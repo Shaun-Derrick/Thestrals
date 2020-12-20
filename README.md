@@ -4,5 +4,5 @@ Team Members include:
 
 
 
-Shaun Derrick
-Danny Nguyen
+- Shaun Derrick
+- Danny Nguyen
