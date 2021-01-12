@@ -1,0 +1,71 @@
+.LandingPage {
+  position: absolute;
+  min-height: 100vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  background-image: url(Images/sunFusion.jpg);
+  background-size: cover;
+}
+.icon-left {
+  position: absolute;
+  top: 30px;
+  left: 200px;
+  color: aqua;
+}
+.icon-right {
+  position: absolute;
+  top: 30px;
+  right: 200px;
+  color: aquamarine;
+}
+.text {
+  display: flex;
+  color: palegreen;
+  font-size: 400%;
+  font-weight: bolder;
+  justify-content: center;
+  align-items: center;
+  /* height: 50px; */
+  padding-top: 20px;
+  /* padding-bottom: 50px; */
+}
+.footer-description {
+  display: flex;
+  /* position: absolute; */
+  bottom: 10px;
+  color: aquamarine;
+  font-size: 150%;
+  font-weight: bold;
+  width: 100vw;
+}
+.platform-statement-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: palegreen;
+  font-size: 150%;
+  font-weight: bold;
+  width: 100vw;
+  /* padding-top: 20px;
+  padding-bottom: 10px; */
+}
+.mission-statement-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: powderblue;
+  font-size: 200%;
+  font-weight: bold;
+  width: 100vw;
+  /* padding-bottom: 10px; */
+}
+.event-list-display {
+  display: flex;
+  color: palegreen;
+  font-size: 150%;
+  font-weight: bold;
+  width: 100vw;
+  /* padding-top: 20px;
+  padding-bottom: 10px; */
+}
