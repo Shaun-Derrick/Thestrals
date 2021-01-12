@@ -1,0 +1,17 @@
+.date{
+   position: relative;
+   left: 22px;
+   bottom: 42px;
+   font-weight: bold;
+}
+.month{
+    margin-bottom: 0;
+}
+.day{
+    position: relative; 
+    left: 2px;
+}
+.ui.items>.item>.image:not(.ui){
+    width: 70px;
+    height:50px;
+}
