@@ -26,13 +26,11 @@
   font-weight: bolder;
   justify-content: center;
   align-items: center;
-  /* height: 50px; */
   padding-top: 20px;
-  /* padding-bottom: 50px; */
 }
 .footer-description {
   display: flex;
-  /* position: absolute; */
+  flex-direction: column;
   bottom: 10px;
   color: aquamarine;
   font-size: 150%;
@@ -41,31 +39,33 @@
 }
 .platform-statement-display {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   color: palegreen;
   font-size: 150%;
   font-weight: bold;
   width: 100vw;
-  /* padding-top: 20px;
-  padding-bottom: 10px; */
 }
 .mission-statement-display {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   color: powderblue;
   font-size: 200%;
   font-weight: bold;
   width: 100vw;
-  /* padding-bottom: 10px; */
 }
 .event-list-display {
   display: flex;
+  flex-direction: column;
   color: palegreen;
   font-size: 150%;
   font-weight: bold;
   width: 100vw;
-  /* padding-top: 20px;
-  padding-bottom: 10px; */
+}
+p {
+  margin-block-start: 0em;
+  margin-block-end: 0em;
 }
