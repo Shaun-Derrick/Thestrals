@@ -5,7 +5,7 @@ import FuseList from "./FuseList";
 import Text from "./Text";
 const App = () => {
   return (
-    <div class="LandingPage">
+    <div className="LandingPage">
       <Text />
     </div>
   );
