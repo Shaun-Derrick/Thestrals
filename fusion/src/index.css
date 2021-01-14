@@ -4,6 +4,26 @@
   width: 100vw;
   align-items: center;
   justify-content: center;
+  background-color: black;
+  background-size: cover;
+}
+.Container {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  background-size: cover;
+}
+.banner {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  height: 260px;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-color: transparent;
   background-image: url(Images/sunFusion.jpg);
   background-size: cover;
 }
@@ -11,31 +31,22 @@
   position: absolute;
   top: 30px;
   left: 200px;
-  color: aqua;
+  color: powderblue;
 }
 .icon-right {
   position: absolute;
   top: 30px;
   right: 200px;
-  color: aquamarine;
+  color: powderblue;
 }
 .text {
   display: flex;
-  color: palegreen;
+  color: powderblue;
   font-size: 400%;
   font-weight: bolder;
   justify-content: center;
   align-items: center;
   padding-top: 20px;
-}
-.footer-description {
-  display: flex;
-  flex-direction: column;
-  bottom: 10px;
-  color: aquamarine;
-  font-size: 150%;
-  font-weight: bold;
-  width: 100vw;
 }
 .platform-statement-display {
   display: flex;
@@ -52,13 +63,36 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: powderblue;
+  color: palegreen;
   font-size: 200%;
+  font-weight: bold;
+  width: 100vw;
+}
+.containerFooter {
+  display: flex;
+  position: absolute;
+  bottom: 20px;
+  min-height: 270px;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  background-size: cover;
+  padding-bottom: 150px;
+}
+.footer-description {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 10px;
+  color: palegreen;
+  font-size: 150%;
   font-weight: bold;
   width: 100vw;
 }
 .event-list-display {
   display: flex;
+  position: absolute;
   flex-direction: column;
   color: palegreen;
   font-size: 150%;
