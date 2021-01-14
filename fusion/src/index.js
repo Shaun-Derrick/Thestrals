@@ -7,6 +7,7 @@ const App = () => {
   return (
     <div className="LandingPage">
       <Text />
+      <FuseList></FuseList>
     </div>
   );
 };

@@ -4,7 +4,8 @@
   width: 100vw;
   align-items: center;
   justify-content: center;
-  background-image: url(Images/sunFusion.jpg);
+  background-color: black;
+  /* background-image: url(Images/sunFusion.jpg); */
   background-size: cover;
 }
 .icon-left {
