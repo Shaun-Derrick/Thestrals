@@ -1,5 +1,4 @@
 .LandingPage {
-  position: absolute;
   min-height: 100vh;
   width: 100vw;
   align-items: center;
@@ -9,7 +8,6 @@
 }
 .Container {
   display: flex;
-  position: absolute;
   align-items: center;
   justify-content: center;
   background-color: black;
@@ -18,7 +16,6 @@
 .banner {
   display: flex;
   flex-direction: column;
-  position: absolute;
   height: 260px;
   width: 100vw;
   background-repeat: no-repeat;
@@ -70,7 +67,7 @@
 }
 .containerFooter {
   display: flex;
-  position: absolute;
+  flex-direction: column;
   bottom: 20px;
   min-height: 270px;
   width: 100vw;
@@ -83,7 +80,6 @@
 .footer-description {
   display: flex;
   flex-direction: column;
-  position: absolute;
   bottom: 10px;
   color: palegreen;
   font-size: 150%;
@@ -92,7 +88,6 @@
 }
 .event-list-display {
   display: flex;
-  position: absolute;
   flex-direction: column;
   color: palegreen;
   font-size: 150%;

@@ -48,3 +48,6 @@
 .linkContent{
     flex-direction: column;
 }
+.fuseContainer{
+    align-self: flex-start;
+}
