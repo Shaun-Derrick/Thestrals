@@ -51,3 +51,21 @@
 .fuseContainer{
     align-self: flex-start;
 }
+.fuseWeek{
+    color:palegreen;
+}
+.fuzeModal{
+    overflow: auto;  
+}
+.modalColor{
+    background-color: grey;
+}
+.ui.modal>.content{
+    background-color: grey;
+}
+.ui.modal>.header{
+    background-color: grey;
+}
+.modalLink{
+    color:blue
+}

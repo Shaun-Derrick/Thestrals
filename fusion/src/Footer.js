@@ -10,8 +10,7 @@ const Footer = () => {
           attendees
         </p>
         <p>
-          Scroll down to view a list of Fuses occuring this week: 12/01/2021 ---
-          18/01/2021
+          Scroll down to view a list of Fuses occuring this week: 
           {/* get date values dynamically as prop */}
         </p>
       </div>
