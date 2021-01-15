@@ -8,8 +8,8 @@ import Footer from "./Footer";
 const App = () => {
   return (
     <div className="LandingPage">
-      <Logo />,
-      <Text />,
+      <Logo />
+      <Text />
       <Footer />
       <FuseList></FuseList>
     </div>

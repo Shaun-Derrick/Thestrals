@@ -6,11 +6,11 @@ const Footer = () => {
     <div className="containerFooter">
       <div className="event-list-display" style={{ marginBottom: "10px" }}>
         <p>
-          Fuses scheduled events or lectures posted by organizers for interested
+          Fuzes scheduled events or lectures posted by organizers for interested
           attendees
         </p>
         <p>
-          Scroll down to view a list of Fuses occuring this week: 12/01/2021 ---
+          Scroll down to view a list of Fuzes occuring this week: 12/01/2021 ---
           18/01/2021
           {/* get date values dynamically as prop */}
         </p>
