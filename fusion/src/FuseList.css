@@ -11,7 +11,40 @@
     position: relative; 
     left: 2px;
 }
-.ui.items>.item>.image:not(.ui){
-    width: 70px;
-    height:50px;
+.ui.card{
+    flex-direction: row;
+    width: auto;
+    max-width: 75vh;
+    background-color: black;
+    color: palegreen
+}
+.ui.card>.content>.header{
+    color:palegreen;
+}
+.ui.link.card:hover{
+    background: #fff;
+    background-image: initial;
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color:black
+}
+.fuzeDate{
+    height:4em;
+}
+.fuzeTitle{
+    position: relative;
+    top: 5px;
+}
+.modalContent{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 1em;
+}
+.linkContent{
+    flex-direction: column;
 }

@@ -11,6 +11,7 @@ const App = () => {
       <Logo />,
       <Text />,
       <Footer />
+      <FuseList></FuseList>
     </div>
   );
 };
