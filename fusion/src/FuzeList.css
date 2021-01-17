@@ -14,7 +14,7 @@
 .ui.card{
     flex-direction: row;
     width: auto;
-    max-width: 75vh;
+    max-width: 100vh;
     background-color: black;
     color: palegreen
 }
@@ -33,7 +33,7 @@
     background-color:black
 }
 .fuzeDate{
-    height:4em;
+    height:4.1em;
 }
 .fuzeTitle{
     position: relative;
@@ -48,10 +48,10 @@
 .linkContent{
     flex-direction: column;
 }
-.fuseContainer{
+.fuzeContainer{
     align-self: flex-start;
 }
-.fuseWeek{
+.fuzeWeek{
     color:palegreen;
 }
 .fuzeModal{

@@ -1,9 +1,9 @@
-import './FuseList.css'
+import './FuzeList.css'
 import React from 'react'
 import { useState } from 'react';
 
-let fuseObject = {
-    fuse1: {
+let fuzeObject = {
+    fuze1: {
         date: 'January 15',
         startTime: '10:00',
         endTime: '11:00',
@@ -16,7 +16,7 @@ let fuseObject = {
         tags3: null,
         organizer: 'The 51'
     },
-    fuse2: {
+    fuze2: {
         date: 'January 18',
         startTime: '13:00',
         endTime: '16:30',
@@ -29,7 +29,7 @@ let fuseObject = {
         tags3: null,
         organizer: 'Women Entrepreneurs In STEM Program'
     },
-    fuse3: {
+    fuze3: {
         date: 'March 02',
         startTime: '15:00',
         endTime: '16:15',
@@ -62,7 +62,7 @@ function getMonth(date, type) {
     return (newDate[type].slice(0, 3))
 }
 
-const FuseList = (props) => {
+const FuzeList = (props) => {
     const [modal, setModal] = useState('')
 
     function openModal() {
@@ -80,89 +80,80 @@ const FuseList = (props) => {
     }
 
     return (
-        <div className='fuseContainer'>
-            <div className='fuseWeek'>
+        <div className='fuzeContainer'>
+            <div className='fuzeWeek'>
                 <h1 className='weekDates'>Jan 10-16</h1>
             </div>
             <div className="fuzeItem ui link card" onClick={openModal}>
                 <div className="content">
-                    <h2 className="fuzeTitle header">{fuseObject.fuse1.title}</h2>
+                    <h2 className="fuzeTitle header">{fuzeObject.fuze1.title}</h2>
                 </div>
                 <div className="fuzeDate image">
                     <i className=" huge calendar outline icon"></i>
                     <div className="date">
-                        <p className="month">{getMonth(fuseObject.fuse1.date, 0)}</p>
-                        <span className="day">{getMonth(fuseObject.fuse1.date, 1)}</span>
+                        <p className="month">{getMonth(fuzeObject.fuze1.date, 0)}</p>
+                        <span className="day">{getMonth(fuzeObject.fuze1.date, 1)}</span>
                     </div>
                 </div>
             </div>
             <div className="fuzeItem ui link card" onClick={openModal}>
-
                 <div className="middle aligned content">
-                    <h2 className="fuzeTitle header">{fuseObject.fuse2.title}</h2>
+                    <h2 className="fuzeTitle header">{fuzeObject.fuze2.title}</h2>
                 </div>
                 <div className="fuzeDate image">
                     <i className=" huge calendar outline icon"></i>
                     <div className="date">
-                        <p className="month">{getMonth(fuseObject.fuse2.date, 0)}</p>
-                        <span className="day">{getMonth(fuseObject.fuse2.date, 1)}</span>
+                        <p className="month">{getMonth(fuzeObject.fuze2.date, 0)}</p>
+                        <span className="day">{getMonth(fuzeObject.fuze2.date, 1)}</span>
                     </div>
                 </div>
-
             </div>
             <div className=" fuzeItem ui link card" onClick={openModal}>
 
                 <div className="middle aligned content">
-                    <h2 className="fuzeTitle header">{fuseObject.fuse3.title}</h2>
+                    <h2 className="fuzeTitle header">{fuzeObject.fuze3.title}</h2>
                 </div>
                 <div className="fuzeDate image">
                     <i className=" huge calendar outline icon"></i>
                     <div className="date">
-                        <p className="month">{getMonth(fuseObject.fuse3.date, 0)}</p>
-                        <span className="day">{getMonth(fuseObject.fuse3.date, 1)}</span>
+                        <p className="month">{getMonth(fuzeObject.fuze3.date, 0)}</p>
+                        <span className="day">{getMonth(fuzeObject.fuze3.date, 1)}</span>
                     </div>
                 </div>
-
             </div>
             <div className={"ui page modals dimmer transition fuzeModal " + modal} >
                 <div className={'ui modal transition ' + modal}>
                     <i className="close icon" onClick={closeModal}></i>
-
                     <div className="ui image content">
                         <img className='centered ui small image modalColor' src="https://s2.qwant.com/thumbr/0x380/f/2/a2d510008beabb9b85c8419f334814b052e00070af6d7cca6b218b9626ca3e/thumbs%20up%20child.jpg?u=https%3A%2F%2Fstatic.ecpbuilder.com%2Fclipart%2Fpeople%2Fthumbs%2520up%2520child.jpg&q=0&b=1&p=0&a=1" alt='random ting'></img>
                     </div>
                     <div className="header modalColor">
-                        <h2>{fuseObject.fuse1.title}</h2>
-                        <p>{fuseObject.fuse1.date}</p>
-                        <p>{fuseObject.fuse1.startTime} - {fuseObject.fuse1.endTime}</p>
+                        <h2>{fuzeObject.fuze1.title}</h2>
+                        <p>{fuzeObject.fuze1.date}</p>
+                        <p>{fuzeObject.fuze1.startTime} - {fuzeObject.fuze1.endTime}</p>
                     </div>
-
                     <div className="content">
                         <div className='modalInfo'>
                             <div>
                                 <div className="ui header">Description</div>
-                                <p>{fuseObject.fuse1.description}</p>
+                                <p>{fuzeObject.fuze1.description}</p>
                             </div>
                             <div className='modalContent'>
-                                <div className='linkContent'>
-                                    <div className="ui header">Links</div>
-                                    <p><a className='modalLink' href={fuseObject.fuse1.description}>{fuseObject.fuse1.description}</a></p>
-                                    <p><a className='modalLink' href={fuseObject.fuse1.description}>{fuseObject.fuse1.description}</a></p>
-                                </div>
+                                <p><a className='modalLink' href={fuzeObject.fuze1.description}><button class="ui button">
+                                    Check it out!
+                                    </button></a></p>
                             </div>
                             <div className='modalTags'>
-                                <p className='modalTagItem'>#{fuseObject.fuse1.tags1}</p>
-                                <p className='modalTagItem'>#{fuseObject.fuse1.tags2}</p>
-                                <p className='modalTagItem'>#{fuseObject.fuse1.tags3}</p>
+                                <p className='modalTagItem'>#{fuzeObject.fuze1.tags1}</p>
+                                <p className='modalTagItem'>#{fuzeObject.fuze1.tags2}</p>
+                                <p className='modalTagItem'>#{fuzeObject.fuze1.tags3}</p>
                             </div>
                         </div>
-
                         <div className='Location'>
                             <img className='ui small middle aligned image' alt="Random pic- don't expect the best things in the world" src='https://s2.qwant.com/thumbr/0x380/d/5/edc623b484dfe71f16269638ec033424a016e6097506cbc5cb7122e15bc6e8/wordpress-google-maps-performance.png?u=https%3A%2F%2Fkinsta.com%2Fwp-content%2Fuploads%2F2019%2F01%2Fwordpress-google-maps-performance.png&q=0&b=1&p=0&a=1'></img>
                             <h2>Source</h2>
-                            <p>{fuseObject.fuse1.venue} : {fuseObject.fuse1.type}</p>
+                            <p>{fuzeObject.fuze1.venue} : {fuzeObject.fuze1.type}</p>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -183,4 +174,4 @@ tags2: String,
 tags3: String,
 organizer: String */
 
-export default FuseList
+export default FuzeList
