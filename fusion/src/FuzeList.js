@@ -1,6 +1,7 @@
 import './FuzeList.css'
 import React from 'react'
 import { useState } from 'react';
+import FuzeModal from './FuzeModal'
 
 let fuzeObject = {
     fuze1: {
@@ -109,7 +110,6 @@ const FuzeList = (props) => {
                 </div>
             </div>
             <div className=" fuzeItem ui link card" onClick={openModal}>
-
                 <div className="middle aligned content">
                     <h2 className="fuzeTitle header">{fuzeObject.fuze3.title}</h2>
                 </div>
@@ -121,7 +121,25 @@ const FuzeList = (props) => {
                     </div>
                 </div>
             </div>
-            <div className={"ui page modals dimmer transition fuzeModal " + modal} >
+            <FuzeModal modal={modal} fuzeObject={fuzeObject} closeModal={closeModal}></FuzeModal>
+        </div >
+    )
+}
+
+
+/* date: Date,
+startTime: String,
+endTime: String,
+title: String,
+description: String,
+venue: String,
+type: String,
+tags1: String,
+tags2: String,
+tags3: String,
+organizer: String 
+
+ <div className={"ui page modals dimmer transition fuzeModal " + modal} >
                 <div className={'ui modal transition ' + modal}>
                     <i className="close icon" onClick={closeModal}></i>
                     <div className="ui image content">
@@ -156,22 +174,7 @@ const FuzeList = (props) => {
                         </div>
                     </div>
                 </div>
-            </div>
-        </div >
-    )
-}
+            </div> */
 
-
-/* date: Date,
-startTime: String,
-endTime: String,
-title: String,
-description: String,
-venue: String,
-type: String,
-tags1: String,
-tags2: String,
-tags3: String,
-organizer: String */
 
 export default FuzeList
