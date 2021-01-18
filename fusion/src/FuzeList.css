@@ -14,7 +14,7 @@
 .ui.card{
     flex-direction: row;
     width: auto;
-    max-width: 75vh;
+    max-width: 100vh;
     background-color: black;
     color: palegreen
 }
@@ -33,7 +33,7 @@
     background-color:black
 }
 .fuzeDate{
-    height:4em;
+    height:4.1em;
 }
 .fuzeTitle{
     position: relative;
@@ -41,17 +41,17 @@
 }
 .modalContent{
     display:flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     padding-top: 1em;
 }
 .linkContent{
     flex-direction: column;
 }
-.fuseContainer{
+.fuzeContainer{
     align-self: flex-start;
 }
-.fuseWeek{
+.fuzeWeek{
     color:palegreen;
 }
 .fuzeModal{
@@ -61,6 +61,8 @@
     background-color: grey;
 }
 .ui.modal>.content{
+    display: flex;
+    justify-content: space-between;
     background-color: grey;
 }
 .ui.modal>.header{
@@ -68,4 +70,15 @@
 }
 .modalLink{
     color:blue
+}
+.location{
+    align-self: flex-end;
+}
+.modalTags{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1em;
+}
+.modalTagItem{
+    padding-right: 1em;
 }
