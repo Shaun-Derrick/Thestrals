@@ -1,6 +1,6 @@
 import "./index.css";
 import React from "react";
-
+import FuseList from "./FuseList";
 const Footer = () => {
   return (
     <div className="containerFooter">
@@ -10,11 +10,11 @@ const Footer = () => {
           attendees
         </p>
         <p>
-          Scroll down to view a list of Fuzes occuring this week: 12/01/2021 ---
-          18/01/2021
+          Scroll down to view a list of Fuzes occuring this week:
           {/* get date values dynamically as prop */}
         </p>
       </div>
+      <FuseList></FuseList>
       <div className="footer-description">
         <p>Become Part of the energy! </p>
         <p>

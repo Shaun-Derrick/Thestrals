@@ -1,5 +1,4 @@
 .LandingPage {
-  position: absolute;
   min-height: 100vh;
   width: 100vw;
   align-items: center;
@@ -7,19 +6,17 @@
   background-color: black;
   background-size: cover;
 }
-.Container {
+.container {
   display: flex;
-  position: absolute;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   background-color: black;
   background-size: cover;
 }
 .banner {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  min-height: 300px;
   width: 100vw;
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -28,25 +25,23 @@
   background-size: cover;
 }
 .icon-left {
-  position: absolute;
-  top: 30px;
-  left: 200px;
+  display: flex;
+  width: 33vw;
   color: powderblue;
 }
 .icon-right {
-  position: absolute;
-  top: 30px;
-  right: 200px;
+  display: flex;
+  width: 33vw;
   color: powderblue;
 }
 .text {
   display: flex;
+  width: 33%;
   color: powderblue;
   font-size: 400%;
   font-weight: bolder;
   justify-content: center;
   align-items: center;
-  padding-top: 20px;
 }
 .platform-statement-display {
   display: flex;
@@ -70,7 +65,7 @@
 }
 .containerFooter {
   display: flex;
-  position: absolute;
+  flex-direction: column;
   bottom: 20px;
   min-height: 320px;
   width: 100vw;
@@ -78,26 +73,26 @@
   justify-content: center;
   background-color: black;
   background-size: cover;
-  padding-bottom: 150px;
 }
 .footer-description {
   display: flex;
   flex-direction: column;
-  position: absolute;
   bottom: 10px;
   color: palegreen;
   font-size: 150%;
   font-weight: bold;
   width: 100vw;
+  padding-top: 30px;
 }
 .event-list-display {
   display: flex;
-  position: absolute;
   flex-direction: column;
   color: palegreen;
   font-size: 150%;
   font-weight: bold;
   width: 100vw;
+  padding-top: 30px;
+  padding-bottom: 10px;
 }
 p {
   margin-block-start: 0em;
