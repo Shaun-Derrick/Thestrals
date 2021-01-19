@@ -1,16 +1,16 @@
 import "./index.css";
 import React from "react";
-import FuzeList from './FuzeList'
+import FuzeList from "./FuzeList";
 const Footer = () => {
   return (
     <div className="containerFooter">
       <div className="event-list-display" style={{ marginBottom: "10px" }}>
         <p>
-          Fuses scheduled events or lectures posted by organizers for interested
+          Fuzes scheduled events or lectures posted by organizers for interested
           attendees
         </p>
         <p>
-          Scroll down to view a list of Fuses occuring this week: 
+          Scroll down to view a list of Fuzes occuring this week:
           {/* get date values dynamically as prop */}
         </p>
       </div>

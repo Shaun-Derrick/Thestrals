@@ -6,17 +6,17 @@
   background-color: black;
   background-size: cover;
 }
-.Container {
+.container {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   background-color: black;
   background-size: cover;
 }
 .banner {
   display: flex;
   flex-direction: column;
-  height: 260px;
   width: 100vw;
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -25,25 +25,23 @@
   background-size: cover;
 }
 .icon-left {
-  position: absolute;
-  top: 30px;
-  left: 200px;
+  display: flex;
+  width: 33vw;
   color: powderblue;
 }
 .icon-right {
-  position: absolute;
-  top: 30px;
-  right: 200px;
+  display: flex;
+  width: 33vw;
   color: powderblue;
 }
 .text {
   display: flex;
+  width: 33%;
   color: powderblue;
   font-size: 400%;
   font-weight: bolder;
   justify-content: center;
   align-items: center;
-  padding-top: 20px;
 }
 .platform-statement-display {
   display: flex;
@@ -69,7 +67,7 @@
   display: flex;
   flex-direction: column;
   bottom: 20px;
-  min-height: 270px;
+  min-height: 320px;
   width: 100vw;
   align-items: center;
   justify-content: center;
@@ -84,6 +82,7 @@
   font-size: 150%;
   font-weight: bold;
   width: 100vw;
+  padding-top: 30px;
 }
 .event-list-display {
   display: flex;
@@ -92,6 +91,8 @@
   font-size: 150%;
   font-weight: bold;
   width: 100vw;
+  padding-top: 30px;
+  padding-bottom: 10px;
 }
 p {
   margin-block-start: 0em;

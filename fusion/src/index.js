@@ -4,11 +4,13 @@ import ReactDOM from "react-dom";
 import Text from "./Text";
 import Logo from "./Logo";
 import Footer from "./Footer";
+import NavBar from "./NavBar";
 const App = () => {
   return (
     <div className="LandingPage">
-      <Logo />,
-      <Text />,
+      <NavBar />
+      <Logo />
+      <Text />
       <Footer />
     </div>
   );
