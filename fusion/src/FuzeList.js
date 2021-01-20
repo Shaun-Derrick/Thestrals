@@ -2,10 +2,11 @@ import './FuzeList.css'
 import React from 'react'
 import { useState } from 'react';
 import FuzeModal from './FuzeModal'
+import FuzeItem from './FuzeItem'
 
 let fuzeObject = {
     fuze1: {
-        date: 'Friday, January 15, 2021',
+        date: '2021-01-15T07:00:00.000+00:00',
         startTime: '10:00 AM',
         endTime: '11:00 AM',
         title: '#FinancialFeminismFriday Coffee Live with Olivia Norton',
@@ -18,7 +19,7 @@ let fuzeObject = {
         organizer: 'The 51'
     },
     fuze2: {
-        date: 'Monday, January 18, 2021',
+        date: '2021-01-18T07:00:00.000+00:00',
         startTime: '1:00 PM',
         endTime: '4:30 PM',
         title: 'Breaking Down Barriers for Starting a Business',
@@ -31,7 +32,7 @@ let fuzeObject = {
         organizer: 'Women Entrepreneurs In STEM Program'
     },
     fuze3: {
-        date: 'Tuesday, March 02, 2021',
+        date: '2021-03-02T07:00:00.000+00:00',
         startTime: '3:00 PM',
         endTime: '4:15 PM',
         title: '6-Pack App Series',
@@ -56,23 +57,14 @@ let fuzeObject = {
         tags3: String,
         organizer: String
     }
-    
-}
 
-function getMonth(date, type) {
-    let newDate = date.split(' ')
-    if (type === 1){
-    return (newDate[type].slice(0, 3))
-    } else{
-        return (newDate[type].slice(0, 2))
-    }
 }
 
 const FuzeList = (props) => {
     const [modal, setModal] = useState('')
-    const [fuzeChoice, setFuzeChoice]= useState('')
+    const [fuzeChoice, setFuzeChoice] = useState('')
 
-    function chooseFuze(fuzeItem){
+    function chooseFuze(fuzeItem) {
         console.log(fuzeItem)
         setFuzeChoice(fuzeItem)
     }
@@ -95,43 +87,10 @@ const FuzeList = (props) => {
         <div className='fuzeContainer'>
             <div className='fuzeWeek'>
                 <h1 className='weekDates'>Jan 10-16</h1>
-            </div> 
-            <div className="fuzeItem ui link card" onClick={() => {openModal(); chooseFuze(fuzeObject.fuze1)}}>
-                <div className="content">
-                    <h2 className="fuzeTitle header">{fuzeObject.fuze1.title}</h2>
-                </div>
-                <div className="fuzeDate image">
-                    <i className=" huge calendar outline icon"></i>
-                    <div className="date">
-                        <p className="month">{getMonth(fuzeObject.fuze1.date, 1)}</p>
-                        <span className="day">{getMonth(fuzeObject.fuze1.date, 2)}</span>
-                    </div>
-                </div>
             </div>
-            <div className="fuzeItem ui link card" onClick={() => {openModal(); chooseFuze(fuzeObject.fuze2)}}>
-                <div className="middle aligned content">
-                    <h2 className="fuzeTitle header">{fuzeObject.fuze2.title}</h2>
-                </div>
-                <div className="fuzeDate image">
-                    <i className=" huge calendar outline icon"></i>
-                    <div className="date">
-                        <p className="month">{getMonth(fuzeObject.fuze2.date, 1)}</p>
-                        <span className="day">{getMonth(fuzeObject.fuze2.date, 2)}</span>
-                    </div>
-                </div>
-            </div>
-            <div className=" fuzeItem ui link card" onClick={() => {openModal(); chooseFuze(fuzeObject.fuze3)}}>
-                <div className="middle aligned content">
-                    <h2 className="fuzeTitle header">{fuzeObject.fuze3.title}</h2>
-                </div>
-                <div className="fuzeDate image">
-                    <i className=" huge calendar outline icon"></i>
-                    <div className="date">
-                        <p className="month">{getMonth(fuzeObject.fuze3.date, 1)}</p>
-                        <span className="day">{getMonth(fuzeObject.fuze3.date, 2)}</span>
-                    </div>
-                </div>
-            </div>
+            <FuzeItem fuzeObject={fuzeObject.fuze1} chooseFuze={chooseFuze} openModal={openModal}></FuzeItem>
+            <FuzeItem fuzeObject={fuzeObject.fuze2} chooseFuze={chooseFuze} openModal={openModal}></FuzeItem>
+            <FuzeItem fuzeObject={fuzeObject.fuze3} chooseFuze={chooseFuze} openModal={openModal}></FuzeItem>
             <FuzeModal modal={modal} fuzeItem={fuzeChoice} closeModal={closeModal}></FuzeModal>
         </div >
     )

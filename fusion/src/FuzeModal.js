@@ -1,10 +1,49 @@
 import React from 'react'
 
+function getDate(date, type) {
+    let month=''
+    let actualDate = date.split('T')
+    let splitDate = actualDate[0].split('-')
+    console.log(splitDate)
+    let monthNumber=parseInt(splitDate[1])
+    let dayNumber=splitDate[2]
+    switch(monthNumber){
+            case 1: month = 'January '
+                break;
+            case 2: month = 'February '
+                break;
+            case 3: month = 'March '
+                break;
+            case 4: month = 'April '
+                break;
+            case 5: month = 'May '
+                break;
+            case 6: month = 'June '
+                break;
+            case 7: month = 'July '
+                break;
+            case 8: month = 'August '
+                break;
+            case 9: month = 'September '
+                break;
+            case 10: month = 'October '
+                break;
+            case 11: month = 'November '
+                break;
+            case 12: month = 'December '
+                break;
+    }
+    let combinedDate=month.concat(dayNumber)
+    return(combinedDate)
+}
+
+
+
 const FuzeModal = (props) => {
     return (
         <div className={"ui page modals dimmer transition fuzeModal " + props.modal}>
             <div className={'ui modal transition ' + props.modal}>
-                <i className="close icon" onClick= {props.closeModal}></i>
+                <i className="close icon" onClick={props.closeModal}></i>
                 <div className="ui image content">
                     <img className='centered ui small image modalColor' src="https://s2.qwant.com/thumbr/0x380/f/2/a2d510008beabb9b85c8419f334814b052e00070af6d7cca6b218b9626ca3e/thumbs%20up%20child.jpg?u=https%3A%2F%2Fstatic.ecpbuilder.com%2Fclipart%2Fpeople%2Fthumbs%2520up%2520child.jpg&q=0&b=1&p=0&a=1" alt='random ting'></img>
                 </div>

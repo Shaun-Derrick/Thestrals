@@ -1,6 +1,7 @@
 import "./index.css";
 import React from "react";
 import FuzeList from "./FuzeList";
+
 const Footer = () => {
   return (
     <div className="containerFooter">
