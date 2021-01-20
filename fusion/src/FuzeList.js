@@ -6,8 +6,8 @@ import FuzeModal from './FuzeModal'
 let fuzeObject = {
     fuze1: {
         date: 'Friday, January 15, 2021',
-        startTime: '10:00',
-        endTime: '11:00',
+        startTime: '10:00 AM',
+        endTime: '11:00 AM',
         title: '#FinancialFeminismFriday Coffee Live with Olivia Norton',
         description: 'https://the51.com/events/financialfeministfriday-coffee-live-with-olivia-norton',
         venue: 'Online',
@@ -19,8 +19,8 @@ let fuzeObject = {
     },
     fuze2: {
         date: 'Monday, January 18, 2021',
-        startTime: '13:00',
-        endTime: '16:30',
+        startTime: '1:00 PM',
+        endTime: '4:30 PM',
         title: 'Breaking Down Barriers for Starting a Business',
         description: 'https://www.eventbrite.ca/e/breaking-down-barriers-to-starting-a-business-tickets-130828458441?aff=erelpanelorg',
         venue: 'Online',
@@ -32,8 +32,8 @@ let fuzeObject = {
     },
     fuze3: {
         date: 'Tuesday, March 02, 2021',
-        startTime: '15:00',
-        endTime: '16:15',
+        startTime: '3:00 PM',
+        endTime: '4:15 PM',
         title: '6-Pack App Series',
         description: 'https://www.eventbrite.ca/e/6-pack-app-series-tickets-131115579227?aff=erelpanelorg',
         venue: 'Online',
@@ -56,6 +56,7 @@ let fuzeObject = {
         tags3: String,
         organizer: String
     }
+    
 }
 
 function getMonth(date, type) {
