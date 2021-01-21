@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 
-function getDate(date, type) {
+function getDateShort(date, type) {
     let month = ''
     let actualDate = date.split('T')
     let splitDate = actualDate[0].split('-')
@@ -41,16 +41,17 @@ function getDate(date, type) {
 
 
 const FuzeItem = (props) => {
+
     return (
-        <div className="fuzeItem ui link card" onClick={() => { props.openModal(); props.chooseFuze(props.fuzeObject) }}>
+        <div className="fuzeItem ui link card" onClick={() => {props.openModal(); props.chooseFuze(props.fuzeObject); props.getDateLong(props.fuzeObject.date) }}>
             <div className="content">
                 <h2 className="fuzeTitle header">{props.fuzeObject.title}</h2>
             </div>
             <div className="fuzeDate image">
                 <i className=" huge calendar outline icon"></i>
                 <div className="date">
-                    <p className="month">{getDate(props.fuzeObject.date, 1)}</p>
-                    <span className="day">{getDate(props.fuzeObject.date, 2)}</span>
+                    <p className="month">{getDateShort(props.fuzeObject.date, 1)}</p>
+                    <span className="day">{getDateShort(props.fuzeObject.date, 2)}</span>
                 </div>
             </div>
         </div>

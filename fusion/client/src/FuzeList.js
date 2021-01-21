@@ -60,9 +60,48 @@ let fuzeObject = {
 
 }
 
+function getDate(date, type) {
+    let month = ''
+    let actualDate = date.split('T')
+    let splitDate = actualDate[0].split('-')
+    let dateNumber = parseInt(splitDate[type])
+    if (type === 1) {
+        switch (dateNumber) {
+            case 1: month = 'Jan'
+                break;
+            case 2: month = 'Feb'
+                break;
+            case 3: month = 'Mar'
+                break;
+            case 4: month = 'Apr'
+                break;
+            case 5: month = 'May'
+                break;
+            case 6: month = 'Jun'
+                break;
+            case 7: month = 'Jul'
+                break;
+            case 8: month = 'Aug'
+                break;
+            case 9: month = 'Sep'
+                break;
+            case 10: month = 'Oct'
+                break;
+            case 11: month = 'Nov'
+                break;
+            case 12: month = 'Dec'
+                break;
+        }
+        return month
+    } else {
+        return splitDate[type]
+    }
+}
+
 const FuzeList = (props) => {
     const [modal, setModal] = useState('')
     const [fuzeChoice, setFuzeChoice] = useState('')
+    const [date, setDate]= useState('')
 
     function chooseFuze(fuzeItem) {
         console.log(fuzeItem)
@@ -77,10 +116,64 @@ const FuzeList = (props) => {
         setModal('')
     }
 
+    function getDateLong(date, type) {
+        let month=''
+        let actualDate = date.split('T')
+        let splitDate = actualDate[0].split('-')
+        console.log(splitDate)
+        let monthNumber=parseInt(splitDate[1])
+        let dayNumber=splitDate[2]
+        switch(monthNumber){
+                case 1: month = 'January '
+                    break;
+                case 2: month = 'February '
+                    break;
+                case 3: month = 'March '
+                    break;
+                case 4: month = 'April '
+                    break;
+                case 5: month = 'May '
+                    break;
+                case 6: month = 'June '
+                    break;
+                case 7: month = 'July '
+                    break;
+                case 8: month = 'August '
+                    break;
+                case 9: month = 'September '
+                    break;
+                case 10: month = 'October '
+                    break;
+                case 11: month = 'November '
+                    break;
+                case 12: month = 'December '
+                    break;
+        }
+        let combinedDate=month.concat(dayNumber)
+        setDate(combinedDate)
+    }
+
     window.onclick = function (event) {
         if (event.target === document.querySelector('.fuzeModal')) {
             setModal('')
         }
+    }
+
+    function testMap(fuze) {
+        return (
+            <div className="fuzeItem ui link card" onClick={() => {openModal();chooseFuze(fuze)}}>
+                <div className="content">
+                    <h2 className="fuzeTitle header">{fuze.title}</h2>
+                </div>
+                <div className="fuzeDate image">
+                    <i className=" huge calendar outline icon"></i>
+                    <div className="date">
+                        <p className="month">{getDate(fuze.date, 1)}</p>
+                        <span className="day">{getDate(fuze.date, 2)}</span>
+                    </div>
+                </div>
+            </div>
+        )
     }
 
     return (
@@ -88,10 +181,10 @@ const FuzeList = (props) => {
             <div className='fuzeWeek'>
                 <h1 className='weekDates'>Jan 10-16</h1>
             </div>
-            <FuzeItem fuzeObject={fuzeObject.fuze1} chooseFuze={chooseFuze} openModal={openModal}></FuzeItem>
-            <FuzeItem fuzeObject={fuzeObject.fuze2} chooseFuze={chooseFuze} openModal={openModal}></FuzeItem>
-            <FuzeItem fuzeObject={fuzeObject.fuze3} chooseFuze={chooseFuze} openModal={openModal}></FuzeItem>
-            <FuzeModal modal={modal} fuzeItem={fuzeChoice} closeModal={closeModal}></FuzeModal>
+             <FuzeItem fuzeObject={fuzeObject.fuze1} chooseFuze={chooseFuze} openModal={openModal} getDateLong={getDateLong}></FuzeItem>
+            <FuzeItem fuzeObject={fuzeObject.fuze2} chooseFuze={chooseFuze} openModal={openModal} getDateLong={getDateLong}></FuzeItem>
+            <FuzeItem fuzeObject={fuzeObject.fuze3} chooseFuze={chooseFuze} openModal={openModal} getDateLong={getDateLong}></FuzeItem>
+            <FuzeModal modal={modal} fuzeItem={fuzeChoice} closeModal={closeModal} date={date}></FuzeModal>
         </div >
     )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function getDate(date, type) {
+function getDateLong(date, type) {
     let month=''
     let actualDate = date.split('T')
     let splitDate = actualDate[0].split('-')
@@ -34,7 +34,7 @@ function getDate(date, type) {
                 break;
     }
     let combinedDate=month.concat(dayNumber)
-    return(combinedDate)
+    setDate(combinedDate)
 }
 
 
@@ -49,7 +49,7 @@ const FuzeModal = (props) => {
                 </div>
                 <div className="header modalColor">
                     <h2>{props.fuzeItem.title}</h2>
-                    <p>{props.fuzeItem.date}</p>
+                    <p>{props.date}</p>
                     <p>{props.fuzeItem.startTime} - {props.fuzeItem.endTime}</p>
                 </div>
                 <div className="content">
