@@ -8,7 +8,7 @@ var router = express.Router();
 /* GET home page. */
 // will handle any request that ends in /events
 // depends on where the router is "use()'d"
-router.get('/car', function(req, res, next) {
+router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 

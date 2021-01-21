@@ -1,6 +1,6 @@
 import './FuzeList.css'
 import React from 'react'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import FuzeModal from './FuzeModal'
 import FuzeItem from './FuzeItem'
 
@@ -101,7 +101,8 @@ function getDate(date, type) {
 const FuzeList = (props) => {
     const [modal, setModal] = useState('')
     const [fuzeChoice, setFuzeChoice] = useState('')
-    const [date, setDate]= useState('')
+    const [modalDate, setModalDate]= useState('')
+    const [fuzeFull, setFuzeFull]= useState([])
 
     function chooseFuze(fuzeItem) {
         console.log(fuzeItem)
@@ -120,7 +121,6 @@ const FuzeList = (props) => {
         let month=''
         let actualDate = date.split('T')
         let splitDate = actualDate[0].split('-')
-        console.log(splitDate)
         let monthNumber=parseInt(splitDate[1])
         let dayNumber=splitDate[2]
         switch(monthNumber){
@@ -150,7 +150,7 @@ const FuzeList = (props) => {
                     break;
         }
         let combinedDate=month.concat(dayNumber)
-        setDate(combinedDate)
+        setModalDate(combinedDate)
     }
 
     window.onclick = function (event) {
@@ -158,6 +158,18 @@ const FuzeList = (props) => {
             setModal('')
         }
     }
+    
+    useEffect(() => {
+        const getSandbox = async () => {
+          // fetch uses the "proxy" value set in client/package.json
+          let response = await fetch('/Sandbox/'+ "5ffcdf71554972691c0d5372" );
+          console.info("hey i m here", response);
+          let fuze = await response.json();
+          
+          setFuzeFull(fuze);
+        };
+        getSandbox();
+      }, []);
 
     function testMap(fuze) {
         return (
@@ -168,8 +180,8 @@ const FuzeList = (props) => {
                 <div className="fuzeDate image">
                     <i className=" huge calendar outline icon"></i>
                     <div className="date">
-                        <p className="month">{getDate(fuze.date, 1)}</p>
-                        <span className="day">{getDate(fuze.date, 2)}</span>
+                        <p className="month">{getDate(fuze.startDate, 1)}</p>
+                        <span className="day">{getDate(fuze.startDate, 2)}</span>
                     </div>
                 </div>
             </div>
@@ -181,10 +193,10 @@ const FuzeList = (props) => {
             <div className='fuzeWeek'>
                 <h1 className='weekDates'>Jan 10-16</h1>
             </div>
-             <FuzeItem fuzeObject={fuzeObject.fuze1} chooseFuze={chooseFuze} openModal={openModal} getDateLong={getDateLong}></FuzeItem>
+            <FuzeItem fuzeObject={fuzeFull} chooseFuze={chooseFuze} openModal={openModal} getDateLong={getDateLong}></FuzeItem>
             <FuzeItem fuzeObject={fuzeObject.fuze2} chooseFuze={chooseFuze} openModal={openModal} getDateLong={getDateLong}></FuzeItem>
             <FuzeItem fuzeObject={fuzeObject.fuze3} chooseFuze={chooseFuze} openModal={openModal} getDateLong={getDateLong}></FuzeItem>
-            <FuzeModal modal={modal} fuzeItem={fuzeChoice} closeModal={closeModal} date={date}></FuzeModal>
+            <FuzeModal modal={modal} fuzeItem={fuzeChoice} closeModal={closeModal} date={modalDate}></FuzeModal>
         </div >
     )
 }
