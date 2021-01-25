@@ -60,7 +60,7 @@ let fuzeObject = {
 
 }
 
-function getDate(date, type) {
+/* function getDate(date, type) {
     let month = ''
     let actualDate = date.split('T')
     let splitDate = actualDate[0].split('-')
@@ -96,7 +96,7 @@ function getDate(date, type) {
     } else {
         return splitDate[type]
     }
-}
+} */
 
 const FuzeList = (props) => {
     const [modal, setModal] = useState('')
@@ -148,6 +148,7 @@ const FuzeList = (props) => {
                     break;
                 case 12: month = 'December '
                     break;
+                default: month = 'Something broke pls send halp '
         }
         let combinedDate=month.concat(dayNumber)
         setModalDate(combinedDate)
@@ -165,13 +166,12 @@ const FuzeList = (props) => {
           let response = await fetch('/Sandbox/'+ "5ffcdf71554972691c0d5372" );
           console.info("hey i m here", response);
           let fuze = await response.json();
-          
           setFuzeFull(fuze);
         };
         getSandbox();
       }, []);
 
-    function testMap(fuze) {
+  /*   function testMap(fuze) {
         return (
             <div className="fuzeItem ui link card" onClick={() => {openModal();chooseFuze(fuze)}}>
                 <div className="content">
@@ -186,7 +186,7 @@ const FuzeList = (props) => {
                 </div>
             </div>
         )
-    }
+    } */
 
     return (
         <div className='fuzeContainer'>

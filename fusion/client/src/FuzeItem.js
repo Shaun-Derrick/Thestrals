@@ -2,8 +2,8 @@ import React from 'react'
 import { useState } from 'react'
 
 function getDateShort(date, type) {
-    if(date==undefined){
-        return undefined
+    if(date===undefined){
+        return 'Loading!'
     }
     else{
     let month = ''
@@ -36,6 +36,7 @@ function getDateShort(date, type) {
                 break;
             case 12: month = 'Dec'
                 break;
+            default: month = 'Something broke pls send halp'
         }
         return month
     } else {
