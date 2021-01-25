@@ -2,7 +2,7 @@ import './FuzeList.css'
 import React from 'react'
 import { useState, useEffect } from 'react';
 import FuzeModal from './FuzeModal'
-import FuzeItem from './FuzeItem'
+import Pagination from './Pagination'
 
 let fuzeObject = {
     fuze1: {
@@ -101,8 +101,8 @@ let fuzeObject = {
 const FuzeList = (props) => {
     const [modal, setModal] = useState('')
     const [fuzeChoice, setFuzeChoice] = useState('')
-    const [modalDate, setModalDate]= useState('')
-    const [fuzeFull, setFuzeFull]= useState([])
+    const [modalDate, setModalDate] = useState('')
+    const [fuzeFull, setFuzeFull] = useState([])
 
     function chooseFuze(fuzeItem) {
         console.log(fuzeItem)
@@ -117,13 +117,60 @@ const FuzeList = (props) => {
         setModal('')
     }
 
+    function getDateShort(date, type) {
+        if (date === undefined) {
+            return 'Loading!'
+        }
+        else {
+            let month = ''
+            let actualDate = date.split('T')
+            let splitDate = actualDate[0].split('-')
+            let dateNumber = parseInt(splitDate[type])
+            if (type === 1) {
+                switch (dateNumber) {
+                    case 1: month = 'Jan'
+                        break;
+                    case 2: month = 'Feb'
+                        break;
+                    case 3: month = 'Mar'
+                        break;
+                    case 4: month = 'Apr'
+                        break;
+                    case 5: month = 'May'
+                        break;
+                    case 6: month = 'Jun'
+                        break;
+                    case 7: month = 'Jul'
+                        break;
+                    case 8: month = 'Aug'
+                        break;
+                    case 9: month = 'Sep'
+                        break;
+                    case 10: month = 'Oct'
+                        break;
+                    case 11: month = 'Nov'
+                        break;
+                    case 12: month = 'Dec'
+                        break;
+                    default: month = 'Something broke pls send halp'
+                }
+                return month
+            } else {
+                return splitDate[type]
+            }
+        }
+    }
+
     function getDateLong(date, type) {
-        let month=''
-        let actualDate = date.split('T')
-        let splitDate = actualDate[0].split('-')
-        let monthNumber=parseInt(splitDate[1])
-        let dayNumber=splitDate[2]
-        switch(monthNumber){
+        if (date === undefined) {
+            return 'Loading!'
+        } else {
+            let month = ''
+            let actualDate = date.split('T')
+            let splitDate = actualDate[0].split('-')
+            let monthNumber = parseInt(splitDate[1])
+            let dayNumber = splitDate[2]
+            switch (monthNumber) {
                 case 1: month = 'January '
                     break;
                 case 2: month = 'February '
@@ -149,9 +196,10 @@ const FuzeList = (props) => {
                 case 12: month = 'December '
                     break;
                 default: month = 'Something broke pls send halp '
+            }
+            let combinedDate = month.concat(dayNumber)
+            setModalDate(combinedDate)
         }
-        let combinedDate=month.concat(dayNumber)
-        setModalDate(combinedDate)
     }
 
     window.onclick = function (event) {
@@ -159,43 +207,50 @@ const FuzeList = (props) => {
             setModal('')
         }
     }
-    
+
     useEffect(() => {
         const getSandbox = async () => {
-          // fetch uses the "proxy" value set in client/package.json
-          let response = await fetch('/Sandbox/'+ "5ffcdf71554972691c0d5372" );
-          console.info("hey i m here", response);
-          let fuze = await response.json();
-          setFuzeFull(fuze);
+            // fetch uses the "proxy" value set in client/package.json
+            let response = await fetch('/Sandbox/');
+            console.info("hey i m here", response);
+            let fuze = await response.json();
+            setFuzeFull(fuze);
         };
         getSandbox();
-      }, []);
+    }, []);
 
-  /*   function testMap(fuze) {
+    function testMap(fuze) {
         return (
-            <div className="fuzeItem ui link card" onClick={() => {openModal();chooseFuze(fuze)}}>
-                <div className="content">
-                    <h2 className="fuzeTitle header">{fuze.title}</h2>
-                </div>
-                <div className="fuzeDate image">
-                    <i className=" huge calendar outline icon"></i>
-                    <div className="date">
-                        <p className="month">{getDate(fuze.startDate, 1)}</p>
-                        <span className="day">{getDate(fuze.startDate, 2)}</span>
+            <div>
+                <div>{console.log(fuze)}</div>
+                <div className="fuzeItem ui link card" onClick={() => { openModal(); chooseFuze(fuze); getDateLong(fuze.startDate) }}>
+                    <div className="content">
+                        <h2 className="fuzeTitle header">{fuze.title}</h2>
+                    </div>
+                    <div className="fuzeDate image">
+                        <i className=" huge calendar outline icon"></i>
+                        <div className="date">
+                            <p className="month">{getDateShort(fuze.startDate, 1)}</p>
+                            <span className="day">{getDateShort(fuze.startDate, 2)}</span>
+                        </div>
                     </div>
                 </div>
             </div>
         )
-    } */
+    }
+
+
 
     return (
         <div className='fuzeContainer'>
             <div className='fuzeWeek'>
-                <h1 className='weekDates'>Jan 10-16</h1>
+                <h1 className='weekDates'>{console.log(fuzeFull)}</h1>
             </div>
-            <FuzeItem fuzeObject={fuzeFull} chooseFuze={chooseFuze} openModal={openModal} getDateLong={getDateLong}></FuzeItem>
+            <div>{fuzeFull.map(testMap)}</div>
+            {/* <FuzeItem fuzeObject={fuzeFull} chooseFuze={chooseFuze} openModal={openModal} getDateLong={getDateLong}></FuzeItem>
             <FuzeItem fuzeObject={fuzeObject.fuze2} chooseFuze={chooseFuze} openModal={openModal} getDateLong={getDateLong}></FuzeItem>
-            <FuzeItem fuzeObject={fuzeObject.fuze3} chooseFuze={chooseFuze} openModal={openModal} getDateLong={getDateLong}></FuzeItem>
+            <FuzeItem fuzeObject={fuzeObject.fuze3} chooseFuze={chooseFuze} openModal={openModal} getDateLong={getDateLong}></FuzeItem> */}
+            <Pagination></Pagination>
             <FuzeModal modal={modal} fuzeItem={fuzeChoice} closeModal={closeModal} date={modalDate}></FuzeModal>
         </div >
     )
