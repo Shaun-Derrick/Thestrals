@@ -17,7 +17,9 @@ const Fuze = require('../models/FuzeSchema');
 
 //so when we have get request for /,function will be called
 router.get('/', async (req, res, next) => {
-  let data = await Fuze.find({});
+  let data = await Fuze
+    .find({})
+    .sort({startDate:1, endDate: 1});
   console.info(`records retrieved from mongoose:`, data?.length)
   res.send(data);
 });
