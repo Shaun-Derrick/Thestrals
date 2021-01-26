@@ -1,14 +1,13 @@
 import React from 'react'
-import { useState } from 'react'
 
 const Pagination = (props) => {
     return (
-        <div class="ui pagination menu">
-            <a class="item">1</a>
-            <a class="item">2</a>
-            <a class="item">3</a>
-            <a class="item">4</a>
-            <a class="item">5</a>
+        <div className="ui pagination menu">
+            <button className="item">1</button>
+            <button className="item">2</button>
+            <button className="item">3</button>
+            <button className="item">4</button>
+            <button className="item">5</button>
         </div>
     )
 }
