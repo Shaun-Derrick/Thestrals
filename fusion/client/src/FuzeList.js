@@ -2,6 +2,7 @@ import './FuzeList.css'
 import React from 'react'
 import { useState, useEffect } from 'react';
 import FuzeModal from './FuzeModal'
+import FuzeItem from './FuzeItem'
 import Pagination from './Pagination'
 
 let fuzeObject = {
@@ -103,6 +104,17 @@ const FuzeList = (props) => {
     const [fuzeChoice, setFuzeChoice] = useState('')
     const [modalDate, setModalDate] = useState('')
     const [fuzeFull, setFuzeFull] = useState([])
+    let count = 1
+
+    useEffect(() => {
+        const getSandbox = async () => {
+            // fetch uses the "proxy" value set in client/package.json
+            let response = await fetch('/Sandbox/');
+            let fuze = await response.json();
+            setFuzeFull(fuze);
+        };
+        getSandbox();
+    }, []);
 
     function chooseFuze(fuzeItem) {
         console.log(fuzeItem)
@@ -161,7 +173,7 @@ const FuzeList = (props) => {
         }
     }
 
-    function getDateLong(date, type) {
+    function getDateLong(date) {
         if (date === undefined) {
             return 'Loading!'
         } else {
@@ -170,6 +182,7 @@ const FuzeList = (props) => {
             let splitDate = actualDate[0].split('-')
             let monthNumber = parseInt(splitDate[1])
             let dayNumber = splitDate[2]
+            let yearNumber = splitDate[0]
             switch (monthNumber) {
                 case 1: month = 'January '
                     break;
@@ -197,7 +210,7 @@ const FuzeList = (props) => {
                     break;
                 default: month = 'Something broke pls send halp '
             }
-            let combinedDate = month.concat(dayNumber)
+            let combinedDate = month.concat(dayNumber,', ', yearNumber)
             setModalDate(combinedDate)
         }
     }
@@ -208,43 +221,22 @@ const FuzeList = (props) => {
         }
     }
 
-    useEffect(() => {
-        const getSandbox = async () => {
-            // fetch uses the "proxy" value set in client/package.json
-            let response = await fetch('/Sandbox/');
-            console.info("hey i m here", response);
-            let fuze = await response.json();
-            setFuzeFull(fuze);
-        };
-        getSandbox();
-    }, []);
+    
 
     function testMap(fuze) {
-        return (
-            <div>
-                <div>{console.log(fuze)}</div>
-                <div className="fuzeItem ui link card" onClick={() => { openModal(); chooseFuze(fuze); getDateLong(fuze.startDate) }}>
-                    <div className="content">
-                        <h2 className="fuzeTitle header">{fuze.title}</h2>
-                    </div>
-                    <div className="fuzeDate image">
-                        <i className=" huge calendar outline icon"></i>
-                        <div className="date">
-                            <p className="month">{getDateShort(fuze.startDate, 1)}</p>
-                            <span className="day">{getDateShort(fuze.startDate, 2)}</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        )
+        let fuzeTemplate = <FuzeItem fuzeObject={fuze} chooseFuze={chooseFuze} openModal={openModal} getDateLong={getDateLong}></FuzeItem>
+        if (count <= 10) {
+            count++
+            return (
+                fuzeTemplate
+            )
+        }
     }
-
-
 
     return (
         <div className='fuzeContainer'>
             <div className='fuzeWeek'>
-                <h1 className='weekDates'>{console.log(fuzeFull)}</h1>
+                <h1 className='weekDates'></h1>
             </div>
             <div>{fuzeFull.map(testMap)}</div>
             {/* <FuzeItem fuzeObject={fuzeFull} chooseFuze={chooseFuze} openModal={openModal} getDateLong={getDateLong}></FuzeItem>
