@@ -5,6 +5,7 @@ import Text from "./Text";
 import Logo from "./Logo";
 import Footer from "./Footer";
 import NavBar from "./NavBar";
+import Filter from "./Filter";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <NavBar />
       <Logo />
       <Text />
+      <Filter />
       <Footer />
     </div>
   );
