@@ -45,7 +45,7 @@ function getDateShort(date, type) {
 
 const FuzeItem = (props) => {
     return (
-        <div className="fuzeItem fuzeSelection1 ui link card transition" onClick={() => { props.openModal(); props.chooseFuze(props.fuzeObject); props.getDateLong(props.fuzeObject.startDate) }}>
+        <div className="fuzeItem ui link card" onClick={() => { props.openModal(); props.chooseFuze(props.fuzeObject); props.getDateLong(props.fuzeObject.startDate) }}>
             <div className="content">
                 <h2 className="fuzeTitle header">{props.fuzeObject.title}</h2>
             </div>
