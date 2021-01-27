@@ -18,7 +18,7 @@ function openPage(chosenNumber, prevNumber) {
 
 const Pagination = (props) => {
     return (
-        <button className={"item"} onClick={() => { props.changePage(props.number); openPage(props.number, prevPageNumber) }}>{props.number}</button>
+        <button className={"item pageButto"} onClick={() => { props.changePage(props.number); openPage(props.number, prevPageNumber) }}>{props.number}</button>
     )
 }
 

@@ -99,7 +99,7 @@ const FuzeList = (props) => {
             divCount++
             fuzecount=0
             return (
-                <div key={index} className={'transition hidden fuzeGroup'+divCount}>{fuzeFull.map(makeFuze)}</div>
+                <div key={index} className={'transition hidden fuzeHolder fuzeGroup'+divCount}>{fuzeFull.map(makeFuze)}</div>
             ) 
         }
     }
@@ -142,7 +142,7 @@ const FuzeList = (props) => {
             {/* <FuzeItem fuzeObject={fuzeFull} chooseFuze={chooseFuze} openModal={openModal} getDateLong={getDateLong}></FuzeItem>
             <FuzeItem fuzeObject={fuzeObject.fuze2} chooseFuze={chooseFuze} openModal={openModal} getDateLong={getDateLong}></FuzeItem>
             <FuzeItem fuzeObject={fuzeObject.fuze3} chooseFuze={chooseFuze} openModal={openModal} getDateLong={getDateLong}></FuzeItem> */}
-            <div className="ui pagination menu">
+            <div className="ui pagination pageButtons menu">
             {fuzeFull.map(makePage)}
             </div>
             <FuzeModal modal={modalStatus} fuzeItem={fuzeChoice} closeModal={closeModal} date={modalDate}></FuzeModal>
