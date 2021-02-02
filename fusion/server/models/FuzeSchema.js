@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require('./database');
 const Schema = mongoose.Schema;
 
 const fuzeSchema = new mongoose.Schema({
@@ -19,7 +19,7 @@ const fuzeSchema = new mongoose.Schema({
 
 });
 
-// first argument is the singular name of the collection your model is 4. 
+// first argument is the singular name of the collection your model is for. 
 //Mongoose automat looks for plural,lowercased version of your model name. 
 //Thus, the model Fuse is for the fuses collection in the database.
-module.exports = mongoose.model('Fuse', fuzeSchema, 'Sandbox');
+module.exports = mongoose.model('fuze', fuzeSchema, 'Fuzes')

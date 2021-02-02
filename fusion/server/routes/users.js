@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const mongoose = require('mongoose');
+const mongoose = require('../models/database');
 const Fuze = require('../models/FuzeSchema');
 
 //ORIGINALLY 

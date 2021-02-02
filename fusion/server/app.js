@@ -7,23 +7,7 @@ var logger = require('morgan');
 //to import routes
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
-// SETUP MONGO/MONGOOSE
-const mongoose = require('mongoose');
-const mongoUser = 'kltestuser';
-const mongoPasswd = 'Dbt3st1ng';
-const mongoDBName = 'Fuses';
-const mongoServer = 'cluster0.qbxu5.mongodb.net';
-const url =
-  `mongodb+srv://${mongoUser}:${mongoPasswd}` +
-  `@${mongoServer}/${mongoDBName}?retryWrites=true&w=majority`;
-
-mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
-const db = mongoose.connection;
-db.once('open', (_) =>
-  console.log('MongoDB is now connected:', `${mongoUser}@${mongoServer}/${mongoDBName}`)
-);
-db.on('error', (err) => console.error('MongoDB connection error!', err));
+var tagsRouter = require('./routes/tags');
 
 // to call the express function 
 var app = express();
@@ -42,7 +26,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 
 //only requests to /users will be sent to "usersRouter"
-app.use('/Sandbox', usersRouter);
+app.use('/Fuzes', usersRouter);
+
+//only requests to /Tags will be sent to "tagsRouter"
+app.use('/Tags', tagsRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

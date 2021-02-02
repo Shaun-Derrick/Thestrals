@@ -15,7 +15,7 @@ const FuzeList = (props) => {
     useEffect(() => {
         const getSandbox = async () => {
             // fetch uses the "proxy" value set in client/package.json
-            let response = await fetch('/Sandbox/nextSevenDays');
+            let response = await fetch('/Fuzes/nextSevenDays');
             let fuze = await response.json();
             setFuzeFull(fuze);
         };
