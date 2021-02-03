@@ -1,0 +1,92 @@
+.date {
+  position: relative;
+  left: 22px;
+  bottom: 42px;
+  font-weight: bold;
+}
+.month {
+  margin-bottom: 0;
+}
+.day {
+  position: relative;
+  left: 2px;
+}
+div.ui.card {
+  flex-direction: row;
+  width: auto;
+  max-width: 100vh;
+  background-color: black;
+  color: palegreen;
+}
+div.ui.card > .content > .header {
+  color: palegreen;
+}
+/* .ui.card, .ui.cards>.card */
+div.ui.link.card:hover {
+  background: #fff;
+  background-image: initial;
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: black;
+}
+.fuzeDate {
+  height: 4.1em;
+}
+.fuzeTitle {
+  position: relative;
+  top: 5px;
+}
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 1em;
+}
+.linkContent {
+  flex-direction: column;
+}
+.fuzeContainer {
+  align-self: flex-start;
+}
+.fuzeWeek {
+  color: palegreen;
+}
+.fuzeModal {
+  overflow: auto;
+}
+.modalColor {
+  background-color: grey;
+}
+div.ui.modal > .content {
+  display: flex;
+  justify-content: space-between;
+  background-color: grey;
+}
+div.ui.modal > .header {
+  background-color: grey;
+}
+.modalLink {
+  color: blue;
+}
+.location {
+  align-self: flex-end;
+}
+.modalTags {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1em;
+}
+.modalTagItem {
+  padding-right: 1em;
+}
+.fuzeHolder {
+  margin-left: 1em;
+}
+.ui.pagination.menu {
+  margin-top: 1em;
+  margin-left: 1em;
+}

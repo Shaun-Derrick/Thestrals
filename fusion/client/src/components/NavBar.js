@@ -1,19 +1,19 @@
-import React, { useState } from "react";
-import "./NavBar.css";
+import React, { useState } from "react"
+import "../stylesheets/NavBar.css"
 
 const NavBar = () => {
-  const [navLinkOpen, navLinkToggle] = useState(false);
+  const [navLinkOpen, navLinkToggle] = useState(false)
 
   const handleNavLinksToggle = () => {
-    navLinkToggle(!navLinkOpen);
-  };
+    navLinkToggle(!navLinkOpen)
+  }
   const renderClasses = () => {
-    let classes = "navlinks";
+    let classes = "navlinks"
     if (navLinkOpen) {
-      classes += " active";
+      classes += " active"
     }
-    return classes;
-  };
+    return classes
+  }
 
   return (
     <nav>
@@ -37,7 +37,7 @@ const NavBar = () => {
         </div>
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default NavBar;
+export default NavBar

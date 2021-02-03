@@ -1,9 +1,0 @@
-.container-filter {
-  display: flex;
-  flex-direction: row;
-  width: 100vw;
-  color: palegreen;
-  justify-content: left;
-  padding-top: 20px;
-  font-size: large;
-}

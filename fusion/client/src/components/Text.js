@@ -1,5 +1,5 @@
-import "./index.css";
-import React from "react";
+import "../stylesheets/index.css"
+import React from "react"
 const Text = () => {
   return (
     <div className="banner">
@@ -16,6 +16,6 @@ const Text = () => {
         <p>organizations from Alberta</p>
       </div>
     </div>
-  );
-};
-export default Text;
+  )
+}
+export default Text
