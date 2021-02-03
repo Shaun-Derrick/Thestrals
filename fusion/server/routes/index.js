@@ -9,7 +9,7 @@ var router = express.Router();
 // will handle any request that ends in /events
 // depends on where the router is "use()'d"
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Thestrals', name: 'Danny' });
 });
 
 module.exports = router;

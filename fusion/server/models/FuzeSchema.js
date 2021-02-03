@@ -1,7 +1,7 @@
 const mongoose = require('./database');
 const Schema = mongoose.Schema;
 
-const fuzeSchema = new mongoose.Schema({
+const fuzeSchema = new Schema({
   date: Date,
   startTime: String,
   endTime:String,

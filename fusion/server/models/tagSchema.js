@@ -1,11 +1,8 @@
 const mongoose = require('./database');
 const Schema = mongoose.Schema;
 
-const tagSchema = new mongoose.Schema({
-
+const tagSchema = new Schema({
   name: String,
-
-
 });
 
 // first argument is the singular name of the collection your model is 4. 
