@@ -16,7 +16,6 @@ const fuzeSchema = new Schema({
   whereIFoundThisEvent1:String,
   whereIFoundThisEvent2:String,
   whereIFoundThisEvent3:String,
-
 });
 
 // first argument is the singular name of the collection your model is for. 

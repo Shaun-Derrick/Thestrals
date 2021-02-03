@@ -71,4 +71,31 @@ router.get('/:id', async (req, res, next) => {
    }
 });
 
+router.put('/:id', async(req, res)=>{
+  try{
+    const foundFuze= await Fuze.findById(req.params.id)
+    foundFuze.set({
+      date: req.body.date,
+      startTime: req.body.startTime,
+      endTime:req.body.endTime,
+      title:req.body.title,
+      description: req.body.description,
+      venue:req.body.venue,
+      type:req.body.type,
+      tags1:req.body.tags1,
+      tags2:req.body.tags2,
+      tags3:req.body.tags3,
+      organizer:req.body.organizer,
+      whereIFoundThisEvent1:req.body.whereIFoundThisEvent1,
+      whereIFoundThisEvent2:req.body.whereIFoundThisEvent2,
+      whereIFoundThisEvent3:req.body.whereIFoundThisEvent3,
+    })
+    const updatedFuze= foundFuze.save();
+    res.send(foundFuze)
+  }
+  catch(error){
+    res.sendStatus(404)
+  } 
+})
+
 module.exports = router;
