@@ -2,7 +2,7 @@ import "../stylesheets/index.css"
 import React from "react"
 import FuzeList from "./FuzeList"
 
-const Footer = (props) => {
+const Annotation = (props) => {
   return (
     <div className="containerAnnotation">
       <div className="event-list-display" style={{ marginBottom: "10px" }}>
@@ -10,12 +10,12 @@ const Footer = (props) => {
           Fuzes scheduled events or lectures posted by organizers for interested
           attendees
         </p>
-        <p>
-          Scroll down to view a list of Fuzes occuring this week:
-          {/* get date values dynamically as prop */}
-        </p>
+        <p>Scroll down to view a list of Fuzes occuring this week:</p>
       </div>
-      <FuzeList list={props.list}></FuzeList>
+      <FuzeList
+        fuzeFull={props.fuzeFull}
+        setFuzeFull={props.setFuzeFull}
+      ></FuzeList>
       <div className="annotation-description">
         <p>Become Part of the energy! </p>
         <p>
@@ -28,4 +28,4 @@ const Footer = (props) => {
   )
 }
 
-export default Footer
+export default Annotation

@@ -2,7 +2,6 @@ import React from "react"
 import { Dropdown } from "semantic-ui-react"
 import "../stylesheets/Dropdown.css"
 import "semantic-ui-css/semantic.min.css"
-import { useState } from "react"
 
 const options = [
   {
@@ -83,12 +82,9 @@ const options = [
 
 const DropdownExampleMultipleSelection = (props) => {
   // const Dropdown = (props) => { ----- Tried changing name an export but as it is a semantic-ui-react module I do not think it can be as it stops rendering
-  const [categoryName, setCategoryName] = useState([])
 
   const createBlock = (e, data) => {
     let selectedCategory = data.value
-    // console.log(data.value)
-    setCategoryName(selectedCategory)
     props.updateFilter(selectedCategory)
   }
 

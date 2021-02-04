@@ -1,6 +1,6 @@
 import "../stylesheets/index.css"
 import React from "react"
-const Text = () => {
+const MissionStatement = () => {
   return (
     <div className="banner">
       <div
@@ -18,4 +18,4 @@ const Text = () => {
     </div>
   )
 }
-export default Text
+export default MissionStatement

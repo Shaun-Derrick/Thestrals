@@ -1,6 +1,6 @@
 import "../stylesheets/FuzeList.css"
 import React from "react"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import FuzeModal from "./FuzeModal"
 import FuzeItem from "./FuzeItem"
 import Pagination from "./Pagination"
@@ -9,28 +9,7 @@ const FuzeList = (props) => {
   const [modalStatus, setModalStatus] = useState(" notActive")
   const [fuzeChoice, setFuzeChoice] = useState("")
   const [modalDate, setModalDate] = useState("")
-  const [fuzeFull, setFuzeFull] = useState([])
   const [pageStatus, setPageStatus] = useState(0)
-  // Set state for display
-  const [fuzeDisplayToggle, setFuzeDisplayToggle] = useState(false)
-
-  useEffect(() => {
-    const getSandbox = async () => {
-      // fetch uses the "proxy" value set in client/package.json
-      let response = await fetch("/Sandbox/nextSevenDays")
-      let fuze = await response.json()
-      // toggle display to true to show unfilterd fuze list
-      setFuzeDisplayToggle(true)
-      setFuzeFull(fuze)
-    }
-    getSandbox()
-  }, [])
-  // useEffect to change displayed fuze list to user selected search
-  useEffect(() => {
-    setFuzeFull(props.list)
-    // toggle display by changing state to false
-    setFuzeDisplayToggle(false)
-  }, [props.list])
 
   //State functions
   function chooseFuze(fuzeItem) {
@@ -115,7 +94,7 @@ const FuzeList = (props) => {
   //All dynamically built elements
   let divCount = 0
   function makeDiv(thing, index) {
-    if (divCount < fuzeFull.length / 10) {
+    if (divCount < props.fuzeFull.length / 10) {
       divCount++
       fuzecount = 0
       return (
@@ -123,7 +102,7 @@ const FuzeList = (props) => {
           key={index}
           className={"transition hidden fuzeHolder fuzeGroup" + divCount}
         >
-          {fuzeFull.map(makeFuze)}
+          {props.fuzeFull.map(makeFuze)}
         </div>
       )
     }
@@ -135,13 +114,13 @@ const FuzeList = (props) => {
     if (fuzecount < 10) {
       fuzecount++
       fuzeIndex++
-      if (fuzeFull[fuzeIndex] === undefined) {
+      if (props.fuzeFull[fuzeIndex] === undefined) {
         return undefined
       }
       return (
         <FuzeItem
           key={index}
-          fuzeObject={fuzeFull[fuzeIndex]}
+          fuzeObject={props.fuzeFull[fuzeIndex]}
           chooseFuze={chooseFuze}
           openModal={openModal}
           getDateLong={getDateLong}
@@ -152,7 +131,7 @@ const FuzeList = (props) => {
 
   let pageCount = 0
   function makePage(thing, index) {
-    if (pageCount < fuzeFull.length / 10) {
+    if (pageCount < props.fuzeFull.length / 10) {
       pageCount++
       return (
         <Pagination
@@ -168,21 +147,10 @@ const FuzeList = (props) => {
   return (
     <div className="fuzeContainer">
       <div className="fuzeWeek"></div>
-      {fuzeFull.map(makeDiv)}
-      <div className="fuzeList">
-        {props.list === undefined && fuzeDisplayToggle && setFuzeFull}
-        {/* {props.list === undefined && fuzeDisplayToggle && fuzeFull} */}
-        {props.list !== undefined && fuzeDisplayToggle === false && setFuzeFull}
-        {/* {props.list !== undefined &&
-          fuzeDisplayToggle === false &&
-          setFuzeFull(props.list)} */}
-        {console.log(props.list, fuzeDisplayToggle)}
-      </div>
-      {/* <FuzeItem fuzeObject={fuzeFull} chooseFuze={chooseFuze} openModal={openModal} getDateLong={getDateLong}></FuzeItem>
-            <FuzeItem fuzeObject={fuzeObject.fuze2} chooseFuze={chooseFuze} openModal={openModal} getDateLong={getDateLong}></FuzeItem>
-            <FuzeItem fuzeObject={fuzeObject.fuze3} chooseFuze={chooseFuze} openModal={openModal} getDateLong={getDateLong}></FuzeItem> */}
+      {props.fuzeFull.map(makeDiv)}
+      <div className="fuzeList"></div>
       <div className="ui pagination pageButtons menu">
-        {fuzeFull.map(makePage)}
+        {props.fuzeFull.map(makePage)}
       </div>
       <FuzeModal
         modal={modalStatus}
