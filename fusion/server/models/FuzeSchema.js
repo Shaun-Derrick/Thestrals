@@ -21,4 +21,4 @@ const fuzeSchema = new Schema({
 // first argument is the singular name of the collection your model is for. 
 //Mongoose automat looks for plural,lowercased version of your model name. 
 //Thus, the model Fuse is for the fuses collection in the database.
-module.exports = mongoose.model('fuze', fuzeSchema, 'Fuzes')
+module.exports = mongoose.model('fuze', fuzeSchema, 'Sandbox')

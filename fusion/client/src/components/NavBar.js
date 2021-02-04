@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./NavBar.css";
+import "../stylesheets/NavBar.css";
 
 const NavBar = () => {
   const [navLinkOpen, navLinkToggle] = useState(false);

@@ -11,17 +11,17 @@
     position: relative; 
     left: 2px;
 }
-.ui.card{
+div.ui.card{
     flex-direction: row;
     width: auto;
     max-width: 100vh;
     background-color: black;
     color: palegreen
 }
-.ui.card>.content>.header{
+div.ui.card>.content>.header{
     color:palegreen;
 }
-.ui.link.card:hover{
+div.ui.link.card:hover{
     background: #fff;
     background-image: initial;
     background-position-x: initial;
@@ -60,12 +60,12 @@
 .modalColor{
     background-color: grey;
 }
-.ui.modal>.content{
+div.ui.modal>.content{
     display: flex;
     justify-content: space-between;
     background-color: grey;
 }
-.ui.modal>.header{
+div.ui.modal>.header{
     background-color: grey;
 }
 .modalLink{

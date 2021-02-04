@@ -1,6 +1,6 @@
-import './FuzeList.css'
+import "../stylesheets/FuzeList.css"
 import React from 'react'
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import FuzeModal from './FuzeModal'
 import FuzeItem from './FuzeItem'
 import Pagination from './Pagination'
@@ -9,19 +9,7 @@ const FuzeList = (props) => {
     const [modalStatus, setModalStatus] = useState(' notActive')
     const [fuzeChoice, setFuzeChoice] = useState('')
     const [modalDate, setModalDate] = useState('')
-    const [fuzeFull, setFuzeFull] = useState([])
-    const [pageStatus, setPageStatus] =useState(0)
-    
-    useEffect(() => {
-        const getSandbox = async () => {
-            // fetch uses the "proxy" value set in client/package.json
-            let response = await fetch('/Fuzes/');
-            let fuze = await response.json();
-            setFuzeFull(fuze);
-        };
-        getSandbox();
-    }, []);
-
+    const [pageStatus, setPageStatus] = useState(0)
 
     //State functions
     function chooseFuze(fuzeItem) {
@@ -36,10 +24,10 @@ const FuzeList = (props) => {
         setModalStatus(' notActive')
     }
 
-    function changePage(number){
+    function changePage(number) {
         setPageStatus(number)
     }
-    
+
     //Date functions- probably will combine this with another later
     function getDateLong(date) {
         if (date === undefined) {
@@ -78,7 +66,7 @@ const FuzeList = (props) => {
                     break;
                 default: month = 'Something broke pls send halp '
             }
-            let combinedDate = month.concat(dayNumber,', ', yearNumber)
+            let combinedDate = month.concat(dayNumber, ', ', yearNumber)
             setModalDate(combinedDate)
         }
     }
@@ -93,60 +81,55 @@ const FuzeList = (props) => {
 
 
     //All dynamically built elements
-    let divCount=0
+    let divCount = 0
     function makeDiv(thing, index) {
-        if(divCount<(fuzeFull.length)/10){
+        if (divCount < (props.fuzeFull.length) / 10) {
             divCount++
-            fuzecount=0
+            fuzecount = 0
             return (
-                <div key={index} className={'transition hidden fuzeHolder fuzeGroup'+divCount}>{fuzeFull.map(makeFuze)}</div>
-            ) 
+                <div key={index} className={'transition hidden fuzeHolder fuzeGroup' + divCount}>{props.fuzeFull.map(makeFuze)}</div>
+            )
         }
     }
 
-    let fuzecount=0
-    let fuzeIndex=-1
+    let fuzecount = 0
+    let fuzeIndex = -1
     function makeFuze(fuze, index) {
-        if(fuzecount<10){
+        if (fuzecount < 10) {
             fuzecount++
             fuzeIndex++
-            if(fuzeFull[fuzeIndex]===undefined){
+            if (props.fuzeFull[fuzeIndex] === undefined) {
                 return undefined
             }
             return (
-                <FuzeItem key={index} fuzeObject={fuzeFull[fuzeIndex]} chooseFuze={chooseFuze} openModal={openModal} getDateLong={getDateLong}></FuzeItem>
-            ) 
-        }    
+                <FuzeItem key={index} fuzeObject={props.fuzeFull[fuzeIndex]} chooseFuze={chooseFuze} openModal={openModal} getDateLong={getDateLong}></FuzeItem>
+            )
+        }
     }
 
-   
 
-    let pageCount=0
+
+    let pageCount = 0
     function makePage(thing, index) {
-        if(pageCount<(fuzeFull.length)/10){
+        if (pageCount < (props.fuzeFull.length) / 10) {
             pageCount++
             return (
                 <Pagination key={index} number={pageCount} pageStatus={pageStatus} changePage={changePage}></Pagination>
-            ) 
+            )
         }
     }
 
 
     return (
         <div className='fuzeContainer'>
-            <div className='fuzeWeek'>
-                {/* <h1 className='weekDates'></h1> */}
+            <div className='fuzeList'>
+                {props.fuzeFull.map(makeDiv)}
             </div>
-            {fuzeFull.map(makeDiv)}
-            <div className='fuzeList'></div>
-            {/* <FuzeItem fuzeObject={fuzeFull} chooseFuze={chooseFuze} openModal={openModal} getDateLong={getDateLong}></FuzeItem>
-            <FuzeItem fuzeObject={fuzeObject.fuze2} chooseFuze={chooseFuze} openModal={openModal} getDateLong={getDateLong}></FuzeItem>
-            <FuzeItem fuzeObject={fuzeObject.fuze3} chooseFuze={chooseFuze} openModal={openModal} getDateLong={getDateLong}></FuzeItem> */}
             <div className="ui pagination pageButtons menu">
-            {fuzeFull.map(makePage)}
+                {props.fuzeFull.map(makePage)}
             </div>
             <FuzeModal modal={modalStatus} fuzeItem={fuzeChoice} closeModal={closeModal} date={modalDate}></FuzeModal>
-        </div >
+        </div>
     )
 }
 

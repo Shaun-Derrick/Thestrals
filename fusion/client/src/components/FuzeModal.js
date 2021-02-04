@@ -9,7 +9,7 @@ const FuzeModal = (props) => {
                     <img className='centered ui small image modalColor' src="https://s2.qwant.com/thumbr/0x380/f/2/a2d510008beabb9b85c8419f334814b052e00070af6d7cca6b218b9626ca3e/thumbs%20up%20child.jpg?u=https%3A%2F%2Fstatic.ecpbuilder.com%2Fclipart%2Fpeople%2Fthumbs%2520up%2520child.jpg&q=0&b=1&p=0&a=1" alt='random ting'></img>
                 </div>
                 <div className="header modalColor">
-                    <h2>{props.fuzeItem.Title}</h2>
+                    <h2>{props.fuzeItem.title}</h2>
                     <p>{props.date}</p>
                     <p>{props.fuzeItem.startTime} - {props.fuzeItem.endTime}</p>
                 </div>
@@ -20,9 +20,13 @@ const FuzeModal = (props) => {
                             <p>{props.fuzeItem.description}</p>
                         </div>
                         <div className='modalContent'>
-                            <p><a className='modalLink' href={props.fuzeItem.description} target='_blank' rel='noreferrer'><button class="ui button">
-                                Check it out!
-                                    </button></a></p>
+                            <p>
+                                <a className='modalLink' href={props.fuzeItem.description} target='_blank' rel='noreferrer'>
+                                    <button class="ui button">
+                                        Check it out!
+                                    </button>
+                                </a>
+                            </p>
                         </div>
                         <div className='modalTags'>
                             <p className='modalTagItem'>#{props.fuzeItem.tags1}</p>

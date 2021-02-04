@@ -1,6 +1,6 @@
-import "./index.css";
-import React from "react";
-const Text = () => {
+import "../stylesheets/index.css"
+import React from "react"
+const MissionStatement = () => {
   return (
     <div className="banner">
       <div
@@ -16,6 +16,6 @@ const Text = () => {
         <p>organizations from Alberta</p>
       </div>
     </div>
-  );
-};
-export default Text;
+  )
+}
+export default MissionStatement

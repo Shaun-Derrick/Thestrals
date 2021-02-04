@@ -8,16 +8,16 @@ const mongoose = require('mongoose');
 //const mongoServer = '@cluster0.alihe.mongodb.net';
 
 // Fuzes login Danny tester
-const mongoUser = 'Debbietester';
+/* const mongoUser = 'Debbietester';
 const mongoPasswd = 'lcrS9w6vcxZbcXCV';
 const mongoDBName = 'Fuzes';
-const mongoServer = '@cluster0.alihe.mongodb.net';
+const mongoServer = '@cluster0.alihe.mongodb.net'; */
 
 // Fuses-Sandbox login
-// const mongoUser = 'kltestuser';
-// const mongoPasswd = 'Dbt3st1ng';
-// const mongoDBName = 'Fuses';
-// const mongoServer = 'cluster0.qbxu5.mongodb.net';
+const mongoUser = 'kltestuser';
+ const mongoPasswd = 'Dbt3st1ng';
+ const mongoDBName = 'Fuses';
+ const mongoServer = '@cluster0.qbxu5.mongodb.net';
 const url = `mongodb+srv://${mongoUser}:${mongoPasswd}${mongoServer}/${mongoDBName}?retryWrites=true&w=majority`
 
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });

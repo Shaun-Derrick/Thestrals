@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 
 //only requests to /users will be sent to "usersRouter"
-app.use('/Fuzes', usersRouter);
+app.use('/Sandbox', usersRouter);
 
 //only requests to /Tags will be sent to "tagsRouter"
 app.use('/Tags', tagsRouter)

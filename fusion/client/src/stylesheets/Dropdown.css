@@ -1,0 +1,53 @@
+.overrideCss {
+  color: palegreen;
+  border-color: palegreen;
+  border-width: 8px;
+}
+dropdown.ui.dropdown.default.text {
+  color: palegreen;
+}
+
+div.ui.dropdown:not(.button) > .default.text {
+  color: palegreen;
+  font-weight: 700;
+  background-color: black;
+}
+div.ui.dropdown .menu > .item {
+  color: palegreen;
+  background-color: black;
+}
+
+div.ui.selection.active.dropdown .menu {
+  border-width: 4px;
+  border-color: whitesmoke;
+}
+i.ui.selection.dropdown > .dropdown.icon {
+  background-color: palegreen;
+}
+div.ui.selection.dropdown {
+  background-color: black;
+}
+a.ui.active.label {
+  color: palegreen;
+  border-color: palegreen;
+  border-width: 2px;
+}
+div.ui.dropdown .menu > .item:hover {
+  background-color: black;
+  color: palegreen;
+  opacity: 0.7;
+}
+div.ui.dropdown .menu .selected.item {
+  color: palegreen;
+  background-color: black;
+}
+div.visible.menu.transition::-webkit-scrollbar-track {
+  background: whitesmoke;
+}
+div.visible.menu.transition::-webkit-scrollbar-thumb {
+  background-color: palegreen;
+  height: 17px;
+}
+.content {
+  color: blue;
+}
