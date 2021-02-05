@@ -31,11 +31,13 @@ const NavBar = () => {
           <li className="link">
             <a href="#">Contact Us</a>
           </li>
+          
         </ul>
         <div onClick={handleNavLinksToggle} className="hamburger-toggle">
           <i className="bars icon"></i>
         </div>
       </div>
+      
     </nav>
   );
 };

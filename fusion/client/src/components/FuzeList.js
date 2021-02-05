@@ -5,6 +5,7 @@ import FuzeModal from './FuzeModal'
 import FuzeItem from './FuzeItem'
 import Pagination from './Pagination'
 
+
 const FuzeList = (props) => {
     const [modalStatus, setModalStatus] = useState(' notActive')
     const [fuzeChoice, setFuzeChoice] = useState('')

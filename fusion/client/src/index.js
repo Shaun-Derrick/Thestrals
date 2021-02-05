@@ -8,6 +8,8 @@ import NavBar from "./components/NavBar"
 import Dropdown from "./components/Dropdown"
 import Filter from "./components/Filter"
 import { useState, useEffect } from "react"
+import AdminLoginForm from "./components/AdminLoginForm"
+
 
 const App = () => {
   const [currentFilters, setCurrentFilters] = useState([])
@@ -26,6 +28,7 @@ const App = () => {
   return (
     <div className="LandingPage">
       <NavBar />
+      
       <Logo />
        <MissionStatement />
       <Dropdown updateFilter={setCurrentFilters} />
@@ -35,6 +38,7 @@ const App = () => {
         setFuzeFull={setFuzeFull}
       />
       <Annotation fuzeFull={fuzeFull} setFuzeFull={setFuzeFull} />
+      <AdminLoginForm />
     </div>
   );
 };
