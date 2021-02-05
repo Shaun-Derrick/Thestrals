@@ -8,7 +8,8 @@ import NavBar from "./components/NavBar"
 import Dropdown from "./components/Dropdown"
 import Filter from "./components/Filter"
 import { useState, useEffect } from "react"
-import AdminLoginForm from "./components/AdminLoginForm"
+
+import AdminModal from "./components/AdminModal"
 
 
 const App = () => {
@@ -38,7 +39,11 @@ const App = () => {
         setFuzeFull={setFuzeFull}
       />
       <Annotation fuzeFull={fuzeFull} setFuzeFull={setFuzeFull} />
-      <AdminLoginForm />
+      
+    
+       <AdminModal /> 
+       
+
     </div>
   );
 };
