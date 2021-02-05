@@ -90,7 +90,17 @@ router.put('/:id', async(req, res)=>{
       whereIFoundThisEvent2:req.body.whereIFoundThisEvent2,
       whereIFoundThisEvent3:req.body.whereIFoundThisEvent3,
     })
-    const updatedFuze= foundFuze.save();
+    res.send(foundFuze)
+  }
+  catch(error){
+    res.sendStatus(404)
+  } 
+})
+
+router.delete('/:id', async(req,res)=>{
+  try{
+    const foundFuze= await Fuze.deleteOne({_id: req.params.id})
+    console.log(`This is deleted!: ${foundFuze}`)
     res.send(foundFuze)
   }
   catch(error){

@@ -34,7 +34,7 @@ function getDateShort(date, type) {
                     break;
                 case 12: month = 'Dec'
                     break;
-                default: month = 'Something broke pls send halp'
+                default: month = ' '
             }
             return month
         } else {
