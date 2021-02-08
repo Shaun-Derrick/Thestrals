@@ -9,15 +9,12 @@ const fuzeSchema = new Schema({
   Title:String,
   description: String,
   venue:String,
-  type:String,
-  tags1:String,
-  tags2:String,
-  tags3:String,
+  tags:String,
   organizer:String,
-  whereIFoundThisEvent1:String,
   whereIFoundThisEvent2:String,
-  whereIFoundThisEvent3:String,
 });
+
+
 
 // first argument is the singular name of the collection your model is for. 
 //Mongoose automat looks for plural,lowercased version of your model name. 

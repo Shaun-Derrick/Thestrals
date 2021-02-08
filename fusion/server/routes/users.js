@@ -75,20 +75,17 @@ router.put('/:id', async(req, res)=>{
   try{
     const foundFuze= await Fuze.findById(req.params.id)
     foundFuze.set({
-      date: req.body.date,
+      startDate: req.body.startDate,
+      endDate: req.body.endDate,
       startTime: req.body.startTime,
       endTime:req.body.endTime,
-      title:req.body.title,
+      Title:req.body.Title,
       description: req.body.description,
       venue:req.body.venue,
       type:req.body.type,
-      tags1:req.body.tags1,
-      tags2:req.body.tags2,
-      tags3:req.body.tags3,
+      tags:req.body.tags,
       organizer:req.body.organizer,
-      whereIFoundThisEvent1:req.body.whereIFoundThisEvent1,
       whereIFoundThisEvent2:req.body.whereIFoundThisEvent2,
-      whereIFoundThisEvent3:req.body.whereIFoundThisEvent3,
     })
     res.send(foundFuze)
   }
