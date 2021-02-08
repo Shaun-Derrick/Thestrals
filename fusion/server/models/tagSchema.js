@@ -3,7 +3,8 @@ const Schema = mongoose.Schema;
 
 const tagSchema = new Schema({
   key: String,
-  text: String
+  text: String,
+  value: String
 });
 
 // first argument is the singular name of the collection your model is 4. 

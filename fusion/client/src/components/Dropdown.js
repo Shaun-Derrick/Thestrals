@@ -1,9 +1,10 @@
 import React from "react"
 import { Dropdown } from "semantic-ui-react"
+import {useState, useEffect} from 'react'
 import "../stylesheets/Dropdown.css"
 import "semantic-ui-css/semantic.min.css"
 
-const options = [
+/* const optionsOld = [
   {
     key: "softwaredevelopment",
     text: "Software Development",
@@ -43,11 +44,6 @@ const options = [
     text: "Product Management",
     value: "Product Management",
   },
-  {
-    key: "projectmanagement",
-    text: "Project Management",
-    value: "Project Management",
-  },
   { key: "funding", text: "Funding", value: "Funding" },
   {
     key: "customerserviceandengagement",
@@ -78,10 +74,21 @@ const options = [
   },
   { key: "womenintech", text: "Women in Tech", value: "Women in Tech" },
   { key: "fintech", text: "Fintech", value: "Fintech" },
-]
+] */
 
 const DropdownExampleMultipleSelection = (props) => {
   // const Dropdown = (props) => { ----- Tried changing name an export but as it is a semantic-ui-react module I do not think it can be as it stops rendering
+  const [options, setOptions] = useState([])
+
+  useEffect(() => {
+    const getTags = async () => {
+      // fetch uses the "proxy" value set in client/package.json
+      let response = await fetch("/Tags/")
+      let tag = await response.json()
+      setOptions(tag)
+    }
+    getTags()
+  }, [])
 
   const createBlock = (e, data) => {
     let selectedCategory = data.value

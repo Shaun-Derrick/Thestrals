@@ -8,8 +8,7 @@ const Tag= require('../models/tagSchema');
 // Root route
 router.get('/', async (req, res, next) => {
   let data = await Tag.find({})
-  console.log(`hey i'm `, data);
-  console.info(`Tags retrieved from mongoose:`, data?.length)
+  .sort({text:1});
   res.send(data);
 });
 
