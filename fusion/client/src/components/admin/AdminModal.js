@@ -35,9 +35,9 @@ function AdminModal() {
             type='password'
           />
 
-          <Button color='black' fluid size='large'>
+<a href='../../public/admin.html' color='black' fluid size='large'>
             Submit
-          </Button>
+          </a>
         </Segment>
       </Form>
       {/* <Message>
