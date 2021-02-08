@@ -47,7 +47,7 @@ const FuzeItem = (props) => {
     return (
         <div className="fuzeItem ui link card" onClick={() => { props.openModal(); props.chooseFuze(props.fuzeObject); props.getDateLong(props.fuzeObject.startDate) }}>
             <div className="content">
-                <h2 className="fuzeTitle header">{props.fuzeObject.title}</h2>
+                <h2 className="fuzeTitle header">{props.fuzeObject.Title}</h2>
             </div>
             <div className="fuzeDate image">
                 <i className=" huge calendar outline icon"></i>

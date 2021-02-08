@@ -124,7 +124,6 @@ const FuzeList = (props) => {
         }
     }
 
-
     return (
         <div className='fuzeContainer'>
             <div className='fuzeList'>

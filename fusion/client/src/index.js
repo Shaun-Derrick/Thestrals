@@ -7,6 +7,7 @@ import Annotation from "./components/Annotation"
 import NavBar from "./components/NavBar"
 import Dropdown from "./components/Dropdown"
 import Filter from "./components/Filter"
+import AdminModal from "./components/admin/AdminModal"
 import { useState, useEffect } from "react"
 
 const App = () => {
@@ -16,7 +17,7 @@ const App = () => {
   useEffect(() => {
     const getSandbox = async () => {
       // fetch uses the "proxy" value set in client/package.json
-      let response = await fetch("/Sandbox/nextSevenDays")
+      let response = await fetch("/Sandbox/")
       let fuze = await response.json()
       setFuzeFull(fuze)
     }
@@ -35,6 +36,7 @@ const App = () => {
         setFuzeFull={setFuzeFull}
       />
       <Annotation fuzeFull={fuzeFull} setFuzeFull={setFuzeFull} />
+      <AdminModal /> 
     </div>
   );
 };

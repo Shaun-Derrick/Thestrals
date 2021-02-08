@@ -22,20 +22,19 @@ const Filter = (props) => {
 
   const filterItems = (list) => {
     let fuzes = filterFuzes.filter((fuzes) => {
-      let contains = list.includes(fuzes.tags1)
+      let contains = list.includes(fuzes.tags)
       return contains
     })
-
     if (list.length === 0) {
       const getSandbox = async () => {
         // fetch uses the "proxy" value set in client/package.json
-        let response = await fetch("/Sandbox/nextSevenDays")
+        let response = await fetch("/Sandbox/")
         let fuze = await response.json()
         props.setFuzeFull(fuze)
       }
       getSandbox()
     }else if(fuzes.length===0){
-      props.setFuzeFull([{title:'No Fuzes found! Try a different tag.', startDate: ' ', endDate: ' '}])
+      props.setFuzeFull([{Title:'No Fuzes found! Try a different tag.', startDate: ' ', endDate: ' '}])
     }
     else {
       props.setFuzeFull(fuzes)
