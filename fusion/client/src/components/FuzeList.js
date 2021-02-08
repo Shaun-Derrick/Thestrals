@@ -5,7 +5,6 @@ import FuzeModal from './FuzeModal'
 import FuzeItem from './FuzeItem'
 import Pagination from './Pagination'
 
-
 const FuzeList = (props) => {
     const [modalStatus, setModalStatus] = useState(' notActive')
     const [fuzeChoice, setFuzeChoice] = useState('')
@@ -65,7 +64,7 @@ const FuzeList = (props) => {
                     break;
                 case 12: month = 'December '
                     break;
-                default: month = 'Something broke pls send halp '
+                default: month = ' '
             }
             let combinedDate = month.concat(dayNumber, ', ', yearNumber)
             setModalDate(combinedDate)
@@ -87,6 +86,11 @@ const FuzeList = (props) => {
         if (divCount < (props.fuzeFull.length) / 10) {
             divCount++
             fuzecount = 0
+            if(divCount===1){
+                return (
+                    <div key={index} className={'transition fuzeHolder fuzeGroup' + divCount}>{props.fuzeFull.map(makeFuze)}</div>
+                )
+            }
             return (
                 <div key={index} className={'transition hidden fuzeHolder fuzeGroup' + divCount}>{props.fuzeFull.map(makeFuze)}</div>
             )
@@ -119,7 +123,6 @@ const FuzeList = (props) => {
             )
         }
     }
-
 
     return (
         <div className='fuzeContainer'>

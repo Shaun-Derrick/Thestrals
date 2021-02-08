@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "../stylesheets/NavBar.css";
+import "../stylesheets/adminNav.css";
 
-const NavBar = () => {
+const AdminNav = () => {
   const [navLinkOpen, navLinkToggle] = useState(false);
 
   const handleNavLinksToggle = () => {
@@ -23,13 +23,16 @@ const NavBar = () => {
             <a href="#">Home</a>
           </li>
           <li className="link">
-            <a href="#">About Us</a>
+            <a href="#">Admin Home</a>
           </li>
           <li className="link">
-            <a href="#">Services</a>
+            <a href="#">Create</a>
           </li>
           <li className="link">
-            <a href="#">Contact Us</a>
+            <a href="#">Update</a>
+          </li>
+          <li className="link">
+            <a href="#">Delete</a>
           </li>
         </ul>
         <div onClick={handleNavLinksToggle} className="hamburger-toggle">
@@ -40,4 +43,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default AdminNav;

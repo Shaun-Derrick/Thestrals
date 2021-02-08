@@ -4,14 +4,17 @@ const MissionStatement = () => {
   return (
     <div className="banner">
       <div
-        className="mission-statement-display"
-        style={{ marginBottom: "100px" }}
+        className="admin-console-display"
+        style={{ marginTop: "150px", marginBottom: "" }}
       >
-        <p>WHERE ALBERTA'S TECH INDUSTRY</p>
-        <p>CONVERGES TO RELEASE BOUNDLESS ENERGY</p>
+          <h1>ADMINISTRATION CONSOLE</h1>
+      
       </div>
+      <hr />
+             
+      <br />
       <div className="platform-statement-display">
-        <p>Fusion is a networking platform that provides a centralized</p>
+        <p>Your Fusion dministration console</p>
         <p>database of events and lectures hosted by technology based</p>
         <p>organizations from Alberta</p>
       </div>

@@ -23,7 +23,7 @@ router.get('/', async (req, res, next) => {
 }); */
 
 /* to find a Fuze by its id */
-router.get('/:id', async (req, res, next) => {
+/* router.get('/:id', async (req, res, next) => {
   let TagId = req.params.id;
   //console.info('I m here', FuzeId)
   //error handling by try/catch in case of wrong id
@@ -34,6 +34,6 @@ router.get('/:id', async (req, res, next) => {
    catch(error){
      res.sendStatus(404)
    }
-});
+}); */
 
 module.exports = router;

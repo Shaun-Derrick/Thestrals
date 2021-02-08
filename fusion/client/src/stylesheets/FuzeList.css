@@ -60,10 +60,14 @@ div.ui.link.card:hover{
 .modalColor{
     background-color: grey;
 }
+.header>p{
+    margin: 0
+}
 div.ui.modal>.content{
     display: flex;
     justify-content: space-between;
     background-color: grey;
+    color: black
 }
 div.ui.modal>.header{
     background-color: grey;
@@ -85,7 +89,7 @@ div.ui.modal>.header{
 .fuzeHolder{
     margin-left: 1em;
 }
-.ui.pagination.menu{
+div.ui.pagination.menu{
     margin-top: 1em;
     margin-left: 1em;
 }

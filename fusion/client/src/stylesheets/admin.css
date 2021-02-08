@@ -18,10 +18,11 @@
     display: flex;
     flex-direction: column;
     width: 100vw;
+    height:75vh;
     background-repeat: no-repeat;
     background-position: 50% 50%;
-    background-color: transparent;
-    background-image: url('../Images/iter-sun1.jpg');
+    background-color: black;
+    background-image: url('../Images/iter-sun2.jpg');
     background-size: cover;
   }
   .icon-left {
@@ -44,23 +45,28 @@
     align-items: center;
     padding-top: 50px;
   }
-  .platform-statement-display {
+  .admin-portal-display {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: palegreen;
+    color: #F74242;
+    background-color: black;
     font-size: 150%;
     font-weight: bold;
     width: 100vw;
   }
-  .mission-statement-display {
+  .admin-Text{
+    font-size: 8em;
+  }
+  .admin-text-display {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: palegreen;
-    font-size: 200%;
+
+    color: #000000;
+    font-size: 4em;
     font-weight: bold;
     width: 100vw;
   }
