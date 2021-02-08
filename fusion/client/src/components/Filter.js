@@ -7,13 +7,13 @@ const Filter = (props) => {
   const [filterFuzes, setFilterFuzes] = useState([])
 
   useEffect(() => {
-    const getSandbox = async () => {
+    const getFuzes = async () => {
       // fetch uses the "proxy" value set in client/package.json
-      let response = await fetch("/Sandbox")
+      let response = await fetch("/Fuzes")
       let allFuzes = await response.json()
       setFilterFuzes(allFuzes)
     }
-    getSandbox()
+    getFuzes()
   }, [])
 
   useEffect(() => {
@@ -26,13 +26,13 @@ const Filter = (props) => {
       return contains
     })
     if (list.length === 0) {
-      const getSandbox = async () => {
+      const getFuzes = async () => {
         // fetch uses the "proxy" value set in client/package.json
-        let response = await fetch("/Sandbox/")
+        let response = await fetch("/Fuzes/")
         let fuze = await response.json()
         props.setFuzeFull(fuze)
       }
-      getSandbox()
+      getFuzes()
     }else if(fuzes.length===0){
       props.setFuzeFull([{Title:'No Fuzes found! Try a different tag.', startDate: ' ', endDate: ' '}])
     }

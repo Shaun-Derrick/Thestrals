@@ -10,12 +10,12 @@ function AdminModal() {
       onClose={() => setOpen(false)}
       onOpen={() => setOpen(true)}
       open={open}
-      trigger={<Button style={{ opacity: 0, margin: 10, backgroundColor: 'palegreen' }}>Admin</Button>}
+      trigger={<Button style={{ opacity: 0, margin: 10, backgroundColor: '#F74242' }}>Admin</Button>}
     >
-      <Modal.Header style={{ backgroundColor: 'palegreen' }}><h1 >Admin Login</h1></Modal.Header>
+      <Modal.Header style={{ backgroundColor: '#F74242' }}><h1 >Admin Login</h1></Modal.Header>
       <Modal.Content image>
         {/* <Image size='medium' src='/image/red.jpg' wrapped /> */}
-        <Modal.Description style={{ backgroundColor: 'black', margin: -21.2, borderStyle: 'solid', borderColor: 'palegreen' }}>
+        <Modal.Description style={{ backgroundColor: 'black', margin: -21.2, borderStyle: 'solid', borderColor: '#F74242' }}>
           <div>
             {/* <Container text style={{ margin: 30}}> */}
             <Grid textAlign='center' style={{ height: '35vh' }} verticalAlign='middle'>
@@ -50,7 +50,7 @@ function AdminModal() {
 
       </Modal.Content>
 
-      <Modal.Actions style={{ backgroundColor: 'palegreen' }} >
+      <Modal.Actions style={{ backgroundColor: '#F74242' }} >
         <Button color='black' onClick={() => setOpen(false)}>
           Cancel
         </Button>

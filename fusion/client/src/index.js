@@ -15,13 +15,13 @@ const App = () => {
   const [fuzeFull, setFuzeFull] = useState([])
 
   useEffect(() => {
-    const getSandbox = async () => {
+    const getFuzes = async () => {
       // fetch uses the "proxy" value set in client/package.json
-      let response = await fetch("/Sandbox/")
+      let response = await fetch("/Fuzes/")
       let fuze = await response.json()
       setFuzeFull(fuze)
     }
-    getSandbox()
+    getFuzes()
   }, [])
 
   return (
