@@ -1,3 +1,6 @@
+body {
+  background-color:black;
+}
 .adminPage {
     min-height: 100vh;
     width: 100vw;
@@ -18,12 +21,12 @@
     display: flex;
     flex-direction: column;
     width: 100vw;
-    height:75vh;
+    height:25vh;
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-color: black;
     background-image: url('../Images/iter-sun2.jpg');
-    background-size: cover;
+    /* background-size: cover; */
   }
   .icon-left {
     display: flex;
@@ -52,9 +55,11 @@
     align-items: center;
     color: #F74242;
     background-color: black;
-    font-size: 150%;
+    /* font-size: 150%; */
     font-weight: bold;
     width: 100vw;
+
+    height: 75vh;
   }
   .admin-Text{
     font-size: 8em;

@@ -22,7 +22,7 @@ const App = () => {
       let response = await fetch("/Sandbox/nextSevenDays")
       let fuze = await response.json()
       setFuzeFull(fuze)
-    }
+    };
     getSandbox()
   }, [])
 

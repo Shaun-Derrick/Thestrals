@@ -1,3 +1,7 @@
+ul{
+  margin-block-start: 0
+}
+
 a {
     text-decoration: none;
   }
@@ -13,7 +17,8 @@ a {
     list-style: none;
     justify-content: space-around;
     width: 100%;
-    font-size: 24px;
+    font-size: 1.5em;
+    /* margin-top: 0.5em; */
   }
   .link {
     letter-spacing: 1px;
@@ -22,7 +27,7 @@ a {
   .link a {
     color: #F74242;
     opacity: 0.75;
-    margin: 0 50px;
+    /* margin: 0 50px; */
   }
   .link a:hover {
     color: #F74242;

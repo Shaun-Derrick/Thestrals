@@ -19,20 +19,21 @@ const AdminNav = () => {
     <nav>
       <div>
         <ul className={renderClasses()}>
+  
           <li className="link">
-            <a href="#">Home</a>
+            <a href="#">ADMIN HOME</a>
           </li>
           <li className="link">
-            <a href="#">Admin Home</a>
+            <a href="#">CREATE</a>
           </li>
           <li className="link">
-            <a href="#">Create</a>
+            <a href="#">UPDATE</a>
           </li>
           <li className="link">
-            <a href="#">Update</a>
+            <a href="#">DELETE</a>
           </li>
           <li className="link">
-            <a href="#">Delete</a>
+            <a href="#">LOGOUT</a>
           </li>
         </ul>
         <div onClick={handleNavLinksToggle} className="hamburger-toggle">
