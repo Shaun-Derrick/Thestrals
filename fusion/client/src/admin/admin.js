@@ -1,7 +1,7 @@
 import "../stylesheets/admin.css"
 import React from "react"
 import ReactDOM from "react-dom"
-import MissionStatement from "./components/MissionStatement"
+import MissionStatement from "./components/adminOverlay"
 import Logo from "./components/Logo"
 import Annotation from "./components/Annotation"
 import NavBar from "./components/NavBar"
