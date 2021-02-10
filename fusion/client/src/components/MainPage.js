@@ -6,7 +6,6 @@ import Annotation from "./Annotation"
 import NavBar from "./NavBar"
 import Dropdown from "./Dropdown"
 import Filter from "./Filter"
-import AdminModal from "./admin/AdminModal"
 import { useState, useEffect } from "react"
 
 const MainPage = (props) => {
@@ -35,7 +34,7 @@ const MainPage = (props) => {
         setFuzeFull={setFuzeFull}
       />
       <Annotation fuzeFull={fuzeFull} setFuzeFull={setFuzeFull} />
-      <AdminModal /> 
+      {/* <Button style={{ opacity: 0, margin: 10 }}><Link to="/login">Login</Link></Button> */}
     </div>
   );
 };
