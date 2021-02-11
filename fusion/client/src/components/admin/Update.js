@@ -1,6 +1,8 @@
 import React from 'react';
 import AdminNav from "./AdminNav"
 import { Container } from 'semantic-ui-react'
+import "../../stylesheets/admin.css"
+import "../../stylesheets/index.css"
 
 const Update = () => {
   return(

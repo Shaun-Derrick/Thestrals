@@ -83,9 +83,9 @@ const FuzeList = (props) => {
     //All dynamically built elements
     let divCount = 0
     function makeDiv(thing, index) {
-        if (divCount < (props.fuzeFull.length) / 10) {
+        if (divCount < (props.fuzeFull.length) / 5) {
             divCount++
-            fuzecount = 0
+            fuzecount=0
             if(divCount===1){
                 return (
                     <div key={index} className={'transition fuzeHolder fuzeGroup' + divCount}>{props.fuzeFull.map(makeFuze)}</div>
@@ -93,14 +93,14 @@ const FuzeList = (props) => {
             }
             return (
                 <div key={index} className={'transition hidden fuzeHolder fuzeGroup' + divCount}>{props.fuzeFull.map(makeFuze)}</div>
-            )
+                )
         }
     }
 
     let fuzecount = 0
     let fuzeIndex = -1
     function makeFuze(fuze, index) {
-        if (fuzecount < 10) {
+        if (fuzecount < 5) {
             fuzecount++
             fuzeIndex++
             if (props.fuzeFull[fuzeIndex] === undefined) {
@@ -116,7 +116,7 @@ const FuzeList = (props) => {
 
     let pageCount = 0
     function makePage(thing, index) {
-        if (pageCount < (props.fuzeFull.length) / 10) {
+        if (pageCount < (props.fuzeFull.length) / 5) {
             pageCount++
             return (
                 <Pagination key={index} number={pageCount} pageStatus={pageStatus} changePage={changePage}></Pagination>

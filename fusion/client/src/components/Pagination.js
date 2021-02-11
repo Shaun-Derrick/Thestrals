@@ -1,6 +1,6 @@
 import React from 'react'
 
-let prevPageNumber = 0
+let prevPageNumber = 1
 function openPage(chosenNumber, prevNumber) {
     let chosenPage = '.fuzeGroup' + chosenNumber
     let prevPage = '.fuzeGroup' + prevNumber

@@ -19,7 +19,6 @@ const AdminNav = () => {
     <nav>
       <div>
         <ul className={renderClasses()}>
-
           <li className="link">
             <Link to="/admin"> HOME</Link>
           </li>

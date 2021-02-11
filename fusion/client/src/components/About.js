@@ -1,15 +1,14 @@
 import React from 'react';
-import AdminNav from "./AdminNav"
+import NavBar from "./NavBar"
 import { Container } from 'semantic-ui-react'
-import "../../stylesheets/admin.css"
-import "../../stylesheets/index.css"
+import "../stylesheets/index.css"
 
-const Create = () => {
+const About = () => {
   return(
     <div>
-      <AdminNav/>
+      <NavBar/>
       <Container>
-      <h1>Create a Fuze</h1>
+      <h1>About Us</h1>
         <p>
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
       ligula eget dolor. Aenean massa strong. Cum sociis natoque penatibus et
@@ -25,10 +24,8 @@ const Create = () => {
       Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi.
         </p>
       </Container>
-
-      
     </div>
   )
 };
 
-export default Create;
+export default About;

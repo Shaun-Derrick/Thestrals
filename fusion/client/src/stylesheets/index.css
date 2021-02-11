@@ -95,9 +95,10 @@
   padding-top: 30px;
   padding-bottom: 10px;
 }
-p {
+div>p{
   margin-block-start: 0em;
   margin-block-end: 0em;
+  margin: 0;
 }
 ul{
   margin-block-start: 0

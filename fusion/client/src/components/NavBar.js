@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {Link} from 'react-router-dom';
 import "../stylesheets/NavBar.css";
 
 const NavBar = () => {
@@ -20,16 +21,16 @@ const NavBar = () => {
       <div>
         <ul className={renderClasses()}>
           <li className="link">
-            <a href="#">Home</a>
+            <Link to="/">HOME</Link>
           </li>
           <li className="link">
-            <a href="#">About Us</a>
+            <Link to="/about">About</Link>
           </li>
           <li className="link">
-            <a href="#">Services</a>
+            <Link to="/services">Services</Link>
           </li>
           <li className="link">
-            <a href="#">Contact Us</a>
+            <Link to="/contact">Contact Us</Link>
           </li>
         </ul>
         <div onClick={handleNavLinksToggle} className="hamburger-toggle">
