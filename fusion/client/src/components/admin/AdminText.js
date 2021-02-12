@@ -10,7 +10,7 @@ const AdminText = () => {
           <p className="AdminText">ADMINISTRATION CONSOLE</p>
       
       </div>
-      <hr />
+    
              
       <br />
       <div className="admin-portal-display">

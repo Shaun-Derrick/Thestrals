@@ -10,6 +10,8 @@ import Filter from "./components/Filter"
 import { useState, useEffect } from "react"
 
 import AdminModal from "./components/AdminModal"
+import AdminActions from "./admin/components/AdminActions"
+
 
 
 const App = () => {
@@ -39,7 +41,9 @@ const App = () => {
         setFuzeFull={setFuzeFull}
       />
       <Annotation fuzeFull={fuzeFull} setFuzeFull={setFuzeFull} />
-      
+
+
+      <AdminActions />
     
        <AdminModal /> 
        
