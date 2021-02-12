@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Form, Grid, Header,  Message, Segment } from 'semantic-ui-react'
+import { Button, Form, Grid, Header, Segment } from 'semantic-ui-react'
 import {Link} from 'react-router-dom';
 // Image
 
@@ -12,7 +12,7 @@ const AdminLogin = () => {
         {/* <Image src='/logo.png' /> Log-in to your account */}
       </Header>
       <Form size='large'>
-        <Segment stacked>
+        <Segment>
           <Form.Input fluid icon='user' iconPosition='left' placeholder='E-mail address' />
           <Form.Input
             fluid
@@ -28,9 +28,6 @@ const AdminLogin = () => {
           </Link>
         </Segment>
       </Form>
-      <Message>
-        New to us? <a href='#'>Sign Up</a>
-      </Message>
     </Grid.Column>
   </Grid>
     </div>

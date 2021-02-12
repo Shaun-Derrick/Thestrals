@@ -11,7 +11,6 @@ div.ui.card{
     flex-direction: column;
     min-width: 150px;
     width: 15%;
-    
     max-width: 15%;
     height: 275px;
     background-color: black;
@@ -22,6 +21,7 @@ div.ui.card>.content{
     display: flex;
     padding: 0;
     align-items: center;
+    
     
 }
 div.ui.card>.content>.header{
@@ -107,4 +107,7 @@ div.ui.pagination.menu{
     display: flex;
     justify-content: center;
     text-align: center;
+}
+h2.fuzeTitle.header{
+    width: 100%
 }

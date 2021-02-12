@@ -40,7 +40,6 @@ const Filter = (props) => {
       props.setFuzeFull(fuzes)
     }
   }
-
   return <div></div>
 }
 export default Filter
