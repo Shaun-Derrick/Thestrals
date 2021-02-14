@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../stylesheets/adminNav.css";
+import {Link} from 'react-router-dom';
 
 const AdminNav = () => {
   const [navLinkOpen, navLinkToggle] = useState(false);
@@ -27,7 +28,7 @@ const AdminNav = () => {
             <a href="#">CREATE</a>
           </li>
           <li className="link">
-            <a href="#">UPDATE</a>
+          <Link to="/update">UPDATE</Link>
           </li>
           <li className="link">
             <a href="#">DELETE</a>

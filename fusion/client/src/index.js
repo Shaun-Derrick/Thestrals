@@ -10,6 +10,9 @@ import Filter from "./components/Filter"
 import { useState, useEffect } from "react"
 import AdminModal from "./components/admin/AdminModal"
 import AdminText from "./components/admin/AdminText"
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Update from "./components/Update";
+import EditFuze from "./components/EditFuze";
 
 
 
@@ -28,7 +31,9 @@ const App = () => {
   }, [])
 
   return (
+    <Router>
     <div className="adminPage">
+     
       <AdminNav />
       <Logo />
       {/* <AdminText /> */}
@@ -41,7 +46,15 @@ const App = () => {
       />
       <Annotation fuzeFull={fuzeFull} setFuzeFull={setFuzeFull} />
        <AdminModal />  */}
+        
+      <Switch>
+        <Route exact path='/update' component= {Update}></Route>
+             {/* for dynamic routing */}
+        <Route exact path = "/fuzes/edit/:_id" component = {EditFuze} />
+       </Switch>
+          
     </div>
+    </Router>
   );
 };
 
