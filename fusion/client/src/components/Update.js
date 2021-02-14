@@ -4,7 +4,7 @@ import React from 'react';
 
 
 import { useState, useEffect } from 'react';
-import { Button, Table, Checkbox, Icon, Segment, SegmentGroup, Dropdown, Container } from 'semantic-ui-react'
+import { Button, Table, Checkbox, Icon, Segment, SegmentGroup, Dropdown, Container, ButtonGroup } from 'semantic-ui-react'
 import axios from 'axios';
 import { Link } from 'react-router-dom'
 //import DropdownBar from '../DropdownBar';
@@ -29,11 +29,11 @@ const Update = () => {
     //setFuze(result.data.reverse());
   }
 
-
-  const deleteFuze = async _id => {
-    await axios.delete(`/Fuzes/${_id}`);
-    loadFuzes();
-  }
+// for DELETE
+  // const deleteFuze = async _id => {
+  //   await axios.delete(`/Fuzes/${_id}`);
+  //   loadFuzes();
+  // }
   
   return (
     <div>
@@ -85,11 +85,16 @@ const Update = () => {
                   <td>{fuze.organizer}</td>
                   <td>{fuze.whereIFoundThisEvent2}</td> */}
                   <td>
-                
-                    <Button as={Link} to={`/fuzes/edit/${fuze._id}`}>Edit Fuze</Button>
+                    <Segment>
+                    <Button size='tiny'as={Link} to={`/fuzes/edit/${fuze._id}`}>Edit Fuze</Button>
+                    <Button size='tiny'as={Link} to={`/view fuzes/${fuze._id}`}>View Fuze</Button>
 
-                     {/* <Button as={Link} to='/sid' onClick={() => deleteFuze(fuze._id)} >Delete Fuze</Button>  */}
-
+{/* \delete button below. UnComment only when required */}
+                     {/* <Button size='tiny' color='red' 
+                      onClick={() => deleteFuze(fuze._id)}
+                       >Delete Fuze</Button> 
+                      */}
+                     </Segment>
                     
                   
                   </td>
