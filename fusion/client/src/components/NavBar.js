@@ -18,7 +18,7 @@ const NavBar = () => {
 
   return (
     <nav>
-      <div>
+      <div className='homeNavBar'>
         <ul className={renderClasses()}>
           <li className="link">
             <Link to="/">HOME</Link>

@@ -5,7 +5,7 @@ import FuzeList from "./FuzeList";
 const Annotation = (props) => {
   return (
     <div className="containerAnnotation">
-      <div className="event-list-display" style={{ marginBottom: "10px" }}>
+      <div className="event-list-display" style={{ marginBottom: "10px", marginLeft: "1em" }}>
         <p>
           Fuzes scheduled events or lectures posted by organizers for interested
           attendees

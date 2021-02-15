@@ -5,6 +5,7 @@
   justify-content: center;
   background-color: black;
   background-size: cover;
+
 }
 .logoContainer {
   display: flex;
@@ -84,6 +85,8 @@
   font-weight: bold;
   width: 100vw;
   padding-top: 30px;
+  margin-left: 1em;
+  margin-bottom: 1em;
 }
 .event-list-display {
   display: flex;

@@ -11,7 +11,7 @@ div.ui.card{
     flex-direction: column;
     min-width: 150px;
     width: 15%;
-    max-width: 15%;
+    max-width: 10%;
     height: 275px;
     background-color: black;
     color: palegreen;
@@ -21,8 +21,6 @@ div.ui.card>.content{
     display: flex;
     padding: 0;
     align-items: center;
-    
-    
 }
 div.ui.card>.content>.header{
     font-size: 1em;
