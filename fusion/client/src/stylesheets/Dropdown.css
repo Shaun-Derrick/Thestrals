@@ -1,19 +1,19 @@
 .overrideCss {
-  color: palegreen;
-  border-color: palegreen;
+  color: red;
+  border-color: red;
   border-width: 8px;
 }
 dropdown.ui.dropdown.default.text {
-  color: palegreen;
+  color: red;
 }
 
 div.ui.dropdown:not(.button) > .default.text {
-  color: palegreen;
+  color: red;
   font-weight: 700;
   background-color: black;
 }
 div.ui.dropdown .menu > .item {
-  color: palegreen;
+  color: red;
   background-color: black;
 }
 
@@ -22,30 +22,30 @@ div.ui.selection.active.dropdown .menu {
   border-color: whitesmoke;
 }
 i.ui.selection.dropdown > .dropdown.icon {
-  background-color: palegreen;
+  background-color: red;
 }
 div.ui.selection.dropdown {
   background-color: black;
 }
 a.ui.active.label {
-  color: palegreen;
-  border-color: palegreen;
+  color: red;
+  border-color: red;
   border-width: 2px;
 }
 div.ui.dropdown .menu > .item:hover {
   background-color: black;
-  color: palegreen;
+  color: red;
   opacity: 0.7;
 }
 div.ui.dropdown .menu .selected.item {
-  color: palegreen;
+  color: red;
   background-color: black;
 }
 div.visible.menu.transition::-webkit-scrollbar-track {
   background: whitesmoke;
 }
 div.visible.menu.transition::-webkit-scrollbar-thumb {
-  background-color: palegreen;
+  background-color: red;
   height: 17px;
 }
 /* .content {

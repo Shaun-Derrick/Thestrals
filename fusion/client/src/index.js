@@ -1,7 +1,7 @@
 import "./stylesheets/admin.css"
 import React from "react"
 import ReactDOM from "react-dom"
-import adminText from "./components/admin/AdminText"
+//import adminText from "./components/admin/AdminText"
 import Logo from "./components/Logo"
  //import Annotation from "./components/Annotation"
  import AdminNav from "./components/AdminNav"

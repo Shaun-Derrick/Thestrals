@@ -7,7 +7,8 @@ import { useState, useEffect } from 'react';
 import { Button, Table, Checkbox, Icon, Segment, SegmentGroup, Dropdown, Container, ButtonGroup, Header } from 'semantic-ui-react'
 import axios from 'axios';
 import { Link } from 'react-router-dom'
-//import DropdownBar from '../DropdownBar';
+import DropdownBar from './DropdownBar';
+import Filter from './Filter';
 
 
 const style = {
@@ -50,18 +51,41 @@ const Update = () => {
   //   await axios.delete(`/Fuzes/${_id}`);
   //   loadFuzes();
   // }
+
+  const [currentFilters, setCurrentFilters] = useState([])
+  const [fuzeFull, setFuzeFull] = useState([])
+
+  useEffect(() => {
+    const getFuzes = async () => {
+      // fetch uses the "proxy" value set in client/package.json
+      let response = await fetch("/Fuzes/")
+      let fuze = await response.json()
+      setFuzeFull(fuze)
+    }
+    getFuzes()
+  }, [])
+  //
   
   return (
     <div>
-     
-      
-
-     
-      
-
       <Segment.Group>
+      <Segment inverted>
+            
+            <Header as='h1' color='red' content='Search from Tags' style={style.h1} textAlign='left' />
+      </Segment>
         
-        
+      <Segment inverted >
+
+{/* filters/dropdon from client */}
+<DropdownBar updateFilter={setCurrentFilters} />
+<Filter
+  filters={currentFilters}
+  fuzeFull={fuzeFull}
+  setFuzeFull={setFuzeFull}
+/>
+{/* // */}
+
+</Segment>
 
       
       <Header as='h1' color='red' content='List of FUZES' style={style.h1} textAlign='center' />
