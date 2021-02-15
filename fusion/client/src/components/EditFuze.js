@@ -65,8 +65,8 @@ const EditFuze = () => {
          <Segment>
        <h1>Edit fuze</h1>
         </Segment>
-        <Segment>
-      <Form onSubmit = {e => onSubmit(e) }>
+        <Segment  inverted>
+      <Form inverted onSubmit = {e => onSubmit(e) }>
      
     <Form.Field>
       <label >startDate</label>
@@ -111,10 +111,10 @@ const EditFuze = () => {
       <input type="text" placeholder='whereIFoundThisEvent2' name = "whereIFoundThisEvent2" value = {whereIFoundThisEvent2}  onChange={e => onInputChange(e)}   />
     </Form.Field>
 
-    <Form.Field>
+    {/* <Form.Field>
       <Checkbox label='Are you sure?' />
-    </Form.Field>
-    <Button type='submit'  >CONFIRM </Button>
+    </Form.Field> */}
+    <Button color='orange' type='submit'  >CONFIRM </Button>
   </Form>
   </Segment>
   </Segment.Group>

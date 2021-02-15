@@ -3,12 +3,12 @@ import React from "react"
 import ReactDOM from "react-dom"
 import adminText from "./components/admin/AdminText"
 import Logo from "./components/Logo"
-import Annotation from "./components/Annotation"
-import AdminNav from "./components/AdminNav"
-import Dropdown from "./components/Dropdown"
-import Filter from "./components/Filter"
+ //import Annotation from "./components/Annotation"
+ import AdminNav from "./components/AdminNav"
+//import Dropdown from "./components/Dropdown"
+ import Filter from "./components/Filter"
 import { useState, useEffect } from "react"
-import AdminModal from "./components/admin/AdminModal"
+//import AdminModal from "./components/admin/AdminModal"
 import AdminText from "./components/admin/AdminText"
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Update from "./components/Update";
@@ -37,8 +37,8 @@ const App = () => {
      
       <AdminNav />
       <Logo />
-      {/* <AdminText /> */}
-       <AdminText />
+       <AdminText /> 
+       
       {/* <Dropdown updateFilter={setCurrentFilters} />
       <Filter
         filters={currentFilters}

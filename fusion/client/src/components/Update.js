@@ -52,8 +52,8 @@ const Update = () => {
           <h1>Full List of Fuzes</h1>
         </Segment>
 
-        <Segment padded='very'>
-          <Table celled>
+        <Segment padded='very' inverted>
+          <Table celled inverted selectable>
             <Table.Header>
               <Table.Row>
                 <Table.HeaderCell>startDate</Table.HeaderCell>
@@ -62,47 +62,59 @@ const Update = () => {
                 <Table.HeaderCell>endTime</Table.HeaderCell> */}
                 <Table.HeaderCell>Title</Table.HeaderCell>
                 {/* <Table.HeaderCell>description</Table.HeaderCell> */}
-                <Table.HeaderCell>venue</Table.HeaderCell>
-                <Table.HeaderCell>tags</Table.HeaderCell>
+                {/* <Table.HeaderCell>venue</Table.HeaderCell>
+                <Table.HeaderCell>tags</Table.HeaderCell> */}
                 {/* <Table.HeaderCell>organizer</Table.HeaderCell>
                 <Table.HeaderCell>whereIFoundThisEvent2</Table.HeaderCell> */}
                 <Table.HeaderCell>Action</Table.HeaderCell>
               </Table.Row>
             </Table.Header>
+           
             <Table.Body>
-              {fuzes.map((fuze, index) => (
-                <tr>
-                  {/* <th scope ="row">{index + 1}</th> */}
+    {fuzes.map((fuze, index) => (
+      <Table.Row>
+        <Table.Cell singleLine>
+        {fuze.startDate}
+        </Table.Cell>
+        <Table.Cell singleLine>{fuze.endDate}</Table.Cell>
+        
+        <Table.Cell >
+        {fuze.Title}
+        </Table.Cell>
+        {/* <Table.Cell>
+        {fuze.description}
+        </Table.Cell> */}
+        {/* <Table.Cell>
+        {fuze.venue}
+        </Table.Cell> */}
+        <Table.Cell>
+        <Segment inverted>
+                    {/* <Button size='tiny'as={Link} to={`/fuzes/edit/${fuze._id}`}>Edit Fuze</Button> */}
 
-                  <td>{fuze.startDate}</td>
-                  <td>{fuze.endDate}</td>
-                  {/* <td>{fuze.startTime}</td>
-                  <td>{fuze.endTime}</td> */}
-                  <td>{fuze.Title}</td>
-                  <td>{fuze.description}</td>
-                  <td>{fuze.venue}</td>
-                  {/* <td>{fuze.tags}</td>
-                  <td>{fuze.organizer}</td>
-                  <td>{fuze.whereIFoundThisEvent2}</td> */}
-                  <td>
-                    <Segment>
-                    <Button size='tiny'as={Link} to={`/fuzes/edit/${fuze._id}`}>Edit Fuze</Button>
-                    <Button size='tiny'as={Link} to={`/view fuzes/${fuze._id}`}>View Fuze</Button>
+                    <Button inverted color='red' animated='fade' as={Link} to={`/fuzes/edit/${fuze._id}`}>
+                      <Button.Content visible>Edit Fuze </Button.Content>
+                      <Button.Content hidden >Are you sure?</Button.Content>
+                    </Button>
 
-{/* \delete button below. UnComment only when required */}
+                    <Button inverted color='green' animated='fade' as={Link} to={`/view fuzes/${fuze._id}`}>
+                      <Button.Content visible>View Fuze</Button.Content>
+                      <Button.Content hidden >View </Button.Content>
+                    </Button>
+
+                    {/* <Button inverted color='green'animated='fade' as={Link} to={`/view fuzes/${fuze._id}`}>View Fuze</Button> */}
+
+                     {/* \delete button below. UnComment only when required */}
                      {/* <Button size='tiny' color='red' 
                       onClick={() => deleteFuze(fuze._id)}
                        >Delete Fuze</Button> 
                       */}
                      </Segment>
-                    
-                  
-                  </td>
+        </Table.Cell>
 
-                </tr>
+      </Table.Row>
+    ))}
+     </Table.Body>
 
-              ))}
-            </Table.Body>
           </Table>
         </Segment>
       </Segment.Group>

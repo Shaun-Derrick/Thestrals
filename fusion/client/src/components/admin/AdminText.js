@@ -14,7 +14,7 @@ const AdminText = () => {
              
       <br />
       <div className="admin-portal-display">
-        <p>Your Fusion dministration console</p>
+        <p>Your Fusion administration console</p>
         <p>create, update and delete Fuzes</p>
         <p>from here</p>
       </div>
