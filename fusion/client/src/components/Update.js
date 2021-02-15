@@ -58,10 +58,9 @@ const Update = () => {
 
   useEffect(() => {
     const getFuzes = async () => {
-      // fetch uses the "proxy" value set in client/package.json
-      let response = await fetch("/Fuzes/")
-      let fuze = await response.json()
-      setFuzeFull(fuze)
+      const result = await axios.get("/Fuzes");
+     
+      setFuzeFull(result.data)
     }
     getFuzes()
   }, [])

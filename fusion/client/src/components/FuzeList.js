@@ -3,7 +3,7 @@ import React from 'react'
 import { useState } from 'react';
 import FuzeModal from './FuzeModal'
 import FuzeItem from './FuzeItem'
-import Pagination from './Pagination'
+import PaginationUpdate from './PaginationUpdate'
 
 const FuzeList = (props) => {
     const [modalStatus, setModalStatus] = useState(' notActive')
@@ -119,7 +119,7 @@ const FuzeList = (props) => {
         if (pageCount < (props.fuzeFull.length) / 10) {
             pageCount++
             return (
-                <Pagination key={index} number={pageCount} pageStatus={pageStatus} changePage={changePage}></Pagination>
+                <PaginationUpdate key={index} number={pageCount} pageStatus={pageStatus} changePage={changePage}></PaginationUpdate>
             )
         }
     }

@@ -16,10 +16,10 @@ function openPage(chosenNumber, prevNumber) {
 
 }
 
-const Pagination = (props) => {
+const PaginationUpdate = (props) => {
     return (
         <button className={"item pageButton"} onClick={() => { props.changePage(props.number); openPage(props.number, prevPageNumber) }}>{props.number}</button>
     )
 }
 
-export default Pagination
+export default PaginationUpdate;
