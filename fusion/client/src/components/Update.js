@@ -9,6 +9,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom'
 import DropdownBar from './DropdownBar';
 import Filter from './Filter';
+import AnnotationUpdate from './AnnotationUpdate';
 
 
 const style = {
@@ -83,7 +84,7 @@ const Update = () => {
   fuzeFull={fuzeFull}
   setFuzeFull={setFuzeFull}
 />
-{/* // */}
+<AnnotationUpdate fuzeFull={fuzeFull} setFuzeFull={setFuzeFull} />
 
 </Segment>
 

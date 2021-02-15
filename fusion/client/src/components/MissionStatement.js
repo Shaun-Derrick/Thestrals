@@ -5,7 +5,7 @@ const MissionStatement = () => {
     <div className="banner">
       <div
         className="admin-console-display"
-        style={{ marginTop: "150px", marginBottom: "" }}
+        style={{ marginBottom: "100px",  }}
       >
           <h1>ADMINISTRATION CONSOLE</h1>
       
@@ -14,7 +14,7 @@ const MissionStatement = () => {
              
       <br />
       <div className="platform-statement-display">
-        <p>Your Fusion dministration console</p>
+        <p>Your Fusion administration console</p>
         <p>database of events and lectures hosted by technology based</p>
         <p>organizations from Alberta</p>
       </div>
