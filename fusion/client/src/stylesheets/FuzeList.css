@@ -98,7 +98,7 @@ div.ui.modal>.header{
     justify-content: space-around;
 }
 div.ui.pagination.menu{
-    margin-top: 1em;
+    margin-bottom: 1em;
     margin-left: 1em;
 }
 .fuzeItem{
@@ -108,4 +108,10 @@ div.ui.pagination.menu{
 }
 h2.fuzeTitle.header{
     width: 100%
+}
+div.centered.ui.image.content.fuzeIcon{
+    display: flex;
+    justify-content: center;
+    background-color: grey;
+    color: black
 }

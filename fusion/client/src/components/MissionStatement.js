@@ -2,13 +2,14 @@ import "../stylesheets/index.css"
 import React from "react"
 const MissionStatement = () => {
   return (
-    <div className="banner">
+    <div>
       <div
         className="mission-statement-display"
-        style={{ marginBottom: "100px" }}
       >
         <p>WHERE ALBERTA'S TECH INDUSTRY</p>
         <p>CONVERGES TO RELEASE BOUNDLESS ENERGY</p>
+      </div>
+      <div className="banner">
       </div>
       <div className="platform-statement-display">
         <p>Fusion is a networking platform that provides a centralized</p>
