@@ -4,11 +4,27 @@ import React from 'react';
 
 
 import { useState, useEffect } from 'react';
-import { Button, Table, Checkbox, Icon, Segment, SegmentGroup, Dropdown, Container, ButtonGroup } from 'semantic-ui-react'
+import { Button, Table, Checkbox, Icon, Segment, SegmentGroup, Dropdown, Container, ButtonGroup, Header } from 'semantic-ui-react'
 import axios from 'axios';
 import { Link } from 'react-router-dom'
 //import DropdownBar from '../DropdownBar';
 
+
+const style = {
+  h1: {
+    marginTop: '3em',
+  },
+  h2: {
+    margin: '4em 0em 2em',
+  },
+  h3: {
+    marginTop: '2em',
+    padding: '2em 0em',
+  },
+  last: {
+    marginBottom: '300px',
+  },
+}
 
 const Update = () => {
 
@@ -48,37 +64,36 @@ const Update = () => {
         
 
       
-        <Segment>
-          <h1>Full List of Fuzes</h1>
-        </Segment>
+      <Header as='h1' color='red' content='List of FUZES' style={style.h1} textAlign='center' />
 
         <Segment padded='very' inverted>
           <Table celled inverted selectable>
             <Table.Header>
               <Table.Row>
-                <Table.HeaderCell>startDate</Table.HeaderCell>
-                <Table.HeaderCell>endDate</Table.HeaderCell>
+                
+                <Table.HeaderCell  textAlign='center'>startDate</Table.HeaderCell>
+                <Table.HeaderCell  textAlign='center'>endDate</Table.HeaderCell>
                 {/* <Table.HeaderCell>startTime</Table.HeaderCell>
                 <Table.HeaderCell>endTime</Table.HeaderCell> */}
-                <Table.HeaderCell>Title</Table.HeaderCell>
+                <Table.HeaderCell  textAlign='center'>Title</Table.HeaderCell>
                 {/* <Table.HeaderCell>description</Table.HeaderCell> */}
                 {/* <Table.HeaderCell>venue</Table.HeaderCell>
                 <Table.HeaderCell>tags</Table.HeaderCell> */}
                 {/* <Table.HeaderCell>organizer</Table.HeaderCell>
                 <Table.HeaderCell>whereIFoundThisEvent2</Table.HeaderCell> */}
-                <Table.HeaderCell>Action</Table.HeaderCell>
+                <Table.HeaderCell  textAlign='center'>Action</Table.HeaderCell>
               </Table.Row>
             </Table.Header>
            
             <Table.Body>
     {fuzes.map((fuze, index) => (
       <Table.Row>
-        <Table.Cell singleLine>
+        <Table.Cell singleLine  textAlign='center'>
         {fuze.startDate}
         </Table.Cell>
-        <Table.Cell singleLine>{fuze.endDate}</Table.Cell>
+        <Table.Cell singleLine  textAlign='center'>{fuze.endDate}</Table.Cell>
         
-        <Table.Cell >
+        <Table.Cell singleLine textAlign='center' >
         {fuze.Title}
         </Table.Cell>
         {/* <Table.Cell>
@@ -90,16 +105,17 @@ const Update = () => {
         <Table.Cell>
         <Segment inverted>
                     {/* <Button size='tiny'as={Link} to={`/fuzes/edit/${fuze._id}`}>Edit Fuze</Button> */}
-
+                    <Button.Group widths='2'>
                     <Button inverted color='red' animated='fade' as={Link} to={`/fuzes/edit/${fuze._id}`}>
-                      <Button.Content visible>Edit Fuze </Button.Content>
-                      <Button.Content hidden >Are you sure?</Button.Content>
+                      <Button.Content visible>EDIT Fuze </Button.Content>
+                      <Button.Content hidden >I want to edit this Fuze </Button.Content>
                     </Button>
 
                     <Button inverted color='green' animated='fade' as={Link} to={`/view fuzes/${fuze._id}`}>
-                      <Button.Content visible>View Fuze</Button.Content>
-                      <Button.Content hidden >View </Button.Content>
+                      <Button.Content visible>VIEW Fuze</Button.Content>
+                      <Button.Content hidden >View Only </Button.Content>
                     </Button>
+                    </Button.Group>
 
                     {/* <Button inverted color='green'animated='fade' as={Link} to={`/view fuzes/${fuze._id}`}>View Fuze</Button> */}
 

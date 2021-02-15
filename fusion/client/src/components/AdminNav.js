@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../stylesheets/adminNav.css";
 import {Link} from 'react-router-dom';
+import 'semantic-ui-css/semantic.min.css'
 
 const AdminNav = () => {
   const [navLinkOpen, navLinkToggle] = useState(false);
