@@ -1,4 +1,3 @@
-import React from "react"
 import "../stylesheets/Dropdown.css"
 import "semantic-ui-css/semantic.min.css"
 import { useState, useEffect } from "react"
@@ -40,6 +39,6 @@ const Filter = (props) => {
       props.setFuzeFull(fuzes)
     }
   }
-  return <div></div>
+  return null
 }
 export default Filter

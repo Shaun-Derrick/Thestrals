@@ -26,7 +26,7 @@ const MainPage = (props) => {
     <div className="LandingPage">
       <NavBar />
       <Logo />
-       <MissionStatement />
+      <MissionStatement />
       <Dropdown updateFilter={setCurrentFilters} />
       <Filter
         filters={currentFilters}

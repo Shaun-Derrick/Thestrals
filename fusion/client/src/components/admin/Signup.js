@@ -3,10 +3,11 @@ import { Button, Form, Grid, Segment, Ref } from "semantic-ui-react"
 import { useAuth } from "../../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
 
-function Login() {
+function Signup() {
   const emailRef = useRef()
   const passwordRef = useRef()
-  const { login } = useAuth()
+  const passwordConfirmRef = useRef()
+  const { signup } = useAuth()
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
   const history = useHistory()
@@ -16,19 +17,25 @@ function Login() {
     console.log(
       "hello world",
       emailRef.current.children[0].value,
-      passwordRef.current.children[0].value
+      passwordRef.current.children[0].value,
+      passwordConfirmRef.current.children[0].value
     )
+    if (
+      passwordRef.current.children[0].value !==
+      passwordConfirmRef.current.children[0].value
+    )
+      return setError("Passwords do not match")
+
     try {
       setError("")
       setLoading(true)
-      await login(
+      await signup(
         emailRef.current.children[0].value,
         passwordRef.current.children[0].value
       )
-      // Will bring us to the dashboard page because the exact route has been declared in the app component
-      history.push("/admin")
+      history.push("/")
     } catch {
-      setError("Failed to sign in")
+      setError("Failed to create an account")
     }
     setLoading(false)
   }
@@ -44,7 +51,7 @@ function Login() {
         <Grid.Column style={{ maxWidth: 600 }}>
           <Form size="large" onSubmit={handleSubmit}>
             <Segment stacked>
-              <h2>Admin Log In</h2>
+              <h2>Add Additional Administrators</h2>
               {/* Change to a div element or get guidance on how to use the error prop from semantic */}
               {error && <div>{error}</div>}
               <Ref innerRef={emailRef}>
@@ -72,6 +79,18 @@ function Login() {
                   required
                 />
               </Ref>
+              <Ref innerRef={passwordConfirmRef}>
+                <Form.Input
+                  id="password-confirm"
+                  control="input"
+                  // fluid
+                  icon="lock"
+                  iconposition="left"
+                  placeholder="Password-Confirmation"
+                  type="password"
+                  required
+                />
+              </Ref>
               <Button
                 disabled={loading}
                 type="submit"
@@ -79,14 +98,10 @@ function Login() {
                 // fluid
                 size="large"
               >
-                Log In
+                Sign Up
               </Button>
               <Button color="black" fluid size="large">
-                <Link to="/forgot-password">Forgot Password?</Link>
-              </Button>
-
-              <Button color="black" fluid size="large">
-                <Link to="/">Return to Public Home Page</Link>
+                <Link to="/admin">Return to Admin Console</Link>
               </Button>
             </Segment>
           </Form>
@@ -97,4 +112,4 @@ function Login() {
   )
 }
 
-export default Login
+export default Signup

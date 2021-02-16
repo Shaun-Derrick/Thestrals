@@ -1,7 +1,7 @@
 import React from 'react'
 
 function getDateShort(date, type) {
-    if (date === undefined) {
+    if (date === undefined || date===null) {
         return 'Loading!'
     } else {
         let month = ''
@@ -44,7 +44,15 @@ function getDateShort(date, type) {
 }
 
 const FuzeItem = (props) => {
-    if (props.fuzeObject.startDate === " ") {
+    if (props.fuzeObject.startDate === null) {
+        return (
+            <div className="fuzeItem ui card">
+                <div className="content">
+                    <h2 className="fuzeTitle header">Broken! Pls fix soon</h2>
+                </div>
+            </div>
+        )}
+    else if (props.fuzeObject.startDate === " ") {
         return (
             <div className="fuzeItem ui card">
                 <div className="content">

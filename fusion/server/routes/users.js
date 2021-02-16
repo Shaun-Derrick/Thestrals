@@ -87,7 +87,8 @@ router.put('/:id', async(req, res)=>{
       organizer:req.body.organizer,
       whereIFoundThisEvent2:req.body.whereIFoundThisEvent2,
     })
-    res.send(foundFuze)
+    const result= await foundFuze.save()
+    res.send(result)
   }
   catch(error){
     res.sendStatus(404)
