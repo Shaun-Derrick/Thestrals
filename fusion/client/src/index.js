@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 import ReactDOM from "react-dom"
 import MainPage from './components/MainPage'
 import About from "./components/About"
@@ -12,7 +12,6 @@ import Delete from './components/admin/Delete'
 import Edit from './components/admin/Edit'
 import View from './components/admin/View'
 import Signup from "./components/admin/Signup"
-import Dashboard from "./components/admin/Dashboard"
 import PrivateRoute from "./components/admin/PrivateRoute"
 import ForgotPassword from "./components/admin/ForgotPassword"
 import UpdateProfile from "./components/admin/UpdateProfile"
@@ -35,7 +34,6 @@ const App = () => {
                     <PrivateRoute exact path='/admin/delete' component={Delete}></PrivateRoute>
                     <PrivateRoute exact path='/admin/update/:_id' component={Edit}></PrivateRoute>
                     <PrivateRoute exact path='/admin/view/:_id' component={View}></PrivateRoute>
-                    <PrivateRoute exact path="/dashboard" component={Dashboard} />
                     <PrivateRoute path="/update-profile" component={UpdateProfile} />
                     <PrivateRoute path="/signup" component={Signup} />
                     <Route path="/forgot-password" component={ForgotPassword} />
