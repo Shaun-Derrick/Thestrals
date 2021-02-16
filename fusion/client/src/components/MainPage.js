@@ -7,8 +7,6 @@ import NavBar from "./NavBar"
 import Dropdown from "./Dropdown"
 import Filter from "./Filter"
 import { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
-import { Button } from "semantic-ui-react"
 
 const MainPage = (props) => {
   const [currentFilters, setCurrentFilters] = useState([])
@@ -36,9 +34,9 @@ const MainPage = (props) => {
         setFuzeFull={setFuzeFull}
       />
       <Annotation fuzeFull={fuzeFull} setFuzeFull={setFuzeFull} />
-      <Button style={{ opacity: 0, margin: 10 }}>
+     {/*  <Button style={{ opacity: 0, margin: 10 }}>
         <Link to="/login">Login</Link>
-      </Button>
+      </Button> */}
     </div>
   )
 }

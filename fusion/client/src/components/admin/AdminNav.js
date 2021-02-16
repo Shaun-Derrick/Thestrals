@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link, useHistory } from 'react-router-dom';
 import { Button } from "semantic-ui-react"
 import { useAuth } from "../../contexts/AuthContext"
+import "../../stylesheets/admin.css";
+
 
 const AdminNav = () => {
   const [navLinkOpen, navLinkToggle] = useState(false);
@@ -34,19 +36,19 @@ const AdminNav = () => {
     <nav>
       <div>
         <ul className={renderClasses()}>
-          <li className="link">
+          <li className="AdminNavLink">
             <Link to="/admin"> HOME</Link>
           </li>
-          <li className="link">
+          <li className="AdminNavLink">
             <Link to="/admin/create">CREATE</Link>
           </li>
-          <li className="link">
+          <li className="AdminNavLink">
             <Link to="/admin/update">UPDATE</Link>
           </li>
-          <li className="link">
+          <li className="AdminNavLink">
             <Link to="/admin/delete">DELETE</Link>
           </li>
-          <li className="link">
+          <li className="AdminNavLink">
             <Link
               to="/update-profile"
               className="btn"
@@ -57,7 +59,7 @@ const AdminNav = () => {
               Update Profile
         </Link>
           </li>
-          <li className="link">
+          <li className="AdminNavLink">
             <Link
               to="/signup"
               className="btn"
@@ -68,7 +70,7 @@ const AdminNav = () => {
               Add Admin Account
         </Link>
           </li>
-          <li className="link">
+          <li className="AdminNavLink">
             <Button color="green" fluid size="large" onClick={handleLogout}>
               Log Out
         </Button>
