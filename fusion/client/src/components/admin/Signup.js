@@ -14,12 +14,6 @@ function Signup() {
 
   async function handleSubmit(e) {
     e.preventDefault()
-    console.log(
-      "hello world",
-      emailRef.current.children[0].value,
-      passwordRef.current.children[0].value,
-      passwordConfirmRef.current.children[0].value
-    )
     if (
       passwordRef.current.children[0].value !==
       passwordConfirmRef.current.children[0].value

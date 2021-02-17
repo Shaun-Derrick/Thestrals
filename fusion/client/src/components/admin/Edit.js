@@ -29,7 +29,6 @@ const EditFuze = () => {
     useEffect(() => {
         //to load a specific fuze for edit
         //so we use get
-
         const loadFuze = async () => {
             const result = await axios.get(`/Fuzes/${_id}`);
             setFuze(result.data);
