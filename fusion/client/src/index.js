@@ -9,6 +9,7 @@ import AdminHome from './components/admin/AdminHome'
 import Create from './components/admin/Create'
 import Update from './components/admin/Update'
 import Delete from './components/admin/Delete'
+import DeleteFuze from './components/admin/DeleteFuze'
 import Edit from './components/admin/Edit'
 import View from './components/admin/View'
 import Signup from "./components/admin/Signup"
@@ -32,6 +33,7 @@ const App = () => {
                     <PrivateRoute exact path='/admin/create' component={Create}></PrivateRoute>
                     <PrivateRoute exact path='/admin/update' component={Update}></PrivateRoute>
                     <PrivateRoute exact path='/admin/delete' component={Delete}></PrivateRoute>
+                    <PrivateRoute exact path = "/admin/delete/:_id" component = {DeleteFuze}></PrivateRoute>
                     <PrivateRoute exact path='/admin/update/:_id' component={Edit}></PrivateRoute>
                     <PrivateRoute exact path='/admin/view/:_id' component={View}></PrivateRoute>
                     <PrivateRoute path="/update-profile" component={UpdateProfile} />
