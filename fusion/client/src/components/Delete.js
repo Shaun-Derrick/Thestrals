@@ -24,11 +24,10 @@ const style = {
   },
 }
 
-const Update = () => {
+const Delete = () => {
+   const [fuzes, setFuze] = useState([]);
 
-  const [fuzes, setFuze] = useState([]);
-
-  useEffect(() => {
+   useEffect(() => {
    
     loadFuzes();
     console.log("Loading full list of fuzes..")
@@ -42,26 +41,9 @@ const Update = () => {
     //to get data in reverse order
     //setFuze(result.data.reverse());
   }
-//mongodb+srv://Debbietester:lcrS9w6vcxZbcXCV@cluster0.alihe.mongodb.net/Fuzes?retryWrites=true&w=majority
-// for DELETE
-  // const deleteFuze = async _id => {
-  //   await axios.delete(`/Fuzes/${_id}`);
-  //   loadFuzes();
-  // }
 
-  const [currentFilters, setCurrentFilters] = useState([])
-  const [fuzeFull, setFuzeFull] = useState([])
-
-  useEffect(() => {
-    const getFuzes = async () => {
-      const result = await axios.get("/Fuzes");
-     
-      setFuzeFull(result.data)
-    }
-    getFuzes()
-  }, [])
-  //
   
+
   return (
     <div>
       <Segment.Group>
@@ -70,19 +52,7 @@ const Update = () => {
             <Header as='h1' color='red' content='Search from Tags' style={style.h1} textAlign='left' />
       </Segment>
         
-      <Segment inverted >
-
-{/* filters/dropdon from client */}
-<DropdownBar updateFilter={setCurrentFilters} />
-<Filter
-  filters={currentFilters}
-  fuzeFull={fuzeFull}
-  setFuzeFull={setFuzeFull}
-/>
-<AnnotationUpdate fuzeFull={fuzeFull} setFuzeFull={setFuzeFull} />
-
-</Segment>
-
+     
       
       <Header as='h1' color='red' content='List of FUZES' style={style.h1} textAlign='center' />
 
@@ -124,26 +94,15 @@ const Update = () => {
         </Table.Cell> */}
         <Table.Cell>
         <Segment inverted>
-                  
-                    <Button.Group widths='2'>
-                    <Button inverted color='green' animated='fade' as={Link} to={`/fuzes/edit/${fuze._id}`}>
-                      <Button.Content visible>EDIT Fuze </Button.Content>
-                      <Button.Content hidden >I want to edit this Fuze </Button.Content>
+                    
+
+                    
+                    <Button inverted color='red' animated='fade' as={Link} to={`/fuzes/delete/${fuze._id}`}>
+                      <Button.Content visible>DELETE Fuze </Button.Content>
+                      <Button.Content hidden >I want to delete this Fuze </Button.Content>
                     </Button>
 
-                    <Button inverted color='green' animated='fade' as={Link} to={`/view fuzes/${fuze._id}`}>
-                      <Button.Content visible>VIEW Fuze</Button.Content>
-                      <Button.Content hidden >View Only </Button.Content>
-                    </Button>
-                    </Button.Group>
-
-                    {/* <Button inverted color='green'animated='fade' as={Link} to={`/view fuzes/${fuze._id}`}>View Fuze</Button> */}
-
-                     {/* \delete button below. UnComment only when required */}
-                     {/* <Button size='tiny' color='red' 
-                      onClick={() => deleteFuze(fuze._id)}
-                       >Delete Fuze</Button> 
-                      */}
+                     
                      </Segment>
         </Table.Cell>
 
@@ -158,4 +117,4 @@ const Update = () => {
   )
 };
 
-export default Update;
+export default Delete;

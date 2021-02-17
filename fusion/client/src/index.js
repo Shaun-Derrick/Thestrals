@@ -14,6 +14,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Update from "./components/Update";
 import EditFuze from "./components/EditFuze";
 import ViewFuze from "./components/ViewFuze";
+import Delete from "./components/Delete";
+import DeleteFuze from "./components/DeleteFuze";
 
 
 
@@ -50,10 +52,13 @@ const App = () => {
         
       <Switch>
         <Route exact path='/update' component= {Update}></Route>
+        <Route exact path = "/delete/" component = {Delete} />
         <Route exact path='/view fuzes/:_id' component= {ViewFuze}></Route>
 
-             {/* for dynamic routing */}
+             
         <Route exact path = "/fuzes/edit/:_id" component = {EditFuze} />
+        
+        <Route exact path = "/fuzes/delete/:_id" component = {DeleteFuze} />
        </Switch>
           
     </div>

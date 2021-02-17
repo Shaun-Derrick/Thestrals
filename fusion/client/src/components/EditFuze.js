@@ -68,7 +68,7 @@ const EditFuze = () => {
   // to show a specfic fuze's details that we want to edit
   const onSubmit =  async e => {
     e.preventDefault();
-    await axios.put(`/Fuzes/${_id}`, fuze);
+     await axios.put(`/Fuzes/${_id}`, fuze);
     // await axios.put(`/Fuzes`, fuze);
     history.push("/update");
     
@@ -130,10 +130,10 @@ const EditFuze = () => {
     {/* <Form.Field>
       <Checkbox Label='Are you sure?' />
     </Form.Field> */}
-     <Button  animated='fade'  color='green' as={Link} to="/update">
+     <Button  animated='fade'  color='green' as={Link} to="/update" >
         <Button.Content visible  >CONFIRM</Button.Content>
         <Button.Content hidden>Are you sure ? </Button.Content>
-            
+       
         </Button>
   </Form>
   </Segment>

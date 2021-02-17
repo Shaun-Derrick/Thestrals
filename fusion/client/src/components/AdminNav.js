@@ -32,7 +32,7 @@ const AdminNav = () => {
           <Link to="/update">UPDATE</Link>
           </li>
           <li className="link">
-            <a href="#">DELETE</a>
+          <Link to="/delete">DELETE</Link>
           </li>
           <li className="link">
             <a href="#">LOGOUT</a>
