@@ -45,8 +45,8 @@ const EditFuze = () => {
     // to show a specfic fuze's details that we want to edit
     const onSubmit = async e => {
         e.preventDefault();
-        await axios.put(`/Fuzes/${_id}`, fuze);
-        history.push("/admin/update");
+        await axios.post(`/Fuzes`, fuze);
+        history.push("/admin/create");
     };
 
     return (
