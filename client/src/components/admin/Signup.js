@@ -3,50 +3,35 @@ import { Button, Form, Grid, Segment, Ref } from "semantic-ui-react"
 import { useAuth } from "../../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
 
-function UpdateProfile() {
+function Signup() {
   const emailRef = useRef()
   const passwordRef = useRef()
   const passwordConfirmRef = useRef()
-  const { currentUser, updatePassword, updateEmail } = useAuth()
+  const { signup } = useAuth()
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
   const history = useHistory()
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault()
-    console.log(
-      "hello world",
-      emailRef.current.children[0].value,
-      passwordRef.current.children[0].value,
-      passwordConfirmRef.current.children[0].value
-    )
     if (
       passwordRef.current.children[0].value !==
       passwordConfirmRef.current.children[0].value
     )
       return setError("Passwords do not match")
 
-    const promises = []
-    setLoading(true)
-    setError("")
-    if (emailRef.current.children[0].value !== currentUser.email) {
-      promises.push(updateEmail(emailRef.current.children[0].value))
+    try {
+      setError("")
+      setLoading(true)
+      await signup(
+        emailRef.current.children[0].value,
+        passwordRef.current.children[0].value
+      )
+      history.push("/")
+    } catch {
+      setError("Failed to create an account")
     }
-    if (passwordRef.current.children[0].value) {
-      promises.push(updatePassword(passwordRef.current.children[0].value))
-    }
-
-    Promise.all(promises)
-      .then(() => {
-        // history.push("/")
-        history.push("/admin")
-      })
-      .catch(() => {
-        setError("Failed to update account")
-      })
-      .finally(() => {
-        setLoading(false)
-      })
+    setLoading(false)
   }
 
   return (
@@ -60,7 +45,7 @@ function UpdateProfile() {
         <Grid.Column style={{ maxWidth: 600 }}>
           <Form size="large" onSubmit={handleSubmit}>
             <Segment stacked>
-              <h2>Update Profile</h2>
+              <h2>Add Additional Administrators</h2>
               {/* Change to a div element or get guidance on how to use the error prop from semantic */}
               {error && <div>{error}</div>}
               <Ref innerRef={emailRef}>
@@ -74,7 +59,6 @@ function UpdateProfile() {
                   type="email"
                   // ref={emailRef}
                   required
-                  defaultValue={currentUser.email}
                 />
               </Ref>
               <Ref innerRef={passwordRef}>
@@ -84,8 +68,9 @@ function UpdateProfile() {
                   // fluid
                   icon="lock"
                   iconposition="left"
-                  placeholder="Leave blank to keep the same password"
+                  placeholder="Password"
                   type="password"
+                  required
                 />
               </Ref>
               <Ref innerRef={passwordConfirmRef}>
@@ -95,8 +80,9 @@ function UpdateProfile() {
                   // fluid
                   icon="lock"
                   iconposition="left"
-                  placeholder="Leave blank to keep the same password"
+                  placeholder="Password-Confirmation"
                   type="password"
+                  required
                 />
               </Ref>
               <Button
@@ -106,10 +92,10 @@ function UpdateProfile() {
                 // fluid
                 size="large"
               >
-                Update
+                Sign Up
               </Button>
               <Button color="black" fluid size="large">
-                <Link to="/admin">Cancel/Return to Admin Console</Link>
+                <Link to="/admin">Return to Admin Console</Link>
               </Button>
             </Segment>
           </Form>
@@ -120,4 +106,4 @@ function UpdateProfile() {
   )
 }
 
-export default UpdateProfile
+export default Signup

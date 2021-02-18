@@ -1,27 +1,34 @@
 import React, { useRef, useState } from "react"
 import { Button, Form, Grid, Segment, Ref } from "semantic-ui-react"
 import { useAuth } from "../../contexts/AuthContext"
-import { Link } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom"
 
-function ForgotPassword() {
+function Login() {
   const emailRef = useRef()
-  const { resetPassword } = useAuth()
+  const passwordRef = useRef()
+  const { login } = useAuth()
   const [error, setError] = useState("")
-  const [message, setMessage] = useState("")
   const [loading, setLoading] = useState(false)
+  const history = useHistory()
 
   async function handleSubmit(e) {
     e.preventDefault()
-    console.log("hello world", emailRef.current.children[0].value)
+    console.log(
+      "hello world",
+      emailRef.current.children[0].value,
+      passwordRef.current.children[0].value
+    )
     try {
-      setMessage("")
       setError("")
       setLoading(true)
-      await resetPassword(emailRef.current.children[0].value)
-      setMessage("Check your inbox for further instructions")
+      await login(
+        emailRef.current.children[0].value,
+        passwordRef.current.children[0].value
+      )
       // Will bring us to the dashboard page because the exact route has been declared in the app component
+      history.push("/admin")
     } catch {
-      setError("Failed to reset password")
+      setError("Failed to sign in")
     }
     setLoading(false)
   }
@@ -37,10 +44,9 @@ function ForgotPassword() {
         <Grid.Column style={{ maxWidth: 600 }}>
           <Form size="large" onSubmit={handleSubmit}>
             <Segment stacked>
-              <h2>Password Reset</h2>
+              <h2>Admin Log In</h2>
               {/* Change to a div element or get guidance on how to use the error prop from semantic */}
               {error && <div>{error}</div>}
-              {message && <div>{message}</div>}
               <Ref innerRef={emailRef}>
                 <Form.Input
                   id="email"
@@ -54,6 +60,18 @@ function ForgotPassword() {
                   required
                 />
               </Ref>
+              <Ref innerRef={passwordRef}>
+                <Form.Input
+                  id="password"
+                  control="input"
+                  // fluid
+                  icon="lock"
+                  iconposition="left"
+                  placeholder="Password"
+                  type="password"
+                  required
+                />
+              </Ref>
               <Button
                 disabled={loading}
                 type="submit"
@@ -61,10 +79,14 @@ function ForgotPassword() {
                 // fluid
                 size="large"
               >
-                Reset Password
+                Log In
               </Button>
               <Button color="black" fluid size="large">
-                <Link to="/login">Log In?</Link>
+                <Link to="/forgot-password">Forgot Password?</Link>
+              </Button>
+
+              <Button color="black" fluid size="large">
+                <Link to="/">Return to Public Home Page</Link>
               </Button>
             </Segment>
           </Form>
@@ -75,4 +97,4 @@ function ForgotPassword() {
   )
 }
 
-export default ForgotPassword
+export default Login

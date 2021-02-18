@@ -1,41 +1,26 @@
 import React, { useRef, useState } from "react"
 import { Button, Form, Grid, Segment, Ref } from "semantic-ui-react"
 import { useAuth } from "../../contexts/AuthContext"
-import { Link, useHistory } from "react-router-dom"
+import { Link } from "react-router-dom"
 
-function Signup() {
+function ForgotPassword() {
   const emailRef = useRef()
-  const passwordRef = useRef()
-  const passwordConfirmRef = useRef()
-  const { signup } = useAuth()
+  const { resetPassword } = useAuth()
   const [error, setError] = useState("")
+  const [message, setMessage] = useState("")
   const [loading, setLoading] = useState(false)
-  const history = useHistory()
 
   async function handleSubmit(e) {
     e.preventDefault()
-    console.log(
-      "hello world",
-      emailRef.current.children[0].value,
-      passwordRef.current.children[0].value,
-      passwordConfirmRef.current.children[0].value
-    )
-    if (
-      passwordRef.current.children[0].value !==
-      passwordConfirmRef.current.children[0].value
-    )
-      return setError("Passwords do not match")
-
     try {
+      setMessage("")
       setError("")
       setLoading(true)
-      await signup(
-        emailRef.current.children[0].value,
-        passwordRef.current.children[0].value
-      )
-      history.push("/")
+      await resetPassword(emailRef.current.children[0].value)
+      setMessage("Check your inbox for further instructions")
+      // Will bring us to the dashboard page because the exact route has been declared in the app component
     } catch {
-      setError("Failed to create an account")
+      setError("Failed to reset password")
     }
     setLoading(false)
   }
@@ -51,9 +36,10 @@ function Signup() {
         <Grid.Column style={{ maxWidth: 600 }}>
           <Form size="large" onSubmit={handleSubmit}>
             <Segment stacked>
-              <h2>Add Additional Administrators</h2>
+              <h2>Password Reset</h2>
               {/* Change to a div element or get guidance on how to use the error prop from semantic */}
               {error && <div>{error}</div>}
+              {message && <div>{message}</div>}
               <Ref innerRef={emailRef}>
                 <Form.Input
                   id="email"
@@ -67,30 +53,6 @@ function Signup() {
                   required
                 />
               </Ref>
-              <Ref innerRef={passwordRef}>
-                <Form.Input
-                  id="password"
-                  control="input"
-                  // fluid
-                  icon="lock"
-                  iconposition="left"
-                  placeholder="Password"
-                  type="password"
-                  required
-                />
-              </Ref>
-              <Ref innerRef={passwordConfirmRef}>
-                <Form.Input
-                  id="password-confirm"
-                  control="input"
-                  // fluid
-                  icon="lock"
-                  iconposition="left"
-                  placeholder="Password-Confirmation"
-                  type="password"
-                  required
-                />
-              </Ref>
               <Button
                 disabled={loading}
                 type="submit"
@@ -98,10 +60,10 @@ function Signup() {
                 // fluid
                 size="large"
               >
-                Sign Up
+                Reset Password
               </Button>
               <Button color="black" fluid size="large">
-                <Link to="/admin">Return to Admin Console</Link>
+                <Link to="/login">Log In?</Link>
               </Button>
             </Segment>
           </Form>
@@ -112,4 +74,4 @@ function Signup() {
   )
 }
 
-export default Signup
+export default ForgotPassword
