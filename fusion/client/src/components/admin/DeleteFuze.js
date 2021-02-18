@@ -40,8 +40,8 @@ const DeleteFuze = () => {
       </div>
       <Container>
         <Segment.Group inverted>
-          <Segment inverted textAlign='center'> startDate: {fuze.startDate}</Segment>
-          <Segment inverted textAlign='center'>endDate: {fuze.endDate}</Segment>
+          <Segment inverted textAlign='center'> startDate: {fuze.startDate.slice(0,10)}</Segment>
+          <Segment inverted textAlign='center'>endDate: {fuze.endDate.slice(0,10)}</Segment>
           <Segment inverted textAlign='center'>startTime: {fuze.startTime}</Segment>
           <Segment inverted textAlign='center'> endTime: {fuze.endTime}</Segment>
           <Segment inverted textAlign='center'>Title: {fuze.Title}</Segment>

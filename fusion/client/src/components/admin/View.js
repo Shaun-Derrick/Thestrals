@@ -35,8 +35,8 @@ const ViewFuze = () => {
             </div>
             <Container>
                 <Segment.Group>
-                    <Segment inverted>startDate: {fuze.startDate}</Segment>
-                    <Segment inverted>endDate: {fuze.endDate}</Segment>
+                    <Segment inverted>startDate: {fuze.startDate.slice(0,10)}</Segment>
+                    <Segment inverted>endDate: {fuze.endDate.slice(0,10)}</Segment>
                     <Segment inverted>startTime: {fuze.startTime}</Segment>
                     <Segment inverted> endTime: {fuze.endTime}</Segment>
                     <Segment inverted>Title: {fuze.Title}</Segment>

@@ -41,9 +41,9 @@ const Delete = () => {
               {fuzes.map((fuze, index) => (
                 <Table.Row>
                   <Table.Cell singleLine textAlign='center'>
-                    {fuze.startDate}
+                    {fuze.startDate.slice(0,10)}
                   </Table.Cell>
-                  <Table.Cell singleLine textAlign='center'>{fuze.endDate}</Table.Cell>
+                  <Table.Cell singleLine textAlign='center'>{fuze.endDate.slice(0,10)}</Table.Cell>
                   <Table.Cell singleLine textAlign='center' >
                     {fuze.Title}
                   </Table.Cell>

@@ -17,7 +17,11 @@ const EditFuze = () => {
         "startTime": "",
         "endTime": "",
         "Title": "",
-        "description": "",
+        "description":
+        
+        
+        
+        "",
         "venue": "",
         "tags": "",
         "organizer": "",
