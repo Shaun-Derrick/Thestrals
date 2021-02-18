@@ -20,6 +20,7 @@ const DropdownExampleMultipleSelection = (props) => {
 
   const createBlock = (e, data) => {
     let selectedCategory = data.value
+    console.log(`this is the selected category: ${selectedCategory}`)
     props.updateFilter(selectedCategory)
   }
 

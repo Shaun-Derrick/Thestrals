@@ -173,7 +173,6 @@ const FuzeList = (props) => {
             <div className='fuzeList'>
                 {props.fuzeFull.map(makeDiv)}
             </div>
-            {console.log(fuzeChoice)}
             <FuzeModal modal={modalStatus} fuzeItem={fuzeChoice} closeModal={closeModal} chooseIcon={chooseIcon} date={modalDate}></FuzeModal>
         </div>
     )

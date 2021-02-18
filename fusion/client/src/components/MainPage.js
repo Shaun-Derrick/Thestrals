@@ -34,6 +34,8 @@ const MainPage = (props) => {
         filters={currentFilters}
         fuzeFull={fuzeFull}
         setFuzeFull={setFuzeFull}
+        category="tags"
+        criteria='tag'
       />
       <Annotation fuzeFull={fuzeFull} setFuzeFull={setFuzeFull} />
       <Link to="/login">

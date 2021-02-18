@@ -99,8 +99,8 @@ const EditFuze = () => {
                             <input type="text" placeholder='whereIFoundThisEvent2' name="whereIFoundThisEvent2" value={whereIFoundThisEvent2 || ""} onChange={e => onInputChange(e)} />
                         </Form.Field>
                         <Button animated='fade' type="submit" color='green' onClick={e => { onSubmit(e) }} as={Link} to="/admin/update">
-                            <Button.Content visible  >CONFIRM</Button.Content>
-                            <Button.Content hidden>Are you sure ? </Button.Content>
+                            <Button.Content visible>CONFIRM</Button.Content>
+                            <Button.Content hidden>Are you sure? </Button.Content>
                         </Button>
                     </Form>
                 </Segment>

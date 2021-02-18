@@ -21,7 +21,10 @@ const NavBar = () => {
       <div className='homeNavBar'>
         <ul className={renderClasses()}>
           <li className="link">
-            <Link to="/">HOME</Link>
+            <Link to="/">Home</Link>
+          </li>
+          <li className="link">
+            <Link to="/fuzes">Fuzes</Link>
           </li>
           <li className="link">
             <Link to="/about">About</Link>

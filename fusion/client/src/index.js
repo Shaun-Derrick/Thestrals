@@ -4,6 +4,7 @@ import MainPage from './components/MainPage'
 import About from "./components/About"
 import Services from "./components/Services"
 import Contact from "./components/Contact"
+import Calendar from "./components/Calendar"
 import AdminLogin from './components/admin/AdminLogin'
 import AdminHome from './components/admin/AdminHome'
 import Create from './components/admin/Create'
@@ -24,6 +25,7 @@ const App = () => {
             <AuthProvider>
                 <Switch>
                     <Route exact path='/' component={MainPage}></Route>
+                    <Route exact path='/fuzes' component={Calendar}></Route>
                     <Route exact path='/about' component={About}></Route>
                     <Route exact path='/services' component={Services}></Route>
                     <Route exact path='/contact' component={Contact}></Route>

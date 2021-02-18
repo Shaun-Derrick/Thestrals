@@ -1,0 +1,72 @@
+.react-calendar{
+  width: 90%;
+  background-color: black;
+  color: palegreen;
+}
+.react-calendar__tile{
+  color: palegreen
+}
+
+.react-calendar__tile.react-calendar__month-view__days__day--neighboringMonth, .react-calendar__tile.react-calendar__month-view__days__day--weekend.react-calendar__month-view__days__day--neighboringMonth{
+    color: #757575;
+}
+
+.react-calendar__tile.react-calendar__month-view__days__day--weekend{
+  color: #d10000;
+}
+/* .react-calendar__navigation button[disabled] {
+  background-color: #41413e;
+  color: palegreen;
+} */
+.react-calendar__navigation button{
+  color: palegreen;
+}
+.react-calendar__navigation button:enabled:hover, .react-calendar__navigation button:enabled:hover:focus{
+  background-color: #404040;
+}
+
+.react-calendar__tile:disabled, .react-calendar__navigation button[disabled]{
+  background-color: #82827d;
+  color: rgba(16, 16, 16, 0.3);
+}
+
+.react-calendar__tile--now{
+  color: #1a6600;
+}
+
+.react-calendar__navigation button:enabled:focus{
+    background-color: black;
+}
+
+.react-calendar__tile--active,.react-calendar__tile--active:enabled:hover, .react-calendar__tile--active:enabled:focus{
+  background-color: #000066;
+  color: palegreen
+}
+
+.react-calendar__tile:enabled:hover{
+  background-color: #404040;
+}
+
+.react-calendar__tile:enabled:hover.react-calendar__month-view__days__day--weekend{
+  background-color: #404040;
+  color: #ff6666;
+}
+
+.react-calendar__tile--active.react-calendar__month-view__days__day--weekend, .react-calendar__tile--active:enabled:focus.react-calendar__month-view__days__day--weekend{
+  color: #ff6666;
+}
+
+.calendarHolder{
+    display: flex;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-color: transparent;
+    background-image: url('../Images/sunFusion.jpg');
+    background-size: cover;
+    margin-bottom: 3em;
+}
+
+/* abbr[aria-label*="February 27, 2021"]::after{
+  content: "♦";
+} */
