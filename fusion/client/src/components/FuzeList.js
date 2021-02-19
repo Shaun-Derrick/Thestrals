@@ -1,5 +1,5 @@
 import "../stylesheets/FuzeList.css"
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react';
 import FuzeModal from './FuzeModal'
 import FuzeItem from './FuzeItem'
@@ -160,7 +160,7 @@ const FuzeList = (props) => {
         if (pageCount < (props.fuzeFull.length) / 5) {
             pageCount++
             return (
-                <Pagination key={index} number={pageCount} pageStatus={pageStatus} changePage={changePage}></Pagination>
+                <Pagination key={index} number={pageCount} pageStatus={pageStatus} changePage={changePage} filters={props.filters}></Pagination>
             )
         }
     }

@@ -15,7 +15,8 @@ const Annotation = (props) => {
         </p>
       </div>
       <FuzeList fuzeFull={props.fuzeFull}
-        setFuzeFull={props.setFuzeFull}></FuzeList>
+        setFuzeFull={props.setFuzeFull}
+        filters={props.filters}></FuzeList>
       <div className="annotation-description">
         <p>Become Part of the energy! </p>
         <p>
