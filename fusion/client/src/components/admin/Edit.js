@@ -59,13 +59,13 @@ const EditFuze = () => {
                     <Form inverted>
                         <Form.Field>
                             <Label color='red' horizontal >startDate</Label>
-                            {startDate.toString()}
+                            {startDate.toString().slice(0,10)}
                             <input type="date" name="startDate" value={startDate} onChange={e => onInputChange(e)} />
                             {/* {console.log(`start date is`, startDate)} */}
                         </Form.Field>
                         <Form.Field>
                             <Label color='red' horizontal>endDate</Label>
-                            {endDate.toString()}
+                            {endDate.toString().slice(0,10)}
                             <input type="date" placeholder='endDate' name="endDate" value={endDate} onChange={e => onInputChange(e)} />
                             {console.log(`end date is`, endDate)}
                         </Form.Field>
