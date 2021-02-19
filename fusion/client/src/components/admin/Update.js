@@ -41,8 +41,8 @@ const Update = () => {
           <Table celled inverted selectable>
             <Table.Header>
               <Table.Row>
-                <Table.HeaderCell textAlign='center'>Date</Table.HeaderCell>
-                {/* <Table.HeaderCell textAlign='center'>End Date</Table.HeaderCell> */}
+                <Table.HeaderCell textAlign='center'>Start Date</Table.HeaderCell>
+                <Table.HeaderCell textAlign='center'>End Date</Table.HeaderCell>
                 <Table.HeaderCell textAlign='center'>Fuze</Table.HeaderCell>
                 <Table.HeaderCell textAlign='center'>Action</Table.HeaderCell>
               </Table.Row>
@@ -51,7 +51,7 @@ const Update = () => {
               {fuzes.map((fuze, index) => (
                 <Table.Row key={index} >
                   <Table.Cell singleLine textAlign='center'> {fuze.startDate} </Table.Cell>
-                  {/* <Table.Cell singleLine textAlign='center'>{fuze.endDate}</Table.Cell> */}
+                  <Table.Cell singleLine textAlign='center'>{fuze.endDate}</Table.Cell>
                   <Table.Cell singleLine textAlign='center' > {fuze.Title} </Table.Cell>
                   <Table.Cell>
                     <Segment inverted>
