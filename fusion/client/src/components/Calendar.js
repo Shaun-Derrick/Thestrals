@@ -3,7 +3,7 @@ import Calendar from 'react-calendar';
 import NavBar from './NavBar'
 import Logo from './Logo'
 import FuzeList from './FuzeList'
-import { format } from 'date-fns'
+import { format, add, isAfter, isBefore, parseISO } from 'date-fns'
 import 'react-calendar/dist/Calendar.css';
 import '../stylesheets/calendar.css'
 import Filter from './Filter';
@@ -11,20 +11,30 @@ import Filter from './Filter';
 function ViewFuzes() {
     const [value, onChange] = useState(new Date());
     const [fuzeFull, setFuzeFull] = useState([])
+    const [allFuzes, setAllFuzes]= useState([])
 
     const getFuzes = async () => {
-        // fetch uses the "proxy" value set in client/package.json
         let response = await fetch("/Fuzes/")
         let fuze = await response.json()
         setFuzeFull(fuze)
     }
 
+    const getAllFuzes = async () => {
+        let response = await fetch("/Fuzes/")
+        let fuze = await response.json()
+        setAllFuzes(fuze)}
+
     useEffect(() => {
         getFuzes()
+        getAllFuzes()
     }, [])
 
-    function seeDate(thing){
-        if(thing=== undefined){
+    useEffect(() => {
+        fuzeFull.map(labelDates)
+      }, [fuzeFull])
+    
+    function labelDates(thing) {
+        if (thing === undefined) {
             return
         }
         let month = ''
@@ -61,19 +71,19 @@ function ViewFuzes() {
             default: month = ' '
         }
         let combinedDate = month.concat(dayNumber, ', ', yearNumber)
-        let splitValue= combinedDate.split(" ")
-        let number=splitValue.slice(1,2)
-        let numberString=number.toString()
-        let numberPure=numberString.slice(0,2)
-        if(numberPure.charAt(0)==0){
-            numberPure=numberPure.slice(1,2)
-            combinedDate=month.concat(numberPure, ', ', yearNumber)
+        let splitValue = combinedDate.split(" ")
+        let number = splitValue.slice(1, 2)
+        let numberString = number.toString()
+        let numberPure = numberString.slice(0, 2)
+        if (numberPure.charAt(0) == 0) {
+            numberPure = numberPure.slice(1, 2)
+            combinedDate = month.concat(numberPure, ', ', yearNumber)
         }
-        let finalSelector=`"${combinedDate}"`
-        if(document.querySelector(`abbr[aria-label*=${finalSelector}]`)===null){
+        let finalSelector = `"${combinedDate}"`
+        if (document.querySelector(`abbr[aria-label*=${finalSelector}]`) === null) {
             return
         }
-        document.querySelector(`abbr[aria-label*=${finalSelector}]`).textContent=`${numberPure} ♦`
+        document.querySelector(`abbr[aria-label*=${finalSelector}]`).textContent = `${numberPure} ♦`
     }
 
     function setMaxDate() {
@@ -101,10 +111,30 @@ function ViewFuzes() {
                     onChange={onChange}
                     value={value}
                     calendarType="US"
+                    nextLabel={null}
+                    prevLabel={null}
+                    next2Label={null}
+                    prev2Label={null}
                     minDate={new Date()}
                     maxDate={setMaxDate()}
                     minDetail={setMinDetail()}
-                />
+                    onClickMonth={(value, event) =>{
+                        let chosenMonth = value
+                        let nextMonth = add(value, { months: 1 })
+                        const filterItems = () => {
+                            let fuzes = allFuzes.filter((fuzes) => {
+                                if (isAfter(parseISO(fuzes.startDate), chosenMonth)&& isBefore(parseISO(fuzes.startDate), nextMonth))
+                                    return fuzes
+                            })
+                            if (fuzes.length === 0) {
+                                setFuzeFull([{ Title: `No Fuzes found! Try a different month.`, startDate: ' ', endDate: ' ' }])
+                            }
+                            else {
+                                setFuzeFull(fuzes)
+                            }
+                        }
+                        filterItems(fuzeFull)
+                    }}/>
             </div>
             <Filter
                 filters={format(value, "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")}
@@ -113,11 +143,7 @@ function ViewFuzes() {
                 category="startDate"
                 criteria='date'>
             </Filter>
-            <button onClick={getFuzes}>Reset</button>
             <FuzeList fuzeFull={fuzeFull} setFuzeFull={setFuzeFull}></FuzeList>
-            <p>The UTC date is {(format(new Date('2020-11-20T07:00:00.000+00:00'), 'MMMM dd, yyyy'))}</p>
-            <p>The chosen date is {format(value, 'MMMM dd, yyyy')}</p>
-            {fuzeFull.map(seeDate)}
         </div>
     );
 }
