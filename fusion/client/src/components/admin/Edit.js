@@ -17,11 +17,7 @@ const EditFuze = () => {
         "startTime": "",
         "endTime": "",
         "Title": "",
-        "description":
-        
-        
-        
-        "",
+        "description": "",
         "venue": "",
         "tags": "",
         "organizer": "",
@@ -63,19 +59,24 @@ const EditFuze = () => {
                     <Form inverted>
                         <Form.Field>
                             <Label color='red' horizontal >startDate</Label>
-                            <input type="text" placeholder="startDate" name="startDate" value={startDate || ""} onChange={e => onInputChange(e)} />
+                            {startDate.toString()}
+                            <input type="date" name="startDate" value={startDate} onChange={e => onInputChange(e)} />
+                            {/* {console.log(`start date is`, startDate)} */}
                         </Form.Field>
                         <Form.Field>
                             <Label color='red' horizontal>endDate</Label>
-                            <input type="text" placeholder='endDate' name="endDate" value={endDate || ""} onChange={e => onInputChange(e)} />
+                            {endDate.toString()}
+                            <input type="date" placeholder='endDate' name="endDate" value={endDate} onChange={e => onInputChange(e)} />
+                            {console.log(`end date is`, endDate)}
                         </Form.Field>
                         <Form.Field>
                             <Label color='red' horizontal>startTime</Label>
-                            <input type="text" placeholder='startTime' name="startTime" value={startTime || ""} onChange={e => onInputChange(e)} />
+                            <input type="text" placeholder='startTime' name="startTime" value={startTime} onChange={e => onInputChange(e)} />
                         </Form.Field>
                         <Form.Field>
                             <Label color='red' horizontal>endTime</Label>
-                            <input type="text" placeholder='endTime' name="endTime" value={endTime || ""} onChange={e => onInputChange(e)} />
+                            <input type="text" placeholder='endTime' name="endTime" value={endTime
+                            } onChange={e => onInputChange(e)} />
                         </Form.Field>
                         <Form.Field>
                             <Label color='red' horizontal>Title</Label>
@@ -93,9 +94,7 @@ const EditFuze = () => {
                             <Label color='red' horizontal>tags</Label>
                             <input type="text" placeholder='tags' name="tags" value={tags || ""} onChange={e => onInputChange(e)} />
                         </Form.Field>
-
                         <Form.Field>
-
                             <Label color='red' horizontal>organizer</Label>
                             <input type="text" placeholder='organizer' name="organizer" value={organizer || ""} onChange={e => onInputChange(e)} />
                         </Form.Field>

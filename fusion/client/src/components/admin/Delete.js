@@ -1,5 +1,4 @@
 import React from 'react';
-import AdminNav from "./AdminNav"
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
@@ -23,10 +22,13 @@ const Delete = () => {
   return (
     <div>
       <Segment.Group>
+        <Header as='h1' color='red' content='List of FUZES' textAlign='center' />
         <Segment inverted>
-          <Header as='h1' color='red' content='Search from Tags' textAlign='left' />
+          <Button floated='right' inverted color='green' animated='fade' as={Link} to='/admin'>
+            <Button.Content visible >BACK </Button.Content>
+            <Button.Content hidden > BACK </Button.Content>
+          </Button>
         </Segment>
-        <Header as='h1' color='red' content='List of FUZES'  textAlign='center' />
         <Segment padded='very' inverted>
           <Table celled inverted selectable>
             <Table.Header>
@@ -41,15 +43,15 @@ const Delete = () => {
               {fuzes.map((fuze, index) => (
                 <Table.Row>
                   <Table.Cell singleLine textAlign='center'>
-                    {fuze.startDate.slice(0,10)}
+                    {fuze.startDate.slice(0, 10)}
                   </Table.Cell>
-                  <Table.Cell singleLine textAlign='center'>{fuze.endDate.slice(0,10)}</Table.Cell>
+                  <Table.Cell singleLine textAlign='center'>{fuze.endDate.slice(0, 10)}</Table.Cell>
                   <Table.Cell singleLine textAlign='center' >
                     {fuze.Title}
                   </Table.Cell>
                   <Table.Cell>
                     <Segment inverted>
-                      <Button inverted color='red' animated='fade' as={Link} to={`/admin/delete/${fuze._id}`}>
+                      <Button fluid inverted color='red' animated='fade' as={Link} to={`/admin/delete/${fuze._id}`}>
                         <Button.Content visible>DELETE Fuze </Button.Content>
                         <Button.Content hidden >Are you Sure? </Button.Content>
                       </Button>

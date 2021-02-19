@@ -29,31 +29,25 @@ const ViewFuze = () => {
     };
 
     return (
-        <div style={{ color: "red" }}>
-            <div>
+        <div >
+            <Segment.Group inverted>
                 <Header as='h1' color='red' textAlign='center' > Title: {fuze.Title} </Header>
-            </div>
-            <Container>
-                <Segment.Group>
-                    <Segment inverted>startDate: {fuze.startDate.slice(0,10)}</Segment>
-                    <Segment inverted>endDate: {fuze.endDate.slice(0,10)}</Segment>
-                    <Segment inverted>startTime: {fuze.startTime}</Segment>
-                    <Segment inverted> endTime: {fuze.endTime}</Segment>
-                    <Segment inverted>Title: {fuze.Title}</Segment>
-                    <Segment inverted>description: {fuze.description}</Segment>
-                    <Segment inverted>venue: {fuze.venue}</Segment>
-                    <Segment inverted>tags: {fuze.tags}</Segment>
-                    <Segment inverted>organizer: {fuze.organizer}</Segment>
-                    <Segment inverted>whereIFoundThisEvent2: {fuze.whereIFoundThisEvent2}</Segment>
-                </Segment.Group >
-            </Container>
-            <Container>
+                <Segment inverted textAlign='center'>startDate: {fuze.startDate.slice(0, 10)}</Segment>
+                <Segment inverted textAlign='center'>endDate: {fuze.endDate.slice(0, 10)}</Segment>
+                <Segment inverted textAlign='center'>startTime: {fuze.startTime}</Segment>
+                <Segment inverted textAlign='center'> endTime: {fuze.endTime}</Segment>
+                <Segment inverted textAlign='center'>Title: {fuze.Title}</Segment>
+                <Segment inverted textAlign='center'>description: {fuze.description}</Segment>
+                <Segment inverted textAlign='center'>venue: {fuze.venue}</Segment>
+                <Segment inverted textAlign='center'>tags: {fuze.tags}</Segment>
+                <Segment inverted textAlign='center'>organizer: {fuze.organizer}</Segment>
+                <Segment inverted textAlign='center'>whereIFoundThisEvent2: {fuze.whereIFoundThisEvent2}</Segment>
                 <Segment inverted>
                     <Button color='green' as={Link} to="/admin/update">
                         <Button.Content visible> BACK</Button.Content>
                     </Button>
                 </Segment>
-            </Container>
+            </Segment.Group >
         </div>
     )
 }

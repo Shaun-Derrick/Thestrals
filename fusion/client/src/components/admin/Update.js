@@ -47,12 +47,11 @@ const Update = () => {
                 <Table.HeaderCell textAlign='center'>Action</Table.HeaderCell>
               </Table.Row>
             </Table.Header>
-
             <Table.Body>
               {fuzes.map((fuze, index) => (
                 <Table.Row key={index} >
-                  <Table.Cell singleLine textAlign='center'> {fuze.startDate.slice(0,10)} </Table.Cell>
-                  <Table.Cell singleLine textAlign='center'>{fuze.endDate.slice(0,10)}</Table.Cell>
+                  <Table.Cell singleLine textAlign='center'> {fuze.startDate} </Table.Cell>
+                  <Table.Cell singleLine textAlign='center'>{fuze.endDate}</Table.Cell>
                   <Table.Cell singleLine textAlign='center' > {fuze.Title} </Table.Cell>
                   <Table.Cell>
                     <Segment inverted>
