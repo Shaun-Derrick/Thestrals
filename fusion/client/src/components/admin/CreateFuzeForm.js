@@ -41,14 +41,20 @@ const CreateFuze = () => {
     // }, []);
 
     const onInputChange = e => {
-        // console.log(e.target.value);
+        console.log(e.target.value);
         setFuze({ ...fuze, [e.target.name]: e.target.value });
+        console.log({...fuze, [e.target.name]: e.target.value })
+    };
+    const onTagChange = TagDropdown => {
+        console.log(TagDropdown.target.value);
+        console.log(document.querySelector('[name=tagsTarget]'))
+        setFuze({ ...fuze, 'tags': TagDropdown.target.value });        
     };
 
     // to show a specfic fuze's details that we want to edit
     const onSubmit = async e => {
         e.preventDefault();
-        await axios.put(`/Fuzes/${_id}`, fuze);
+        await axios.post(`/Fuzes/`, fuze);
         history.push("/admin/create");
         console.info('Creating Fuze')
     };
@@ -91,9 +97,12 @@ const CreateFuze = () => {
                         </Form.Field>
                         <Form.Field>
                             <Label id = 'FormLabel'>tags</Label>
-                            <AdminTagDropdown name="tags" id='TagsDropdown' value={tags || ""} onChange={e => onInputChange(e)} />
+                            <input type="text" placeholder='tagsTarget' name="tags" id='FormInput' value={tags || ""} onChange={e => onInputChange(e)}>
+                            
+                            </input>
+                            <AdminTagDropdown name="tags" id='TagsDropdown' value={tags || ""} onChange={e => onInputChange(e)}onChange={e => onInputChange(e)} />
                             </Form.Field>
-
+                            
                         <Form.Field>
                             <Label id = 'FormLabel'>organizer</Label>
                             <input type="text" placeholder='organizer' name="organizer" id='FormInput' value={organizer || ""} onChange={e => onInputChange(e)} />

@@ -1,29 +1,47 @@
-import React from 'react'
-import { Input, Button, Form, TextArea } from 'semantic-ui-react'
-import "../stylesheets/Forms.css"
-const ContactUsForm = () => {
-return(
+import React from 'react';
+import emailjs from 'emailjs-com';
+import { Button, Form, Label } from 'semantic-ui-react'
+import '../stylesheets/index.css'
+import '../stylesheets/Forms.css'
 
-  <Form id = "ContactUsForm">
-    <Form.Field>
-      <label className="ContactUsFormLabel">First Name</label>
-      <Input placeholder='First Name' className= 'ContactUsFormInput'/>
-    </Form.Field>
-    <Form.Field>
-      <label className="ContactUsFormLabel">Last Name</label>
-      <Input placeholder='Last Name' />
-    </Form.Field>
-    <Form.Field>
-    <label className="ContactUsFormLabel">Email address</label>
-      <Input placeholder='Email Address' />
-    </Form.Field>
-    <label className="ContactUsFormLabel">Fuze Information
-    <TextArea placeholder="Tell us all about your Fuze. Be as specific as possible and include the following information:
-    ' Start Date, End Date, Start Time, End Time, Fuze Title and Description, applicavle links, the venue and the organizer.
-    Thank you."/>
-    </label>
-    <Button type='submit' id='contactUsFormSubmitButton'>Submit</Button>
-  </Form>
-)
+const ContactUsform = () => {
+
+  function sendEmail(contactForm) {
+    contactForm.preventDefault();
+
+    emailjs.sendForm('service_mobcm1r', 'template_j0vh8zh', contactForm.target, 'user_bR0FMltkB3L8nvg1n8NWe')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+  }
+
+  return (
+    <div id ="ContactUsForm">
+    <Form className="contact-form" onSubmit={sendEmail}>
+      <Form.Field>
+      <Label id = "ContactFormLabel">First Name</Label> 
+      <input id="ContactFormInput" type="text" name="submitter_firstName" />
+      </Form.Field>
+     <Form.Field>
+      <Label id = "ContactFormLabel">Last Name</Label>
+      <input id="ContactFormInput" type="text" name="submitter_lastName" />
+      </Form.Field>
+      <Form.Field>
+      <Label id = "ContactFormLabel">Email Address</Label>
+      <input id="ContactFormInput" type="email" name="submitter_email" />
+      </Form.Field>
+      <Form.Field>
+      <Label id = "ContactFormLabel">Phone Number</Label> 
+      <input id="ContactFormInput" type="text" name="submitter_contact_number" />
+      </Form.Field>
+      <Label id ="ContactFormLabel">Fuze details</Label>
+      <Form.Field>
+      <textarea id = "ContactFormInput" name="fuze_details"  placeholder='Please be as specific as possible'/>
+      </Form.Field>
+      <Button id="contactFormSubmitButton" type="submit" value="Submit" />
+    </Form></div>
+  );
 }
-export default ContactUsForm
+export default ContactUsform
