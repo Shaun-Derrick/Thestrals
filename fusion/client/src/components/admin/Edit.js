@@ -3,13 +3,7 @@ import axios from 'axios';
 import { useHistory, useParams } from 'react-router-dom';
 import { Button, Form, Segment, Header, Label } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
-//import SemanticDatepicker from 'react-semantic-ui-datepickers';
-//import 'react-semantic-ui-datepickers/dist/react-semantic-ui-datepickers.css';
-
-import {format} from 'date-fns';
-import lightFormat from 'date-fns/lightFormat'
-
-import isDate from 'date-fns/isDate'
+//import {format} from 'date-fns';
 
 const EditFuze = () => {
     let history = useHistory();
@@ -32,17 +26,8 @@ const EditFuze = () => {
     });
     //destructuring of fuze
     const { startDate, endDate, startTime, endTime, Title, description, venue, tags, organizer, whereIFoundThisEvent2 } = fuze;
-    
-    {console.log('original startdate from DB is:', startDate)}
-    {console.log(`startdate JSON stringify is:`,JSON.stringify(startDate) )}
-    {console.log(`startdate tostring is:`,startDate.toString() )}
-    {console.log(`using new date:`, new Date(startDate))}
-    {console.log (`formatted using datefns:` ,format(new Date(startDate),'MM/dd/yyyy'))}
-  
 
     useEffect(() => {
-        //to load a specific fuze for edit
-        //so we use get
 
         const loadFuze = async () => {
             const result = await axios.get(`/Fuzes/${_id}`);
@@ -51,10 +36,13 @@ const EditFuze = () => {
         loadFuze()
     }, []);
 
-    const onInputChange = e => {
-        // console.log(e.target.value);
-        setFuze({ ...fuze, [e.target.name]: e.target.value });
-    };
+    const onInputChange = event => {
+        let nameOfInputField = event.target.name;
+        let valueOfInputField = event.target.value;
+        //console.log("new input for field: ", nameOfInputField);
+        //console.log("typeof input value:", typeof valueOfInputField);
+        setFuze({ ...fuze, [nameOfInputField]: valueOfInputField });
+    }
 
     // to show a specfic fuze's details that we want to edit
     const onSubmit = async e => {
@@ -62,13 +50,6 @@ const EditFuze = () => {
         await axios.put(`/Fuzes/${_id}`, fuze);
         history.push("/admin/update");
     };
-   
-
-    // for datepicker
-    // const [currentDate, setNewDate] = useState({fuze});
-    // const onEdit = (event, data) => setNewDate(data.value);
-    // console.log(`hi`, onEdit)
-      
 
     return (
         <div>
@@ -80,28 +61,23 @@ const EditFuze = () => {
                     <Form inverted>
                         <Form.Field>
                             <Label color='red' horizontal >startDate</Label>
-                            {/* {format(new Date(startDate), "MM/dd/YYYY") } */}
-                            {format(new Date(startDate),'MM/dd/yyyy')}
-                           
+                            {startDate.slice(0, 10)}
                             <input type="date" name="startDate" value={startDate} onChange={e => onInputChange(e)} />
-                            {/* {console.log(`start date is`, startDate )} */}
                         </Form.Field>
                         <Form.Field>
                             <Label color='red' horizontal>endDate</Label>
-                            {format(new Date(endDate),'MM/dd/yyyy')}
-                          
-                            <input type="date" placeholder='endDate' name="endDate" value={endDate} onChange={e => onInputChange(e)} /> 
-                             {/* {console.log(`end date is`, endDate)} */}
+                            {endDate.slice(0, 10)}
+                            <input type="date" placeholder='endDate' name="endDate" value={endDate} onChange={e => onInputChange(e)} />
                         </Form.Field>
                         <Form.Field>
                             <Label color='red' horizontal>startTime</Label>
                             {startTime}
-                            <input type="time" placeholder='startTime' name="startTime" value={startTime} onChange={e => onInputChange(e)} />
+                            <input type="text" placeholder='startTime' name="startTime" value={startTime} onChange={e => onInputChange(e)} />
                         </Form.Field>
                         <Form.Field>
                             <Label color='red' horizontal>endTime</Label>
                             {endTime}
-                            <input type="time" placeholder='endTime' name="endTime" value={endTime} onChange={e => onInputChange(e)} />
+                            <input type="text" placeholder='endTime' name="endTime" value={endTime} onChange={e => onInputChange(e)} />
                         </Form.Field>
                         <Form.Field>
                             <Label color='red' horizontal>Title</Label>
