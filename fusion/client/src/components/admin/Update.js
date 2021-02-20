@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Button, Table, Segment, Header } from 'semantic-ui-react'
-import {format, parseISO, formatISO} from 'date-fns'
+import {format, parseISO,add} from 'date-fns'
 import { Link } from 'react-router-dom'
 import AdminNav from "./AdminNav"
 import AdminText from "./AdminText"
@@ -27,7 +27,10 @@ const Update = () => {
 
   function convertDate(date){
     let parsedDate= parseISO(date)
-    let formattedDate= format(parsedDate, "MMMM dd, yyyy")
+    let adjustedTimeZone= add(parsedDate, {
+      hours:7
+    })
+    let formattedDate= format(adjustedTimeZone, "MMMM dd, yyyy")
     return(formattedDate)
   }
   
