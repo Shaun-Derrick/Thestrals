@@ -12,6 +12,7 @@ function ViewFuzes() {
     const [value, onChange] = useState(new Date());
     const [fuzeFull, setFuzeFull] = useState([])
     const [allFuzes, setAllFuzes]= useState([])
+    
 
     const getFuzes = async () => {
         let response = await fetch("/Fuzes/")
@@ -141,9 +142,10 @@ function ViewFuzes() {
                 fuzeFull={fuzeFull}
                 setFuzeFull={setFuzeFull}
                 category="startDate"
-                criteria='date'>
+                criteria='date'
+                route="/Fuzes/">
             </Filter>
-            <FuzeList fuzeFull={fuzeFull} setFuzeFull={setFuzeFull}></FuzeList>
+            <FuzeList fuzeFull={fuzeFull} setFuzeFull={setFuzeFull} filters={value}></FuzeList>
         </div>
     );
 }

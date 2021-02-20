@@ -10,7 +10,7 @@ const Filter = (props) => {
   useEffect(() => {
     const getFuzes = async () => {
       // fetch uses the "proxy" value set in client/package.json
-      let response = await fetch("/Fuzes")
+      let response = await fetch(props.route)
       let allFuzes = await response.json()
       setFilterFuzes(allFuzes)
     }
@@ -29,7 +29,7 @@ const Filter = (props) => {
     if (list.length === 0) {
       const getFuzes = async () => {
         // fetch uses the "proxy" value set in client/package.json
-        let response = await fetch("/Fuzes/")
+        let response = await fetch(props.route)
         let fuze = await response.json()
         props.setFuzeFull(fuze)
       }

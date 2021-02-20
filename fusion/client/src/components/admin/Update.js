@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Button, Table, Segment, Header } from 'semantic-ui-react'
+import {format, parseISO, formatISO} from 'date-fns'
 import { Link } from 'react-router-dom'
 import AdminNav from "./AdminNav"
 import AdminText from "./AdminText"
@@ -24,6 +25,12 @@ const Update = () => {
     setFuze(result.data);
   }
 
+  function convertDate(date){
+    let parsedDate= parseISO(date)
+    let formattedDate= format(parsedDate, "MMMM dd, yyyy")
+    return(formattedDate)
+  }
+  
   return (
     <div>
       <AdminNav />
@@ -34,6 +41,9 @@ const Update = () => {
         filters={currentFilters}
         fuzeFull={fuzes}
         setFuzeFull={setFuze}
+        category="tags"
+        criteria='tag'
+        route="/Fuzes/"
       />
       <Segment.Group>
         <Header as='h1' color='red' content='List of Fuzes' textAlign='center' />
@@ -52,10 +62,10 @@ const Update = () => {
               {fuzes.map((fuze, index) => (
                 <Table.Row key={index} >
                   <Table.Cell singleLine textAlign='center'>
-                    {fuze.startDate}
+                    {convertDate(fuze.startDate)}
                   </Table.Cell>
-                  <Table.Cell singleLine textAlign='center'>{fuze.endDate}</Table.Cell>
-                  <Table.Cell singleLine textAlign='center' >
+                  <Table.Cell singleLine textAlign='center'>{convertDate(fuze.endDate)}</Table.Cell>
+                  <Table.Cell singleLine textAlign='center'>
                     {fuze.Title}
                   </Table.Cell>
                   <Table.Cell>

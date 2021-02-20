@@ -58,19 +58,19 @@ const EditFuze = () => {
                     <Form inverted>
                         <Form.Field>
                             <Label color='red' horizontal >startDate</Label>
-                            <input type="text" placeholder="startDate" name="startDate" value={startDate || ""} onChange={e => onInputChange(e)} />
+                            <input type="date" placeholder="startDate" name="startDate" value={startDate || ""} onChange={e => onInputChange(e)} />
                         </Form.Field>
                         <Form.Field>
                             <Label color='red' horizontal>endDate</Label>
-                            <input type="text" placeholder='endDate' name="endDate" value={endDate || ""} onChange={e => onInputChange(e)} />
+                            <input type="date" placeholder='endDate' name="endDate" value={endDate || ""} onChange={e => onInputChange(e)} />
                         </Form.Field>
                         <Form.Field>
                             <Label color='red' horizontal>startTime</Label>
-                            <input type="text" placeholder='startTime' name="startTime" value={startTime || ""} onChange={e => onInputChange(e)} />
+                            <input type="time" placeholder='startTime' name="startTime" value={startTime || ""} onChange={e => onInputChange(e)} />
                         </Form.Field>
                         <Form.Field>
                             <Label color='red' horizontal>endTime</Label>
-                            <input type="text" placeholder='endTime' name="endTime" value={endTime || ""} onChange={e => onInputChange(e)} />
+                            <input type="time" placeholder='endTime' name="endTime" value={endTime || ""} onChange={e => onInputChange(e)} />
                         </Form.Field>
                         <Form.Field>
                             <Label color='red' horizontal>Title</Label>

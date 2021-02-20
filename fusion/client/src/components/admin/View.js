@@ -20,13 +20,14 @@ const ViewFuze = () => {
     });
 
     useEffect(() => {
+        const loadFuze = async () => {
+            const result = await axios.get(`/Fuzes/${_id}`);
+            setFuze(result.data);
+        };
         loadFuze();
     }, []);
 
-    const loadFuze = async () => {
-        const result = await axios.get(`/Fuzes/${_id}`);
-        setFuze(result.data);
-    };
+  
 
     return (
         <div style={{ color: "red" }}>

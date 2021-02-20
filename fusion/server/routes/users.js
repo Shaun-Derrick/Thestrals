@@ -45,6 +45,18 @@ router.get('/nextSevenDays', async (req, res, next) => {
   res.send(data);
 });
 
+router.get('/month', async (req, res, next) => {
+  let DateToday = format(new Date(), "MMMM dd, yyyy")
+  console.log(DateToday)
+  let nextMonthTime = format(add(new Date(), {months:1}), "MMMM dd,yyyy")
+  console.log(nextMonthTime)
+  let data = await Fuze
+  .find({startDate : {$lte : nextMonthTime, $gte : DateToday}})
+  .sort({startDate:1, endDate: 1});
+  console.info(data.length)
+  res.send(data);
+});
+
 /* to find a Fuze by its id */
 router.get('/:id', async (req, res, next) => {
   let FuzeId = req.params.id;
