@@ -15,6 +15,7 @@
     "start-server": "cd server && npm start && cd..",
     "start": "npm run start-server"
   },
+  "engines": { "node": "14.X" },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Shaun-Derrick/Thestrals.git"
