@@ -8,6 +8,7 @@
     "@testing-library/react": "^11.2.3",
     "@testing-library/user-event": "^12.6.0",
     "axios": "^0.21.1",
+    "emailjs": "^3.4.0",
     "emailjs-com": "^2.6.4",
     "firebase": "^8.2.7",
     "react": "^17.0.1",

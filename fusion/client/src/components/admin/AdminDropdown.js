@@ -20,8 +20,7 @@ const AdminTagDropdown = (props) => {
 
   const createBlock = (e, data) => {
     let selectedCategory = data.value
-    {console.log(selectedCategory.toString())}
-    return(selectedCategory.toString())
+    props.updateFilter(selectedCategory)
   }
 
   return (
