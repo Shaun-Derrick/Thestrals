@@ -44,7 +44,7 @@ const ViewFuze = () => {
     return (
         <div style={{ color: "red" }}>
             <div>
-                <Header as='h1' color='red' textAlign='center' > Title: {fuze.Title} </Header>
+                <Header as='h1' color='red' textAlign='center' >{fuze.Title} </Header>
             </div>
             <Container>
                 <Segment.Group>

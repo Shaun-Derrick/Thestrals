@@ -26,7 +26,7 @@ const Filter = (props) => {
       let contains = list.includes(fuzes[category])
       return contains
     })
-    if (list.length === 0) {
+    if (list.length === 0 || category===" ") {
       const getFuzes = async () => {
         // fetch uses the "proxy" value set in client/package.json
         let response = await fetch(props.route)

@@ -57,9 +57,9 @@ const Update = () => {
           <Table celled inverted selectable>
             <Table.Header>
               <Table.Row>
+                <Table.HeaderCell textAlign='center'>Title</Table.HeaderCell>
                 <Table.HeaderCell textAlign='center'>Start Date</Table.HeaderCell>
                 <Table.HeaderCell textAlign='center'>End Date</Table.HeaderCell>
-                <Table.HeaderCell textAlign='center'>Fuze</Table.HeaderCell>
                 <Table.HeaderCell textAlign='center'>Action</Table.HeaderCell>
               </Table.Row>
             </Table.Header>

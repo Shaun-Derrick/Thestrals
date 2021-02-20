@@ -16,6 +16,15 @@ const MissionStatement = () => {
         <p>database of events and lectures hosted by technology based</p>
         <p>organizations from Alberta</p>
       </div>
+      <div className="event-list-display" style={{ marginBottom: "10px", marginLeft: "1em" }}>
+        <p>
+          Fuzes scheduled events or lectures posted by organizers for interested
+          attendees
+        </p>
+        <p>
+          Scroll down to view a list of Fuzes occuring this month:
+        </p>
+      </div>
     </div>
   )
 }

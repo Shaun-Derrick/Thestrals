@@ -54,6 +54,7 @@ div.ui.link.card:hover{
 }
 .fuzeContainer{
     width: 100%;
+    margin-top: 1em;
     align-self: flex-start;
 }
 .fuzeWeek{
@@ -116,8 +117,8 @@ div.centered.ui.image.content.fuzeIcon{
     color: black
 }
 i{
-    margin-top: 10px;
+    margin-top: .3em;
 }
 div.fuzeDate.image{
-    margin-bottom: 10px;
+    margin-bottom: .5em;
 }
