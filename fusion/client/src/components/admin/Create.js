@@ -16,7 +16,6 @@ const CreateFuze = () => {
     <AdminHeader />
      <AdminText />
      <CreateFuzeForm />
-
   </div>
   )
 };
