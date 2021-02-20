@@ -47,9 +47,7 @@ router.get('/nextSevenDays', async (req, res, next) => {
 
 router.get('/month', async (req, res, next) => {
   let DateToday = format(new Date(), "MMMM dd, yyyy")
-  console.log(DateToday)
   let nextMonthTime = format(add(new Date(), {months:1}), "MMMM dd,yyyy")
-  console.log(nextMonthTime)
   let data = await Fuze
   .find({startDate : {$lte : nextMonthTime, $gte : DateToday}})
   .sort({startDate:1, endDate: 1});
@@ -96,7 +94,6 @@ router.put('/:id', async(req, res)=>{
 router.delete('/:id', async(req,res)=>{
   try{
     const foundFuze= await Fuze.deleteOne({_id: req.params.id})
-    console.log(`This is deleted!: ${foundFuze}`)
     res.send(foundFuze)
   }
   catch(error){

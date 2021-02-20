@@ -20,7 +20,6 @@ const AdminTagDropdown = (props) => {
 
   const createBlock = (e, data) => {
     let selectedCategory = data.value
-    console.log(selectedCategory)
     props.updateFilter(selectedCategory)
   }
 
@@ -35,7 +34,7 @@ const AdminTagDropdown = (props) => {
         marginLeft: 10
       }}
       fluid
-      multiple={true}
+      multiple={false}
       selection
       options={options}
       onChange={createBlock}

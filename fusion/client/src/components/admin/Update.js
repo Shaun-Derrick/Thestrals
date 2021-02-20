@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Button, Table, Segment, Header } from 'semantic-ui-react'
-import {format, parseISO,add} from 'date-fns'
+import { format, parseISO, add } from 'date-fns'
 import { Link } from 'react-router-dom'
 import AdminNav from "./AdminNav"
 import AdminText from "./AdminText"
@@ -25,24 +25,24 @@ const Update = () => {
     setFuze(result.data);
   }
 
-  function convertDate(date){
-    if(date===null || date===undefined){
+  function convertDate(date) {
+    if (date === null || date === undefined) {
       return undefined
     }
-    let parsedDate= parseISO(date)
-    let adjustedTimeZone= add(parsedDate, {
-      hours:7
+    let parsedDate = parseISO(date)
+    let adjustedTimeZone = add(parsedDate, {
+      hours: 7
     })
-    let formattedDate= format(adjustedTimeZone, "MMMM dd, yyyy")
-    return(formattedDate)
+    let formattedDate = format(adjustedTimeZone, "MMMM dd, yyyy")
+    return (formattedDate)
   }
-  
+
   return (
     <div>
       <AdminNav />
       <Logo />
       <AdminText />
-      <Dropdown updateFilter={setCurrentFilters}/>
+      <Dropdown updateFilter={setCurrentFilters} />
       <Filter
         filters={currentFilters}
         fuzeFull={fuzes}
@@ -57,7 +57,7 @@ const Update = () => {
           <Table celled inverted selectable>
             <Table.Header>
               <Table.Row>
-                <Table.HeaderCell textAlign='center'>Date</Table.HeaderCell>
+                <Table.HeaderCell textAlign='center'>Start Date</Table.HeaderCell>
                 <Table.HeaderCell textAlign='center'>End Date</Table.HeaderCell>
                 <Table.HeaderCell textAlign='center'>Fuze</Table.HeaderCell>
                 <Table.HeaderCell textAlign='center'>Action</Table.HeaderCell>
@@ -68,12 +68,12 @@ const Update = () => {
               {fuzes.map((fuze, index) => (
                 <Table.Row key={index} >
                   <Table.Cell singleLine textAlign='center'>
+                    {fuze.Title}
+                  </Table.Cell>
+                  <Table.Cell singleLine textAlign='center'>
                     {convertDate(fuze.startDate)}
                   </Table.Cell>
                   <Table.Cell singleLine textAlign='center'>{convertDate(fuze.endDate)}</Table.Cell>
-                  <Table.Cell singleLine textAlign='center'>
-                    {fuze.Title}
-                  </Table.Cell>
                   <Table.Cell>
                     <Segment inverted>
                       <Button.Group widths='2'>

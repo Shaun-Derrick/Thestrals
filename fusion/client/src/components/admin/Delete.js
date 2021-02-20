@@ -1,30 +1,68 @@
 import React from 'react';
-import AdminNav from "./AdminNav"
-import { Container } from 'semantic-ui-react'
+import axios from 'axios';
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'
+import { Button, Table, Segment, Header } from 'semantic-ui-react'
 import "../../stylesheets/admin.css"
 import "../../stylesheets/index.css"
 
 const Delete = () => {
-  return(
+  const [fuzes, setFuze] = useState([]);
+
+  useEffect(() => {
+    loadFuzes();
+  }, []);
+
+  // from Mongo DB
+  const loadFuzes = async () => {
+    const result = await axios.get("/Fuzes");
+    setFuze(result.data);
+  }
+
+  return (
     <div>
-      <AdminNav/>
-      <Container>
-        <h1>Delete a Fuze</h1>
-        <p>
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-      ligula eget dolor. Aenean massa strong. Cum sociis natoque penatibus et
-      magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
-      ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa
-      quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget,
-      arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
-      Nullam dictum felis eu pede link mollis pretium. Integer tincidunt. Cras
-      dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.
-      Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.
-      Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus
-      viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet.
-      Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi.
-        </p>
-      </Container>
+      <Segment.Group>
+        <Header as='h1' color='red' content='List of Fuzes' textAlign='center' />
+        <Segment inverted>
+          <Button floated='right' inverted color='green' animated='fade' as={Link} to='/admin'>
+            <Button.Content visible >BACK </Button.Content>
+            <Button.Content hidden > BACK </Button.Content>
+          </Button>
+        </Segment>
+        <Segment padded='very' inverted>
+          <Table celled inverted selectable>
+            <Table.Header>
+              <Table.Row>
+                <Table.HeaderCell textAlign='center'>startDate</Table.HeaderCell>
+                <Table.HeaderCell textAlign='center'>endDate</Table.HeaderCell>
+                <Table.HeaderCell textAlign='center'>Title</Table.HeaderCell>
+                <Table.HeaderCell textAlign='center'>Action</Table.HeaderCell>
+              </Table.Row>
+            </Table.Header>
+            <Table.Body>
+              {fuzes.map((fuze, index) => (
+                <Table.Row>
+                  <Table.Cell singleLine textAlign='center'>
+                    {fuze.startDate.slice(0, 10)}
+                  </Table.Cell>
+                  <Table.Cell singleLine textAlign='center'>{fuze.endDate.slice(0, 10)}</Table.Cell>
+                  <Table.Cell singleLine textAlign='center' >
+                    {fuze.Title}
+                  </Table.Cell>
+                  <Table.Cell>
+                    <Segment inverted>
+                      <Button fluid inverted color='red' animated='fade' as={Link} to={`/admin/delete/${fuze._id}`}>
+                        <Button.Content visible>Delete Fuze </Button.Content>
+                        <Button.Content hidden >Are you Sure? </Button.Content>
+                      </Button>
+                    </Segment>
+                  </Table.Cell>
+                </Table.Row>
+              ))}
+            </Table.Body>
+          </Table>
+        </Segment>
+      </Segment.Group>
     </div>
   )
 };

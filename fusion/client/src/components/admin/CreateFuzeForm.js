@@ -51,9 +51,7 @@ const CreateFuzeForm = () => {
 
     const onTagChange = TagDropdown => {
         let tagChoice = document.querySelector('input[name=tags]').value
-        console.log(tagChoice)
         setFuze((curValue) => { return {...curValue, 'tags': tagChoice }});
-        console.log('just a simple console.log')
     }
 
         // to show a specfic fuze's details that we want to edit

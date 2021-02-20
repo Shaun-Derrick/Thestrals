@@ -17,7 +17,6 @@ export default function ContactUs() {
       });
   }
 
-
   return (
     <div id ="ContactUsForm">
     <form className="contact-form" onSubmit={sendEmail}>
