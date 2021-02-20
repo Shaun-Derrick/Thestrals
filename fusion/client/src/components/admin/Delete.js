@@ -2,6 +2,9 @@ import React from 'react';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
+import AdminNav from "./AdminNav"
+import AdminText from "./AdminText"
+import Logo from "../Logo"
 import { Button, Table, Segment, Header } from 'semantic-ui-react'
 import "../../stylesheets/admin.css"
 import "../../stylesheets/index.css"
@@ -21,6 +24,9 @@ const Delete = () => {
 
   return (
     <div>
+       <AdminNav />
+      <Logo />
+      <AdminText />
       <Segment.Group>
         <Header as='h1' color='red' content='List of Fuzes' textAlign='center' />
         <Segment inverted>
