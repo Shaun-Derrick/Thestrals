@@ -26,6 +26,9 @@ const Update = () => {
   }
 
   function convertDate(date){
+    if(date===null || date===undefined){
+      return undefined
+    }
     let parsedDate= parseISO(date)
     let adjustedTimeZone= add(parsedDate, {
       hours:7
@@ -39,7 +42,7 @@ const Update = () => {
       <AdminNav />
       <Logo />
       <AdminText />
-      <Dropdown updateFilter={setCurrentFilters} />
+      <Dropdown updateFilter={setCurrentFilters}/>
       <Filter
         filters={currentFilters}
         fuzeFull={fuzes}

@@ -37,16 +37,16 @@ const AdminNav = () => {
       <div>
         <ul className={renderClasses()}>
           <li className="AdminNavLink">
-            <Link to="/admin"> HOME</Link>
+            <Link to="/admin"> Home</Link>
           </li>
           <li className="AdminNavLink">
-            <Link to="/admin/create">CREATE</Link>
+            <Link to="/admin/create">Create</Link>
           </li>
           <li className="AdminNavLink">
-            <Link to="/admin/update">UPDATE</Link>
+            <Link to="/admin/update">Update</Link>
           </li>
           <li className="AdminNavLink">
-            <Link to="/admin/delete">DELETE</Link>
+            <Link to="/admin/delete">Delete</Link>
           </li>
           <li className="AdminNavLink">
             <Link
@@ -71,7 +71,7 @@ const AdminNav = () => {
         </Link>
           </li>
           <li className="AdminNavLink">
-            <Button color="green" fluid size="large" onClick={handleLogout}>
+            <Button color="red" fluid size="large" onClick={handleLogout}>
               Log Out
         </Button>
           </li>
