@@ -1,0 +1,31 @@
+{
+  "name": "thestrals",
+  "version": "1.0.0",
+  "description": "Tech Networking Application\r Team Members include:",
+  "main": "index.js",
+  "scripts": {
+    "install-client": "cd client && npm install && cd ..",
+    "install-server": "cd server && npm install && cd ..",
+    "install": "npm run install-client && npm run install-server",
+    "build-client": "cd client && npm run build && cd ..",
+    "build": "npm run build-client",
+    "test-client": "cd client && npm test && cd ..",
+    "test-server": "cd server && npm test && cd ..",
+    "test": "npm run test-client && npm run test-server",
+    "start-server": "cd server && npm start && cd ..",
+    "start": "npm run start-server"
+  },
+  "engines": {
+    "node": "14.X"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shaun-Derrick/Thestrals.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shaun-Derrick/Thestrals/issues"
+  },
+  "homepage": "https://github.com/Shaun-Derrick/Thestrals#readme"
+}
