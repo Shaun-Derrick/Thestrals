@@ -34,7 +34,7 @@ const AdminTagDropdown = (props) => {
         marginLeft: 10
       }}
       fluid
-      multiple={true}
+      multiple={false}
       selection
       options={options}
       onChange={createBlock}

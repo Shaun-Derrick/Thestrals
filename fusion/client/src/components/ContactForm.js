@@ -16,7 +16,6 @@ export default function ContactUs() {
           console.log(error.text);
       });
   }
-  
 
   return (
     <div id ="ContactUsForm">
@@ -24,23 +23,21 @@ export default function ContactUs() {
 
       <label id = "ContactFormLabel">First Name</label> 
       <input id="ContactFormInput" type="text" name="submitter_firstName" />
-     
+
       <label id = "ContactFormLabel">Last Name</label>
       <input id="ContactFormInput" type="text" name="submitter_lastName" />
-      
+
       <label id = "ContactFormLabel">Email Address</label>
       <input id="ContactFormInput" type="email" name="submitter_email" />
-     
+
       <label id = "ContactFormLabel">Phone Number</label> 
       <input id="ContactFormInput" type="text" name="submitter_contact_number" />
-      
+
       <label id ="ContactFormLabel">Fuze details</label>
-    
+
       <textarea id = "ContactFormInput" name="fuze_details"  placeholder='Please be as specific as possible'/>
-      
+
       <input id="contactFormSubmitButton" type="submit" value="Send" />
     </form></div>
   );
 }
-
-

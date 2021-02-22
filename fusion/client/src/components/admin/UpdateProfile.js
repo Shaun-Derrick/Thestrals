@@ -14,12 +14,6 @@ function UpdateProfile() {
 
   function handleSubmit(e) {
     e.preventDefault()
-    console.log(
-      "hello world",
-      emailRef.current.children[0].value,
-      passwordRef.current.children[0].value,
-      passwordConfirmRef.current.children[0].value
-    )
     if (
       passwordRef.current.children[0].value !==
       passwordConfirmRef.current.children[0].value
@@ -54,7 +48,7 @@ function UpdateProfile() {
       {/* <Container text style={{ margin: 30}}> */}
       <Grid
         textAlign="center"
-        style={{ height: "35vh" }}
+        style={{ height: "100vh", display: 'flex', justifyContent: 'center', alignItems: 'center' }}
         verticalAlign="middle"
       >
         <Grid.Column style={{ maxWidth: 600 }}>
@@ -105,12 +99,13 @@ function UpdateProfile() {
                 color="black"
                 // fluid
                 size="large"
+                style={{ marginBottom: '.5em' }}
               >
                 Update
               </Button>
-              <Button color="black" fluid size="large">
-                <Link to="/admin">Cancel/Return to Admin Console</Link>
-              </Button>
+              <Link to="/admin">
+                <Button color="black" fluid size="large">Cancel/Return to Admin Console </Button>
+              </Link>
             </Segment>
           </Form>
         </Grid.Column>

@@ -9,7 +9,7 @@ const AdminHeader = () => {
         style={{ marginTop: "150px", marginBottom: "" }}
       >
         <h1 id="Admin-Header">ADMINISTRATION CONSOLE</h1>
-     
+
     </div>
     </div> 
   )

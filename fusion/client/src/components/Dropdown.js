@@ -31,10 +31,11 @@ const DropdownExampleMultipleSelection = (props) => {
         borderColor: "paleGreen",
         borderWidth: 4,
         width: "40vw",
-        marginLeft: 10
+        marginLeft: 10,
+        marginTop: 10
       }}
       fluid
-      multiple={true}
+      multiple={false}
       selection
       options={options}
       onChange={createBlock}

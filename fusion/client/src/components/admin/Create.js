@@ -1,7 +1,6 @@
 import React from 'react';
 import Logo from "../Logo"
 import AdminNav from "./AdminNav"
-import AdminHeader from "./AdminHeader"
 import AdminText from "./AdminText"
 import CreateFuzeForm from "./CreateFuzeForm"
 import "../../stylesheets/admin.css"
@@ -13,7 +12,6 @@ const CreateFuze = () => {
   <div id ='adminPage'>
     <AdminNav/>
     <Logo/>
-    <AdminHeader />
      <AdminText />
      <CreateFuzeForm />
   </div>

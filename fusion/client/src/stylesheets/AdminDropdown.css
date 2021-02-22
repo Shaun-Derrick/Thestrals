@@ -6,7 +6,7 @@
   dropdown.ui.dropdown.default.text {
     color: rgb(84, 41, 35);
   }
-  
+
   div.ui.dropdown:not(.button) > .default.text {
     color: palegreen;
     font-weight: 700;
@@ -16,7 +16,7 @@
     color: palegreen;
     background-color: black;
   }
-  
+
   div.ui.selection.active.dropdown .menu {
     border-width: 1px;
     border-color: whitesmoke;
@@ -47,4 +47,4 @@
   div.visible.menu.transition::-webkit-scrollbar-thumb {
     background-color: palegreen;
     height: 17px;
-  }
+  } 

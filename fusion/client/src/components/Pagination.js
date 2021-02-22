@@ -1,4 +1,5 @@
 import React from 'react'
+import {useEffect} from 'react'
 
 let prevPageNumber = 1
 function openPage(chosenNumber, prevNumber) {
@@ -17,6 +18,11 @@ function openPage(chosenNumber, prevNumber) {
 }
 
 const Pagination = (props) => {
+
+    useEffect(() => {
+        openPage(1, 1)
+      }, [props.filters])
+    
     return (
         <button className={"item pageButton"} onClick={() => { props.changePage(props.number); openPage(props.number, prevPageNumber) }}>{props.number}</button>
     )

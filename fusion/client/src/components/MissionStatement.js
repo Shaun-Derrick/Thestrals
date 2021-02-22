@@ -9,13 +9,9 @@ const MissionStatement = () => {
         <p>WHERE ALBERTA'S TECH INDUSTRY</p>
         <p>CONVERGES TO RELEASE BOUNDLESS ENERGY</p>
       </div>
-      <div className="banner">
-      </div>
-      <div className="platform-statement-display">
-        <p>Fusion is a networking platform that provides a centralized</p>
-        <p>database of events and lectures hosted by technology based</p>
-        <p>organizations from Alberta</p>
-      </div>
+      
+      
+   
     </div>
   )
 }

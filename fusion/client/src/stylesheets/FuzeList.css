@@ -9,8 +9,7 @@
 
 div.ui.card{
     flex-direction: column;
-    min-width: 150px;
-    width: 15%;
+    min-width: 200px;
     max-width: 10%;
     height: 275px;
     background-color: black;
@@ -54,6 +53,8 @@ div.ui.link.card:hover{
     flex-direction: column;
 }
 .fuzeContainer{
+    width: 100%;
+    margin-top: 1em;
     align-self: flex-start;
 }
 .fuzeWeek{
@@ -114,4 +115,10 @@ div.centered.ui.image.content.fuzeIcon{
     justify-content: center;
     background-color: grey;
     color: black
+}
+i{
+    margin-top: .3em;
+}
+div.fuzeDate.image{
+    margin-bottom: .5em;
 }

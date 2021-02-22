@@ -53,23 +53,11 @@ router.put('/:id', async(req, res)=>{
 router.delete('/:id', async(req,res)=>{
   try{
     const foundTag= await Tag.deleteOne({_id: req.params.id})
-    console.log(`This is deleted!: ${foundTag}`)
     res.send(foundTag)
   }
   catch(error){
     res.sendStatus(404)
   } 
 })
-
-//so when we have get request for /Tags,function will be called
-//Redundant route
-/* router.get('/Tags', async (req, res, next) => {
-  let data = await Tag.find({});
-  console.log(`Here is the stuff!`,data )
-  console.info(`Tags retrieved from mongoose:`, data?.length)
-  res.send(data);
-}); */
-
-
 
 module.exports = router;

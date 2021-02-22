@@ -1,9 +1,8 @@
 import React from "react"
 import Logo from "../Logo"
 import AdminNav from "./AdminNav"
-import AdminHeader from "./AdminHeader"
-import AdminActions from "./AdminActions"
 import AdminText from "./AdminText"
+import AdminActions from "./AdminActions"
 import "../../stylesheets/admin.css"
 
 const AdminHome = () => {
@@ -11,12 +10,15 @@ const AdminHome = () => {
     <div className="adminPage">
       <AdminNav/>
       <Logo/>
-      <AdminHeader />
        <AdminText />
-       <AdminActions />
-
+       <div className="admin-portal-display">
+        <p>Your Fusion administration console</p>
+        <p>create, update and delete Fuzes</p>
+        <p>from here</p>
+      </div>
+      <AdminActions />
     </div>
-  );
-};
+  )
+}
 
 export default AdminHome
