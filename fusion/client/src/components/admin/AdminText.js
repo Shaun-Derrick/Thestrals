@@ -1,12 +1,13 @@
 import React from "react"
+import "../../stylesheets/admin.css"
 const AdminText = () => {
   return (
     <div className="banner adminBanner">
       <div
         className=" admin-text-display"
-        style={{ marginTop: "150px", marginBottom: "" }}
+        style={{ marginTop: "150px", marginBottom: "2em", color: "black" }}
       >
-        <p className="Admin-Text">ADMINISTRATION CONSOLE</p>
+        <p id="Admin-Text">ADMINISTRATION CONSOLE</p>
       </div>
     </div>
   )

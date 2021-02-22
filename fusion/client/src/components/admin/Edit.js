@@ -5,6 +5,10 @@ import { Button, Form, Segment, Header, Label } from 'semantic-ui-react'
 import AdminTagDropdown from './AdminDropdown'
 import { Link } from 'react-router-dom'
 import {parseISO, add, format} from 'date-fns'
+import Logo from "../Logo"
+import AdminNav from "./AdminNav"
+import AdminText from "./AdminText"
+import "../../stylesheets/Forms.css"
 
 const EditFuze = () => {
     let history = useHistory();
@@ -75,46 +79,49 @@ const EditFuze = () => {
 
     return (
         <div>
+            <AdminNav/>
+    <Logo/>
+     <AdminText />
             <Segment.Group>
-                <Segment inverted>
-                    <Header as='h1' content='Edit fuze' color='red' textAlign='center' />
+                <Segment inverted id="adminActionsSegment">
+                    <Header as='h1' content='Edit  a fuze' color='red' textAlign='center' />
                 </Segment>
-                <Segment inverted>
-                    <Form inverted>
+                <Segment inverted id="adminActionsSegment">
+                    <Form inverted id="adminActionsSegment">
                         <Form.Field>
-                            <Label color='red' horizontal >startDate</Label>
+                            <Label id ="ContactFormLabel">startDate</Label>
                             {convertDate(startDate)}
-                            <input type="date" name="startDate" value={startDate} onChange={e => onInputChange(e)} />
+                            <input id="ContactFormInput" type="date" name="startDate" value={startDate} onChange={e => onInputChange(e)} />
                         </Form.Field>
                         <Form.Field>
-                            <Label color='red' horizontal>endDate</Label>
+                            <Label id ="ContactFormLabel" id ="ContactFormLabel">endDate</Label>
                             {convertDate(endDate)}
-                            <input type="date" placeholder='endDate' name="endDate" value={endDate} onChange={e => onInputChange(e)} />
+                            <input id="ContactFormInput" type="date" placeholder='endDate' name="endDate" value={endDate} onChange={e => onInputChange(e)} />
                         </Form.Field>
                         <Form.Field>
-                            <Label color='red' horizontal>startTime</Label>
+                            <Label id ="ContactFormLabel" id ="ContactFormLabel">startTime</Label>
                             {startTime}
-                            <input type="text" placeholder='startTime' name="startTime" value={startTime} onChange={e => onInputChange(e)} />
+                            <input type="text" id="ContactFormInput" placeholder='startTime' name="startTime" value={startTime} onChange={e => onInputChange(e)} />
                         </Form.Field>
                         <Form.Field>
-                            <Label color='red' horizontal>endTime</Label>
+                            <Label id ="ContactFormLabel">endTime</Label>
                             {endTime}
-                            <input type="text" placeholder='endTime' name="endTime" value={endTime} onChange={e => onInputChange(e)} />
+                            <input type="text" id="ContactFormInput" placeholder='endTime' name="endTime" value={endTime} onChange={e => onInputChange(e)} />
                         </Form.Field>
                         <Form.Field>
-                            <Label color='red' horizontal>Title</Label>
-                            <input type="text" placeholder='Title' name="Title" value={Title || ""} onChange={e => onInputChange(e)} />
+                            <Label id ="ContactFormLabel">Title</Label>
+                            <input type="text" id="ContactFormInput" placeholder='Title' name="Title" value={Title || ""} onChange={e => onInputChange(e)} />
                         </Form.Field>
                         <Form.Field>
-                            <Label color='red' horizontal>description</Label>
-                            <input type="text" placeholder='description' name="description" value={description || ""} onChange={e => onInputChange(e)} />
+                            <Label id ="ContactFormLabel">description</Label>
+                            <input type="text" id="ContactFormInput" placeholder='description' name="description" value={description || ""} onChange={e => onInputChange(e)} />
                         </Form.Field>
                         <Form.Field>
-                            <Label color='red' horizontal>venue</Label>
-                            <input type="text" placeholder='venue' name="venue" value={venue || ""} onChange={e => onInputChange(e)} />
+                            <Label id ="ContactFormLabel">venue</Label>
+                            <input type="text" id="ContactFormInput" placeholder='venue' name="venue" value={venue || ""} onChange={e => onInputChange(e)} />
                         </Form.Field>
                         <Form.Field>
-                        <Label id='FormLabel' color='red horizontal'>tags</Label>
+                        <Label id ="ContactFormLabel" >tags</Label>
                         {tags}
                             <input type="text" placeholder='tags' name="tags" id='FormInput' value={currentFilters || ""} onChange={e => onTagChange(e)}>      
                             </input>
@@ -122,14 +129,14 @@ const EditFuze = () => {
                         </Form.Field>
                         <Form.Field>
 
-                            <Label color='red' horizontal>organizer</Label>
-                            <input type="text" placeholder='organizer' name="organizer" value={organizer || ""} onChange={e => onInputChange(e)} />
+                            <Label id ="ContactFormLabel">organizer</Label>
+                            <input type="text" id="ContactFormInput" placeholder='organizer' name="organizer" value={organizer || ""} onChange={e => onInputChange(e)} />
                         </Form.Field>
                         <Form.Field>
-                            <Label color='red' horizontal>whereIFoundThisEvent2</Label>
-                            <input type="text" placeholder='whereIFoundThisEvent2' name="whereIFoundThisEvent2" value={whereIFoundThisEvent2 || ""} onChange={e => onInputChange(e)} />
+                            <Label id ="ContactFormLabel">whereIFoundThisEvent2</Label>
+                            <input type="text" id="ContactFormInput" placeholder='whereIFoundThisEvent2' name="whereIFoundThisEvent2" value={whereIFoundThisEvent2 || ""} onChange={e => onInputChange(e)} />
                         </Form.Field>
-                        <Button animated='fade' type="submit" color='green' onClick={e => { onSubmit(e) }} as={Link} to="/admin/update">
+                        <Button id="contactFormSubmitButton"animated='fade' type="submit" color='green' onClick={e => { onSubmit(e) }} as={Link} to="/admin/update">
                             <Button.Content visible>CONFIRM</Button.Content>
                             <Button.Content hidden>Are you sure? </Button.Content>
                         </Button>

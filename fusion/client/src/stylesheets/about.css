@@ -53,7 +53,7 @@ a{
   }
 #DannyprofilePicDiv{
     display:flex;
-    background-image: url('../Images/Danny.jpg');
+    background-image: url('../Images/danny5.jpg');
     height:15em;
     width:15em;  
     background-repeat: no-repeat;
@@ -63,7 +63,7 @@ a{
   }
 #DannyPicProfilePage{
   display:flex;
-  background-image: url('../Images/Danny.jpg');
+  background-image: url('../Images/danny5.jpg');
   height:40em;
   width:180em;
   background-repeat: no-repeat;
