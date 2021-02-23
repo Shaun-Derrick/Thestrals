@@ -26,7 +26,7 @@ const Update = () => {
   }
 
   function convertDate(date) {
-    if (date === null || date === undefined) {
+    if (date === null || date === undefined || date ===" ") {
       return undefined
     }
     let parsedDate = parseISO(date)
@@ -59,7 +59,7 @@ const Update = () => {
               <Table.Row>
                 <Table.HeaderCell textAlign='center'>Title</Table.HeaderCell>
                 <Table.HeaderCell textAlign='center'>Start Date</Table.HeaderCell>
-                <Table.HeaderCell textAlign='center'>End Date</Table.HeaderCell>
+                <Table.HeaderCell textAlign='center'>Tags</Table.HeaderCell>
                 <Table.HeaderCell textAlign='center'>Action</Table.HeaderCell>
               </Table.Row>
             </Table.Header>
@@ -73,7 +73,7 @@ const Update = () => {
                   <Table.Cell singleLine textAlign='center'>
                     {convertDate(fuze.startDate)}
                   </Table.Cell>
-                  <Table.Cell singleLine textAlign='center'>{convertDate(fuze.endDate)}</Table.Cell>
+                  <Table.Cell singleLine textAlign='center'>{fuze.tags}</Table.Cell>
                   <Table.Cell>
                     <Segment inverted>
                       <Button.Group widths='2'>

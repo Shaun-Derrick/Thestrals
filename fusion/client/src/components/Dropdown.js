@@ -35,7 +35,7 @@ const DropdownExampleMultipleSelection = (props) => {
         marginTop: 10
       }}
       fluid
-      multiple={false}
+      multiple={true}
       selection
       options={options}
       onChange={createBlock}

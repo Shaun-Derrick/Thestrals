@@ -4,7 +4,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import { Button, Form, Segment, Header, Label } from 'semantic-ui-react'
 import AdminTagDropdown from './AdminDropdown'
 import { Link } from 'react-router-dom'
-import {parseISO, add, format} from 'date-fns'
+import { parseISO, add, format } from 'date-fns'
 
 const EditFuze = () => {
     let history = useHistory();
@@ -39,19 +39,19 @@ const EditFuze = () => {
         loadFuze()
     }, []);
 
-    function convertDate(date){
-        if(date===null || date===undefined || date===""){
-          return undefined
+    function convertDate(date) {
+        if (date === null || date === undefined || date === "") {
+            return undefined
         }
-        let parsedDate= parseISO(date)
-        let adjustedTimeZone= add(parsedDate, {
-          hours:7
+        let parsedDate = parseISO(date)
+        let adjustedTimeZone = add(parsedDate, {
+            hours: 7
         })
-        let formattedDate= format(adjustedTimeZone, "MMMM dd, yyyy")
-        return(formattedDate)  
-      }
+        let formattedDate = format(adjustedTimeZone, "MMMM dd, yyyy")
+        return (formattedDate)
+    }
 
-      useEffect(()=>{
+    useEffect(() => {
         onTagChange()
     }, [currentFilters])
 
@@ -63,7 +63,120 @@ const EditFuze = () => {
 
     const onTagChange = TagDropdown => {
         let tagChoice = document.querySelector('input[name=tags]').value
-        setFuze((curValue) => { return {...curValue, 'tags': tagChoice }});
+        setFuze((curValue) => { return { ...curValue, 'tags': tagChoice } });
+    }
+
+    const onTimeChange = event => {
+        let timeChoice = event.target.name;
+        let timeValue = event.target.value;
+        let timeHour = (timeValue.slice(0, 2))
+        let timeMinute = (timeValue.slice(3, 5))
+        let newHour= ""
+        let AMPM=""
+        switch (timeHour) {
+            case '00':
+                newHour="12"
+                AMPM="AM"
+                break; 
+            case '01':
+                newHour="1"
+                AMPM="AM"
+                break;
+            case '02':
+                newHour="2"
+                AMPM="AM"
+                break;
+            case '03':
+                newHour="3"
+                AMPM="AM"
+                break;
+            case '04':
+                newHour="4"
+                AMPM="AM"
+                break;
+            case '05':
+                newHour="5"
+                AMPM="AM"
+                break;
+            case '06':
+                newHour="6"
+                AMPM="AM"
+                break;
+            case '07':
+                newHour="7"
+                AMPM="AM"
+                break;
+            case '08':
+                newHour="8"
+                AMPM="AM"
+                break;
+            case '09':
+                newHour="9"
+                AMPM="AM"
+                break;
+            case '10':
+                newHour="10"
+                AMPM="AM"
+                break;
+            case '11':
+                newHour="11"
+                AMPM="AM"
+                break;
+            case '12':
+                newHour="12"
+                AMPM="PM"
+                break;
+            case '13':
+                newHour="1"
+                AMPM="PM"
+                break;
+            case '14':
+                newHour="2"
+                AMPM="PM"
+                break;
+            case '15':
+                newHour="3"
+                AMPM="PM"
+                break;
+            case '16':
+                newHour="4"
+                AMPM="PM"
+                break;
+            case '17':
+                newHour="5"
+                AMPM="PM"
+                break;
+            case '18':
+                newHour="6"
+                AMPM="PM"
+                break;
+            case '19':
+                newHour="7"
+                AMPM="PM"
+                break;
+            case '20':
+                newHour="8"
+                AMPM="PM"
+                break;
+            case '21':
+                newHour="9"
+                AMPM="PM"
+                break;
+            case '22':
+                newHour="10"
+                AMPM="PM"
+                break;
+            case '23':
+                newHour="11"
+                AMPM="PM"
+                break;
+            default:
+                newHour=""
+                AMPM=""
+                break;
+        }
+        let finalTime= `${newHour}:${timeMinute} ${AMPM}`
+        setFuze((curValue) => { return { ...curValue, [timeChoice]: finalTime } });
     }
 
     // to show a specfic fuze's details that we want to edit
@@ -94,12 +207,12 @@ const EditFuze = () => {
                         <Form.Field>
                             <Label color='red' horizontal>startTime</Label>
                             {startTime}
-                            <input type="text" placeholder='startTime' name="startTime" value={startTime} onChange={e => onInputChange(e)} />
+                            <input type="time" placeholder='startTime' name="startTime" value={startTime} onChange={e => onTimeChange(e)} />
                         </Form.Field>
                         <Form.Field>
                             <Label color='red' horizontal>endTime</Label>
                             {endTime}
-                            <input type="text" placeholder='endTime' name="endTime" value={endTime} onChange={e => onInputChange(e)} />
+                            <input type="time" placeholder='endTime' name="endTime" value={endTime} onChange={e => onTimeChange(e)} />
                         </Form.Field>
                         <Form.Field>
                             <Label color='red' horizontal>Title</Label>
@@ -114,9 +227,9 @@ const EditFuze = () => {
                             <input type="text" placeholder='venue' name="venue" value={venue || ""} onChange={e => onInputChange(e)} />
                         </Form.Field>
                         <Form.Field>
-                        <Label id='FormLabel' color='red horizontal'>tags</Label>
-                        {tags}
-                            <input type="text" placeholder='tags' name="tags" id='FormInput' value={currentFilters || ""} onChange={e => onTagChange(e)}>      
+                            <Label id='FormLabel' color='red' horizontal>tags</Label>
+                            {tags}
+                            <input type="text" placeholder='tags' name="tags" id='FormInput' value={currentFilters || ""} onChange={e => onTagChange(e)}>
                             </input>
                             <AdminTagDropdown name="tags" id='TagsDropdown' updateFilter={setCurrentFilters} onChange={e => onTagChange(e)} />
                         </Form.Field>
