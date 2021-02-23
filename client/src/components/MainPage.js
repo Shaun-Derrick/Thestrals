@@ -17,7 +17,7 @@ const MainPage = (props) => {
   useEffect(() => {
     const getFuzes = async () => {
       // fetch uses the "proxy" value set in client/package.json
-      let response = await fetch("/Fuzes/")
+      let response = await fetch("/Fuzes/month")
       let fuze = await response.json()
       setFuzeFull(fuze)
     }
@@ -34,8 +34,11 @@ const MainPage = (props) => {
         filters={currentFilters}
         fuzeFull={fuzeFull}
         setFuzeFull={setFuzeFull}
+        category="tags"
+        criteria='tag'
+        route="/Fuzes/month"
       />
-      <Annotation fuzeFull={fuzeFull} setFuzeFull={setFuzeFull} />
+      <Annotation fuzeFull={fuzeFull} setFuzeFull={setFuzeFull} filters={currentFilters} />
       <Link to="/login">
         <Button style={{ opacity: 0, margin: 10 }}>Login</Button>
       </Link>

@@ -33,7 +33,7 @@ function Login() {
       {/* <Container text style={{ margin: 30}}> */}
       <Grid
         textAlign="center"
-        style={{ height: "35vh" }}
+        style={{ height: "100vh", display: 'flex', justifyContent: 'center', alignItems: 'center' }}
         verticalAlign="middle"
       >
         <Grid.Column style={{ maxWidth: 600 }}>
@@ -73,16 +73,12 @@ function Login() {
                 color="black"
                 // fluid
                 size="large"
+                style={{ marginBottom: '.5em' }}
               >
                 Log In
               </Button>
-              <Button color="black" fluid size="large">
-                <Link to="/forgot-password">Forgot Password?</Link>
-              </Button>
-
-              <Button color="black" fluid size="large">
-                <Link to="/">Return to Public Home Page</Link>
-              </Button>
+              <Link to="/forgot-password"> <Button color="black" fluid size="large" style={{ marginBottom: '.5em' }}>Forgot Password?</Button></Link>
+              <Link to="/"><Button color="black" fluid size="large">Return to Public Home Page</Button></Link>
             </Segment>
           </Form>
         </Grid.Column>

@@ -160,7 +160,7 @@ const FuzeList = (props) => {
         if (pageCount < (props.fuzeFull.length) / 5) {
             pageCount++
             return (
-                <Pagination key={index} number={pageCount} pageStatus={pageStatus} changePage={changePage}></Pagination>
+                <Pagination key={index} number={pageCount} pageStatus={pageStatus} changePage={changePage} filters={props.filters}></Pagination>
             )
         }
     }
@@ -173,7 +173,6 @@ const FuzeList = (props) => {
             <div className='fuzeList'>
                 {props.fuzeFull.map(makeDiv)}
             </div>
-            {console.log(fuzeChoice)}
             <FuzeModal modal={modalStatus} fuzeItem={fuzeChoice} closeModal={closeModal} chooseIcon={chooseIcon} date={modalDate}></FuzeModal>
         </div>
     )

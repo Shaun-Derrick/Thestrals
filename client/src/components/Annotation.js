@@ -11,11 +11,12 @@ const Annotation = (props) => {
           attendees
         </p>
         <p>
-          Scroll down to view a list of Fuzes occuring this week:
+          Scroll down to view a list of Fuzes occuring this month:
         </p>
       </div>
       <FuzeList fuzeFull={props.fuzeFull}
-        setFuzeFull={props.setFuzeFull}></FuzeList>
+        setFuzeFull={props.setFuzeFull}
+        filters={props.filters}></FuzeList>
       <div className="annotation-description">
         <p>Become Part of the energy! </p>
         <p>

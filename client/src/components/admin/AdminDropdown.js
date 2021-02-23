@@ -1,10 +1,10 @@
 import React from "react"
 import { Dropdown } from "semantic-ui-react"
 import {useState, useEffect} from 'react'
-import "../stylesheets/Dropdown.css"
+import "../../stylesheets/AdminDropdown.css"
 import "semantic-ui-css/semantic.min.css"
 
-const DropdownExampleMultipleSelection = (props) => {
+const AdminTagDropdown = (props) => {
   // const Dropdown = (props) => { ----- Tried changing name an export but as it is a semantic-ui-react module I do not think it can be as it stops rendering
   const [options, setOptions] = useState([])
 
@@ -25,14 +25,13 @@ const DropdownExampleMultipleSelection = (props) => {
 
   return (
     <Dropdown
-      placeholder="Filter Categories"
+      placeholder="Select tags"
       style={{
-        color: "paleGreen",
+        color: "#f74242",
         borderColor: "paleGreen",
-        borderWidth: 4,
-        width: "40vw",
-        marginLeft: 10,
-        marginTop: 10
+        borderWidth: "1px",
+        width: "25em",
+        marginLeft: 10
       }}
       fluid
       multiple={false}
@@ -43,4 +42,4 @@ const DropdownExampleMultipleSelection = (props) => {
   )
 }
 // export default Dropdown tried changing name but then the dropdown module stops rendering
-export default DropdownExampleMultipleSelection
+export default AdminTagDropdown

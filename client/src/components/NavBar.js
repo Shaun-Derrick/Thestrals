@@ -21,14 +21,17 @@ const NavBar = () => {
       <div className='homeNavBar'>
         <ul className={renderClasses()}>
           <li className="link">
-            <Link to="/">HOME</Link>
+            <Link to="/">Home</Link>
+          </li>
+          <li className="link">
+            <Link to="/fuzes">Fuzes</Link>
           </li>
           <li className="link">
             <Link to="/about">About</Link>
           </li>
-          <li className="link">
+        {/*   <li className="link">
             <Link to="/services">Services</Link>
-          </li>
+          </li> */}
           <li className="link">
             <Link to="/contact">Contact Us</Link>
           </li>
