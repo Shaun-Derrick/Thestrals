@@ -28,7 +28,7 @@ const Danny = () => {
                 <p id="profileText">For future learners, Danny encourages you to "make sure you develop your interpersonal skills because it is so important to collaborate with your team. Enjoy the process and take advantage of every single opportunity."</p><br />
                 <p id="profileText">Danny is truly a #rockstar and we are so proud of him! Curious to learn more? Reach out and connect with Danny! #evolveuyyc #fullstackdeveloper #buildingwhatsnext</p><br />
                 <div id="ProfileBottomLine">
-                <p id="profileText"><a href="https://www.linkedin.com/in/danny-nguyen-b8306b3a/">Find Danny on LinkedIn!</a></p>
+                <p id="profileText"><a href="https://www.linkedin.com/in/danny-nguyen-b8306b3a/" target="_blank">Find Danny on LinkedIn!</a></p>
                 <Link to="/about"><Button id="ProfileBackButton" class="ui button">Back to team </Button></Link>
             </div></div>
         </div>

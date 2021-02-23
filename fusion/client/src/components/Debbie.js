@@ -24,7 +24,7 @@ const Debbie = () => {
                 <p id="profileText">This is how she came up with the idea for a central calendar that lists relevant networking and educational events in one place. A one-stop shopping platform to find events to attend so no one misses out.</p><br />
                 <p id="profileText">When Debbie is not working on Fusion-Alberta, you can find her fanatically riding her bike, a new hobby she gained thanks to COVID-19.</p><br /> 
                 <div id="ProfileBottomLine">
-                <p id="profileText">< a href="https://www.linkedin.com/in/debbie-butt-65040490/">LinkedIn Profile</a></p>
+                <p id="profileText">< a href="https://www.linkedin.com/in/debbie-butt-65040490/" target="_blank">LinkedIn Profile</a></p>
                 <Link to="/about"><Button id="ProfileBackButton" class="ui button">Back to team </Button></Link>
                 </div>
             </div>

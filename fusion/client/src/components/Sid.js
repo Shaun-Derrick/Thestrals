@@ -29,7 +29,7 @@ const Sid = () => {
 
                                 <p id="profileText">#evolveuyyc #fullstackdeveloper</p>
                 <div id="ProfileBottomLine">
-                <p id="profileText">< a href="https://www.linkedin.com/in/sidchopp/">LinkedIn Profile</a></p>
+                <p id="profileText">< a href="https://www.linkedin.com/in/sidchopp/" target="_blank">LinkedIn Profile</a></p>
                 <Link to="/about"><Button id="ProfileBackButton" class="ui button">Back to team </Button></Link>
                 </div>
             </div>

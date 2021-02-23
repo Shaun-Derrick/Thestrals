@@ -1,10 +1,11 @@
-.LandingPage.AboutPage {
+AboutPage {
     min-height: 100vh;
     width: 100vw;
     align-items: center;
     justify-content: center;
     background-color: black;
     background-size: cover;
+    margin-left: 1.5em;
   }
 .TeamMember{
     display:flex;
