@@ -1,39 +1,39 @@
-import React, { useState } from "react";
-import {Link} from 'react-router-dom';
-import "../stylesheets/NavBar.css";
+import React, { useState } from "react"
+import { Link } from "react-router-dom"
+import "../stylesheets/NavBar.css"
 
 const NavBar = () => {
-  const [navLinkOpen, navLinkToggle] = useState(false);
+  const [navLinkOpen, navLinkToggle] = useState(false)
 
   const handleNavLinksToggle = () => {
-    navLinkToggle(!navLinkOpen);
-  };
+    navLinkToggle(!navLinkOpen)
+  }
   const renderClasses = () => {
-    let classes = "navlinks";
+    let classes = "navlinks"
     if (navLinkOpen) {
-      classes += " active";
+      classes += " active"
     }
-    return classes;
-  };
+    return classes
+  }
 
   return (
     <nav>
-      <div className='homeNavBar'>
+      <div className="homeNavBar">
         <ul className={renderClasses()}>
           <li className="link">
             <Link to="/">Home</Link>
           </li>
           <li className="link">
-            <Link to="/fuzes">Fuzes</Link>
+            <Link to="/fuzes">Calendar</Link>
           </li>
           <li className="link">
             <Link to="/about">About</Link>
           </li>
-        {/*   <li className="link">
+          {/*   <li className="link">
             <Link to="/services">Services</Link>
           </li> */}
           <li className="link">
-            <Link to="/contact">Contact Us</Link>
+            <Link to="/contact">Contact</Link>
           </li>
         </ul>
         <div onClick={handleNavLinksToggle} className="hamburger-toggle">
@@ -41,7 +41,7 @@ const NavBar = () => {
         </div>
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default NavBar;
+export default NavBar

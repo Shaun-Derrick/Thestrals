@@ -1,22 +1,25 @@
-import "../stylesheets/index.css";
-import React from "react";
-import FuzeList from "./FuzeList";
+import "../stylesheets/index.css"
+import React from "react"
+import FuzeList from "./FuzeList"
 
 const Annotation = (props) => {
   return (
     <div className="containerAnnotation">
-      <div className="event-list-display" style={{ marginBottom: "10px", marginLeft: "1em" }}>
+      <div
+        className="event-list-display"
+        style={{ marginBottom: "10px", marginLeft: "1em" }}
+      >
         <p>
-          Fuzes scheduled events or lectures posted by organizers for interested
-          attendees
+          "Fuzes" are scheduled events or lectures posted by organizers for
+          interested attendees
         </p>
-        <p>
-          Scroll down to view a list of Fuzes occuring this month:
-        </p>
+        <p>Scroll down to view a list of Fuzes occuring this month:</p>
       </div>
-      <FuzeList fuzeFull={props.fuzeFull}
+      <FuzeList
+        fuzeFull={props.fuzeFull}
         setFuzeFull={props.setFuzeFull}
-        filters={props.filters}></FuzeList>
+        filters={props.filters}
+      ></FuzeList>
       <div className="annotation-description">
         <p>Become Part of the energy! </p>
         <p>
@@ -26,7 +29,7 @@ const Annotation = (props) => {
         <p>event or lecture to the platform.</p>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Annotation;
+export default Annotation

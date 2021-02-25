@@ -12,6 +12,11 @@ import Delete from "./components/admin/Delete"
 import DeleteFuze from "./components/admin/DeleteFuze"
 import Edit from "./components/admin/Edit"
 import View from "./components/admin/View"
+import Danny from "./components/Danny"
+import Debbie from "./components/Debbie"
+import Kery from "./components/Kery"
+import Shaun from "./components/Shaun"
+import Sid from "./components/Sid"
 import Signup from "./components/admin/Signup"
 import PrivateRoute from "./components/admin/PrivateRoute"
 import ForgotPassword from "./components/admin/ForgotPassword"
@@ -29,6 +34,11 @@ const App = () => {
           <Route exact path="/about" component={About}></Route>
           <Route exact path="/contact" component={Contact}></Route>
           <Route exact path="/login" component={AdminLogin}></Route>
+          <Route exact path="/danny" component={Danny}></Route>
+          <Route exact path="/debbie" component={Debbie}></Route>
+          <Route exact path="/kery" component={Kery}></Route>
+          <Route exact path="/shaun" component={Shaun}></Route>
+          <Route exact path="/sid" component={Sid}></Route>
           <PrivateRoute
             exact
             path="/admin"

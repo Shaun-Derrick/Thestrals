@@ -1,0 +1,192 @@
+AboutPage {
+  min-height: 100vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  background-size: cover;
+  margin-left: 1.5em;
+}
+.TeamMember {
+  display: flex;
+  flex-direction: column;
+  height: 25em;
+  width: 20em;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1em;
+  margin-left: 1em;
+}
+#TeamMemName {
+  display: flex;
+  color: palegreen;
+  font-size: 2em;
+  align-items: center;
+  justify-content: center;
+}
+#aboutPara {
+  color: palegreen;
+  display: flex;
+  font-size: 1.25em;
+  margin-left: 2em;
+}
+a {
+  text-decoration: underline;
+}
+
+#profileName {
+  display: flex;
+  justify-content: center;
+  font-size: 2em;
+  color: #f74242;
+  margin-left: 2em;
+}
+#profileText {
+  color: palegreen;
+  display: flex;
+  font-size: 1.25em;
+  margin-left: 2em;
+  width: 70%;
+}
+#DannyprofilePicDiv {
+  display: flex;
+  background-image: url("../Images/danny5.jpg");
+  height: 15em;
+  width: 15em;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-color: transparent;
+  background-size: cover;
+}
+#DannyPicProfilePage {
+  display: flex;
+  background-image: url("../Images/danny5.jpg");
+  height: 40em;
+  width: 180em;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-color: transparent;
+  background-size: cover;
+}
+#DebbieprofilePicDiv {
+  display: flex;
+  background-image: url("../Images/Debbie.jpeg");
+  height: 15em;
+  width: 15em;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-color: transparent;
+  background-size: cover;
+}
+#DebbiePicProfilePage {
+  display: flex;
+  background-image: url("../Images/Debbie.jpeg");
+  height: 40em;
+  width: 180em;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-color: transparent;
+  background-size: cover;
+}
+#KeryprofilePicDiv {
+  display: flex;
+  background-image: url("../Images/Kery.jpg");
+  height: 15em;
+  width: 15em;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-color: transparent;
+  background-size: cover;
+}
+#KeryPicProfilePage {
+  display: flex;
+  background-image: url("../Images/Kery.jpg");
+  height: 40em;
+  width: 180em;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-color: transparent;
+  background-size: cover;
+}
+#ShaunprofilePicDiv {
+  display: flex;
+  background-image: url("../Images/Shaun.jpeg");
+  height: 15em;
+  width: 15em;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-color: transparent;
+  background-size: cover;
+}
+#ShaunPicProfilePage {
+  display: flex;
+  background-image: url("../Images/Shaun.jpeg");
+  height: 40em;
+  width: 180em;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-color: transparent;
+  background-size: cover;
+}
+#SidprofilePicDiv {
+  display: flex;
+  background-image: url("../Images/Sid.jpeg");
+  height: 15em;
+  width: 15em;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-color: transparent;
+  background-size: cover;
+}
+#SidPicProfilePage {
+  display: flex;
+  background-image: url("../Images/Sid.jpeg");
+  height: 40em;
+  width: 180em;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-color: transparent;
+  background-size: cover;
+}
+#TeamMemberGrid {
+  margin-left: 1.5em;
+}
+#ProfileMainContainer {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2em;
+  margin-left: 2em;
+}
+
+#ProfileBackButton {
+  display: flex;
+  background-color: palegreen;
+  color: black;
+  margin-left: 2em;
+  margin-top: 1em;
+}
+#ProfileBottomLine {
+  display: flex;
+  flex-direction: row;
+}
+.platform-statement-display {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: palegreen;
+  font-size: 150%;
+  font-weight: bold;
+  width: 100vw;
+  margin-bottom: 1em;
+}
+.mission-statement-display {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: palegreen;
+  font-size: 200%;
+  font-weight: bold;
+  width: 100vw;
+}

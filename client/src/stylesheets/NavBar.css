@@ -19,11 +19,13 @@ nav {
 .link {
   letter-spacing: 1px;
   font-weight: bold;
+  /* font-size: 22px; */
 }
 .link a {
   color: palegreen;
   opacity: 0.75;
   margin: 0 50px;
+  text-decoration: none;
 }
 .link a:hover {
   color: palegreen;
@@ -36,7 +38,7 @@ nav {
   text-align: center;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 850px) {
   body {
     overflow-x: hidden;
   }
@@ -61,6 +63,6 @@ nav {
   }
   .active {
     transform: translateX(0%);
-    opacity:1
+    opacity: 1;
   }
 }

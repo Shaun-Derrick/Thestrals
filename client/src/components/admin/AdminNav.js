@@ -1,12 +1,11 @@
-import React, { useState } from "react";
-import { Link, useHistory } from 'react-router-dom';
+import React, { useState } from "react"
+import { Link, useHistory } from "react-router-dom"
 import { Button } from "semantic-ui-react"
 import { useAuth } from "../../contexts/AuthContext"
-import "../../stylesheets/admin.css";
-
+import "../../stylesheets/admin.css"
 
 const AdminNav = () => {
-  const [navLinkOpen, navLinkToggle] = useState(false);
+  const [navLinkOpen, navLinkToggle] = useState(false)
   const [error, setError] = useState("")
   const { currentUser, logout } = useAuth()
   const history = useHistory()
@@ -22,33 +21,35 @@ const AdminNav = () => {
   }
 
   const handleNavLinksToggle = () => {
-    navLinkToggle(!navLinkOpen);
-  };
+    navLinkToggle(!navLinkOpen)
+  }
   const renderClasses = () => {
-    let classes = "navlinks";
+    let classes = "navlinks"
     if (navLinkOpen) {
       classes += " active"
     }
-    return classes;
-  };
+    return classes
+  }
 
   return (
     <nav>
-      <div>
+      <div className="homeNavBar">
         <ul className={renderClasses()}>
-          <li className="AdminNavLink">
+          <li className="adminLink">
+            {/* <li className="adminLink, AdminNavLinks"> */}
+            {/* <li className="AdminNavLink"> */}
             <Link to="/admin"> Home</Link>
           </li>
-          <li className="AdminNavLink">
+          <li className="adminLink">
             <Link to="/admin/create">Create</Link>
           </li>
-          <li className="AdminNavLink">
+          <li className="adminLink">
             <Link to="/admin/update">Update</Link>
           </li>
-          <li className="AdminNavLink">
+          <li className="adminLink">
             <Link to="/admin/delete">Delete</Link>
           </li>
-          <li className="AdminNavLink">
+          <li className="adminLink">
             <Link
               to="/update-profile"
               className="btn"
@@ -57,9 +58,9 @@ const AdminNav = () => {
               size="large"
             >
               Update Profile
-        </Link>
+            </Link>
           </li>
-          <li className="AdminNavLink">
+          <li className="adminLink">
             <Link
               to="/signup"
               className="btn"
@@ -67,13 +68,13 @@ const AdminNav = () => {
               // fluid
               size="large"
             >
-              Add Admin Account
-        </Link>
+              Add Admin
+            </Link>
           </li>
-          <li className="AdminNavLink">
+          <li className="adminLink">
             <Button color="red" fluid size="large" onClick={handleLogout}>
               Log Out
-        </Button>
+            </Button>
           </li>
         </ul>
         <div onClick={handleNavLinksToggle} className="hamburger-toggle">
@@ -81,10 +82,10 @@ const AdminNav = () => {
         </div>
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default AdminNav;
+export default AdminNav
 //We have used Link tags so that page
 //will not reload everytime we click a link attached to a route.
 //Internally it converts Link into a tag
