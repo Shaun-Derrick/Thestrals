@@ -33,9 +33,9 @@ body {
   width: 100vw;
   height: 20vh;
 }
-.admin-Text {
-  /* font-size: 8em; */
-}
+/* .admin-Text {
+  font-size: 8em;
+} */
 #Admin-Header {
   display: flex;
   align-items: center;
@@ -80,23 +80,23 @@ body {
   font-size: 22px;
   /* font-size: 22px; */
 }
-.AdminNavLinks {
-  /* position: absolute;
+/* .AdminNavLinks {
+  position: absolute;
   right: 0px;
   display: flex;
   flex-direction: column;
   height: 100vh;
   align-items: center;
   width: 30%;
-  top: 12vh; */
-  /* background-color: black;
+  top: 12vh;
+  background-color: black;
   color: #f74242;
-  font-size: 22px; */
-  /* transform: translateX(100%);
+  font-size: 22px;
+  transform: translateX(100%);
   transition: transform 0.5s ease-in;
   z-index: 1;
-  opacity: 0; */
-}
+  opacity: 0;
+} */
 a {
   color: #f74242;
   text-decoration: none;
